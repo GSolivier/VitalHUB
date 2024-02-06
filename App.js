@@ -2,6 +2,9 @@ import { MontserratAlternates_700Bold, useFonts } from '@expo-google-fonts/monts
 import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Login from './src/screens/auth/Login/Login';
+import { Image, StatusBar } from 'react-native';
+import { AppAssets } from './src/assets/AppAssets';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,12 +14,17 @@ export default function App() {
     Quicksand_600SemiBold,
     Quicksand_500Medium
   })
+
+  if (!fontsLoaded) {
+    return null
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-        name='Navegacao'
-        component={Navegacao}
+        name='Login'
+        component={Login}
+        options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
