@@ -12,6 +12,6 @@ export const Container = styled.SafeAreaView`
 `
 
 export const Spacing = styled.View`
-    width: 100%;
-    gap: ${({ gap }) => gap};
+    width: ${({widht = '0'}) => widht };
+    height: ${({height = '0'}) => height};
 `

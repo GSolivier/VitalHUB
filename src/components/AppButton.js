@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../settings/AppColors'
-import { TitleMedium } from '../settings/AppFonts'
+import { Link, TitleMedium } from '../settings/AppFonts'
+import { TouchableOpacity } from 'react-native'
 
 export const Button = styled.TouchableOpacity`
     width: 100%;
@@ -15,6 +16,22 @@ export const Button = styled.TouchableOpacity`
     flex-direction: row;
     gap: 27px;
 `
+
+export const LinkTouchableOpacity = styled.TouchableOpacity`
+        align-self: ${({ alignSelf = 'auto' }) => alignSelf};
+        padding-top: 3px ;
+`
+
+export function LinkButton({ text, color, size, alignSelf, onTap }) {
+    return (
+        <LinkTouchableOpacity onPress={onTap} alignSelf={alignSelf}>
+            <Link color={color} size={size} >
+                {text}
+            </Link>
+        </LinkTouchableOpacity>
+
+    );
+}
 
 
 export default function AppButton({

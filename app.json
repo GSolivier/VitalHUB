@@ -10,7 +10,6 @@
       "image": "./src/assets/images/app_logoWhite.png",
       "resizeMode": "contain",
       "backgroundColor": "#49B3BA"
-      
     },
     "assetBundlePatterns": [
       "**/*"
@@ -22,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.waternoose.VitalHUB"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
@@ -38,7 +38,13 @@
       ]
     },
     "plugins": [
-      "expo-font"
-    ]
+      "expo-font",
+      "expo-localization"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3d8ff236-1e29-492b-a95c-09f4cd8cca33"
+      }
+    }
   }
 }

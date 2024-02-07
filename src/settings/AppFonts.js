@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { AppColors } from "./AppColors";
 
+
 export const TitleLarge = styled.Text`
     font-family: 'MontserratAlternates_700Bold';
     font-size: ${({size = '40px'}) => size};
@@ -35,5 +36,13 @@ export const TextSmall = styled.Text`
     font-family: 'Quicksand_500Medium';
     font-size: ${({size = '14px'}) => size};
     color: ${({color = AppColors.grayV1 }) => color};
+`
+
+export const Link = styled.Text`
+    font-family: 'MontserratAlternates_500Medium';
+    text-decoration: underline;
+    color: ${({color = AppColors.darkBlue }) => color};
+    font-size: ${({size = '14px'}) => size};
+
 `
  
