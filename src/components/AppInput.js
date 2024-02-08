@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../settings/AppColors'
 import { TextBig } from '../settings/AppFonts'
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field'
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
+
 
 
 export const Input = styled.TextInput`
@@ -11,10 +11,10 @@ export const Input = styled.TextInput`
     height: ${({ isTextArea = false }) => isTextArea == true ? '120px' : '60px'};
     border-radius: 5px;
     border-width: 2px;
-    border-color: ${({ borderColor = AppColors.lightBlue }) => borderColor};
+    border-color: ${({ borderColor = AppColors.lightBlue, isValid = true }) => isValid ?  borderColor : AppColors.red};
     padding: 16px;
     font-family: 'MontserratAlternates_700Bold';
-    color: ${({ color = AppColors.lightBlueV1 }) => color};
+    color: ${({ color = AppColors.lightBlueV1,isValid = true }) => isValid ? color : AppColors.red};
     `
 
 export const InputBox = styled.View`
@@ -31,27 +31,35 @@ export default function AppInput({
     isTextArea = false,
     hasLabel = false,
     textValue,
-    onEdit = null,
+    onEdit,
     focus = null,
-    focusOut = null
+    focusOut = null,
+    isValid = true,
+    onChange = null
 }) {
+    const handleInputChange = (value) => {
+       onEdit === null ? null : onEdit(value);
+    };
+    
     return (
         <InputBox>
             {hasLabel ? (<TextBig>{lable}</TextBig>) : null}
             <Input
                 placeholder={hint}
-                placeholderTextColor={textColor}
-                color={textColor}
+                placeholderTextColor={ isValid ? textColor : AppColors.red}
+                color={ isValid ? textColor : AppColors.red}
                 secureTextEntry={isObscure}
                 multiline={isTextArea}
                 numberOfLines={isTextArea == true ? 5 : 1}
                 isTextArea={isTextArea}
                 textAlignVertical={isTextArea == true ? 'top' : 'center'}
                 value={textValue}
-                onChange={onEdit}
+                onChangeText={handleInputChange}
+                onChange={onChange}
                 borderColor={borderColor}
                 onFocus={focus}
                 onBlur={focusOut}
+                isValid={isValid}
             />
         </InputBox>
     )
@@ -71,12 +79,7 @@ const Cell = styled.Text`
   margin: 0 11px;
 `;
 
-
-const CodeInputBox = styled(CodeField)`
-  width: 100%;
-`;
-
-export function AppCodeInput() {
+export function AppCodeInput({onValueChange}) {
     const [value, setValue] = useState('');
 
     const ref = useBlurOnFulfill({ value, cellCount: CELL_COUNT });
@@ -85,11 +88,20 @@ export function AppCodeInput() {
         setValue,
     });
 
+    // Função para enviar o valor para fora do componente
+    const handleValueChange = (newValue) => {
+        setValue(newValue); // Atualiza o estado imediatamente
+        setTimeout(() => {
+            onValueChange(newValue); // Chama a função de callback após a atualização do estado
+        }, 0);
+    };
+
+
     return (
-        <CodeInputBox
+        <CodeField
             ref={ref}
             value={value}
-            onChangeText={setValue}
+            onChangeText={handleValueChange}
             cellCount={CELL_COUNT}
             keyboardType="number-pad"
             textContentType="oneTimeCode"

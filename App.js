@@ -7,6 +7,7 @@ import ForgotPassword from './src/screens/auth/ForgotPassword';
 import RedefinePassword from './src/screens/auth/RedefinePassword';
 import CreateAccount from './src/screens/auth/CreateAccount';
 import EmailVerify from './src/screens/auth/EmailVerify';
+import AppRoutes from './src/settings/AppRoutes';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,35 +24,7 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-        name='Login'
-        component={Login}
-        options={{headerShown: false}}
-        />
-        <Stack.Screen
-        name='ForgotPassword'
-        component={ForgotPassword}
-        options={{headerShown: false}}
-        />
-        <Stack.Screen
-        name='EmailVerify'
-        component={EmailVerify}
-        options={{headerShown: false}}
-        />
-        <Stack.Screen
-        name='RedefinePassword'
-        component={RedefinePassword}
-        options={{headerShown: false}}
-        />
-        <Stack.Screen
-        name='CreateAccount'
-        component={CreateAccount}
-        options={{headerShown: false}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <AppRoutes/>
   );
 }
 

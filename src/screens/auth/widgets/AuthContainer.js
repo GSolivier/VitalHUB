@@ -15,7 +15,7 @@ export const Leading = styled.TouchableOpacity`
 export default function AuthContainer({isClosable = false,hasLeading = false, children, onTap}){
     return(
         <Container>
-            {hasLeading ? <Leading onPress={onTap}>{isClosable ? <CloseSvg></CloseSvg> : <ArrowSvg></ArrowSvg> }</Leading> : null}
+            {hasLeading ? <Leading onPress={onTap} >{isClosable ? <CloseSvg></CloseSvg> : <ArrowSvg></ArrowSvg> }</Leading> : null}
             {children}
         </Container>
     );
