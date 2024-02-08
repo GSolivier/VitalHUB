@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../settings/AppColors'
 import { Link, TitleMedium } from '../settings/AppFonts'
-import { TouchableOpacity } from 'react-native'
 
 export const Button = styled.TouchableOpacity`
     width: 100%;

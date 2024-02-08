@@ -1,5 +1,3 @@
-import { View, Text, SafeAreaView } from 'react-native'
-import React from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../settings/AppColors'
 

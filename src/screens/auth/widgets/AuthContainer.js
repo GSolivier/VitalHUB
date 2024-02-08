@@ -8,8 +8,8 @@ export const Leading = styled.TouchableOpacity`
     border-radius: 999px;
     padding: 8px;
     position: absolute;
-    top: 120;
-    left: 30;
+    top: 120px;
+    left: 30px;
 `
 
 export default function AuthContainer({isClosable = false,hasLeading = false, children, onTap}){

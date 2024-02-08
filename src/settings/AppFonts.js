@@ -30,7 +30,7 @@ export const TextMedium = styled.Text`
     font-family: 'Quicksand_500Medium';
     font-size: ${({size = '16px'}) => size};
     color: ${({color = AppColors.grayV1 }) => color};
-    text-align: ${({textAlign = 'auto'}) => textAlign}
+    text-align: ${({textAlign = 'auto'}) => textAlign};
 `
 
 export const TextSmall = styled.Text`

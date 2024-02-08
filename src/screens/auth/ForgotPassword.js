@@ -1,14 +1,14 @@
 import React from 'react'
-import AuthContainer from '../widgets/AuthContainer'
-import { AppAssets } from '../../../assets/AppAssets'
+import AuthContainer from './widgets/AuthContainer'
+import { AppAssets } from '../../assets/AppAssets'
 import { Image } from 'react-native'
 import { StackActions } from '@react-navigation/routers';
-import { Spacing } from '../../../components/Container';
-import { TextMedium, TitleMedium } from '../../../settings/AppFonts';
-import translate from '../../../locale';
-import AppLocalizations from '../../../locale/AppLocalizations';
-import AppInput from '../../../components/AppInput';
-import AppButton from '../../../components/AppButton';
+import { Spacing } from '../../components/Container';
+import { TextMedium, TitleMedium } from '../../settings/AppFonts';
+import translate from '../../locale';
+import AppLocalizations from '../../settings/AppLocalizations';
+import AppInput from '../../components/AppInput';
+import AppButton from '../../components/AppButton';
 
 export default function ForgotPassword({ navigation }) {
 
