@@ -24,7 +24,9 @@ const en = {
     createAccountHint: 'Enter your email address and password to register.',
     confirmPassword: 'Confirm password',
     signUp: 'Register',
-    cancel: 'Cancel'
+    cancel: 'Cancel',
+
+    welcome: 'Welcome'
   };
   
   export default en;

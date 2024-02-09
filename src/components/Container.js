@@ -10,6 +10,21 @@ export const Container = styled.SafeAreaView`
 `
 
 export const Spacing = styled.View`
-    width: ${({widht = '0'}) => widht };
-    height: ${({height = '0'}) => height};
+    width: ${({ widht = '0' }) => widht};
+    height: ${({ height = '0' }) => height};
+`
+
+export const Column = styled.View`
+    width: ${({ widht }) => widht};
+    flex-direction: column;
+    align-items: ${({ alignItems }) => alignItems};
+    justify-content: ${({ justifyContent }) => justifyContent};
+    align-self: ${({ alignSelf }) => alignSelf};
+`
+export const Row = styled.View`
+    width: ${({ widht }) => widht};
+    flex-direction: row;
+    align-items: ${({ alignItems }) => alignItems};
+    justify-content: ${({ justifyContent }) => justifyContent};
+    align-self: ${({ alignSelf }) => alignSelf};
 `

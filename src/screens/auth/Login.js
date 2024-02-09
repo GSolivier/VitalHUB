@@ -11,7 +11,6 @@ import AuthContainer from './widgets/AuthContainer'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { RouteKeys, push } from '../../settings/AppRoutes'
-import { validateEmail } from '../../settings/AppUtils'
 
 
 export default function Login({navigation}) {
@@ -34,7 +33,6 @@ export default function Login({navigation}) {
 
       <AppInput hint={translate(AppLocalizations.emailPlacehoder)} 
       onEdit={handleEmailChange}
-      onChange={() => setIsValidated(validateEmail(email))} 
       isValid={isValidated} 
       textValue={email}
       />
@@ -60,8 +58,8 @@ export default function Login({navigation}) {
       <AppButton 
       textButton={translate(AppLocalizations.enterButton).toUpperCase()} 
       onTap={() => {
-        if(isValidated){
-          push(navigation, RouteKeys.createAccount)
+        if(email.length != 0){
+          push(navigation, RouteKeys.homeScreenDoctor)
         } else {
           return
         }

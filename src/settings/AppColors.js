@@ -29,5 +29,7 @@ export const AppColors = {
 
     whiteGray: '#F1F0F5',
 
-    white: '#fff'
+    white: '#fff',
+
+    gradient1: 'linear-gradient(45deg, rgba(73,179,186,1) 0%, rgba(191,232,235,1) 100%)'
 };

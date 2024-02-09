@@ -25,7 +25,9 @@ const pt = {
     createAccountHint: 'Insira seu endereço de e-mail e senha para realizar seu cadastro.',
     confirmPassword: 'Confirmar senha',
     signUp: 'Cadastrar',
-    cancel: 'Cancelar'
+    cancel: 'Cancelar',
+
+    welcome: 'Bem-vindo'
   };
   
   export default pt;

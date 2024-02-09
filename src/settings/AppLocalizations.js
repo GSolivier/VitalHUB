@@ -24,5 +24,7 @@ export default AppLocalizations = {
     createAccountHint: 'createAccountHint',
     confirmPassword: 'confirmPassword',
     signUp: 'signUp',
-    cancel: 'cancel'
+    cancel: 'cancel',
+
+    welcome: 'welcome'
 }

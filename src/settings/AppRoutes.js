@@ -7,6 +7,8 @@ import EmailVerify from '../screens/auth/EmailVerify';
 import RedefinePassword from '../screens/auth/RedefinePassword';
 import CreateAccount from '../screens/auth/CreateAccount';
 import { StackActions } from '@react-navigation/native';
+import HomeScreenDoctor from '../screens/doctor/HomeScreenDoctor';
+import HomeScreenPatient from '../screens/patient/HomeScreenPatient';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +17,9 @@ export const RouteKeys = {
     forgotPassword: 'ForgotPassword',
     emailVerify: 'EmailVerify',
     redefinePassword: 'RedefinePassword',
-    createAccount: 'CreateAccount'
+    createAccount: 'CreateAccount',
+    homeScreenDoctor: 'HomeScreenDoctor',
+    homeScreenPatient: 'HomeScreenPatient'
 }
 
 export default function AppRoutes() {
@@ -23,6 +27,10 @@ export default function AppRoutes() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
+                <Stack.Screen
+                    name={RouteKeys.homeScreenDoctor}
+                    component={HomeScreenDoctor}
+                />  
                 <Stack.Screen
                     name={RouteKeys.loginScreen}
                     component={Login}
@@ -43,6 +51,10 @@ export default function AppRoutes() {
                     name={RouteKeys.createAccount}
                     component={CreateAccount}
                 />
+                <Stack.Screen
+                    name={RouteKeys.homeScreenPatient}
+                    component={HomeScreenPatient}
+                />  
             </Stack.Navigator>
         </NavigationContainer>
     )

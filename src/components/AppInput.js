@@ -3,6 +3,7 @@ import styled from 'styled-components/native'
 import { AppColors } from '../settings/AppColors'
 import { TextBig } from '../settings/AppFonts'
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field'
+import { Spacing } from './Container'
 
 
 
@@ -11,10 +12,10 @@ export const Input = styled.TextInput`
     height: ${({ isTextArea = false }) => isTextArea == true ? '120px' : '60px'};
     border-radius: 5px;
     border-width: 2px;
-    border-color: ${({ borderColor = AppColors.lightBlue, isValid = true }) => isValid ?  borderColor : AppColors.red};
+    border-color: ${({ borderColor = AppColors.lightBlue, isValid = true }) => isValid ? borderColor : AppColors.red};
     padding: 16px;
     font-family: 'MontserratAlternates_700Bold';
-    color: ${({ color = AppColors.lightBlueV1,isValid = true }) => isValid ? color : AppColors.red};
+    color: ${({ color = AppColors.lightBlueV1, isValid = true }) => isValid ? color : AppColors.red};
     `
 
 export const InputBox = styled.View`
@@ -38,16 +39,16 @@ export default function AppInput({
     onChange = null
 }) {
     const handleInputChange = (value) => {
-       onEdit === null ? null : onEdit(value);
+        onEdit === null ? null : onEdit(value);
     };
-    
+
     return (
         <InputBox>
             {hasLabel ? (<TextBig>{lable}</TextBig>) : null}
             <Input
                 placeholder={hint}
-                placeholderTextColor={ isValid ? textColor : AppColors.red}
-                color={ isValid ? textColor : AppColors.red}
+                placeholderTextColor={isValid ? textColor : AppColors.red}
+                color={isValid ? textColor : AppColors.red}
                 secureTextEntry={isObscure}
                 multiline={isTextArea}
                 numberOfLines={isTextArea == true ? 5 : 1}
@@ -72,14 +73,14 @@ const Cell = styled.Text`
   height: 62px;
   font-size: 40px;
   border-width: 2px;
-  border-color: ${(props) => props.isFocused ? AppColors.lightBlueV1 : AppColors.lightBlueV3};
+  border-color: ${({ isFocused }) => isFocused ? AppColors.lightBlueV1 : AppColors.lightBlueV3};
   text-align: center;
   border-radius: 5px;
-  color: ${(props) => AppColors.lightBlueV1};
+  color: ${AppColors.lightBlueV1};
   margin: 0 11px;
 `;
 
-export function AppCodeInput({onValueChange}) {
+export function AppCodeInput({ onValueChange }) {
     const [value, setValue] = useState('');
 
     const ref = useBlurOnFulfill({ value, cellCount: CELL_COUNT });
@@ -88,11 +89,11 @@ export function AppCodeInput({onValueChange}) {
         setValue,
     });
 
-    // Função para enviar o valor para fora do componente
+
     const handleValueChange = (newValue) => {
-        setValue(newValue); // Atualiza o estado imediatamente
+        setValue(newValue);
         setTimeout(() => {
-            onValueChange(newValue); // Chama a função de callback após a atualização do estado
+            onValueChange(newValue);
         }, 0);
     };
 
@@ -105,15 +106,15 @@ export function AppCodeInput({onValueChange}) {
             cellCount={CELL_COUNT}
             keyboardType="number-pad"
             textContentType="oneTimeCode"
-            renderCell={({ index, symbol, isFocused }) => (
-                <Cell
+            renderCell={({ index, symbol, isFocused }) => {
+                return (<Cell
                     key={index}
                     isFocused={isFocused}
                     onLayout={getCellOnLayoutHandler(index)}
                 >
                     {symbol || (isFocused ? <Cursor /> : null)}
-                </Cell>
-            )}
+                </Cell>);
+            }}
         />
 
     );

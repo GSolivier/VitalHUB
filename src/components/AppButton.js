@@ -4,16 +4,18 @@ import { AppColors } from '../settings/AppColors'
 import { Link, TitleMedium } from '../settings/AppFonts'
 
 export const Button = styled.TouchableOpacity`
-    width: 100%;
-    height: 50px;
+    width: ${({ isCompact = false }) => isCompact ? 'max-content' : '100%'};
+    height: ${({ isCompact = false }) => isCompact ? 'max-content' : '50px'};
+    padding: ${({ isCompact = false }) => isCompact ? '12px' : '0px'};
     background-color: ${({ isOutlined = false }) => isOutlined ? AppColors.white : AppColors.darkBlue};
-    border-color: ${({ isOutlined = false }) => isOutlined ? AppColors.darkBlue : null};
-    border-width: ${({ isOutlined = false }) => isOutlined ? '1px' : '0px'} ;
+    border-color: ${AppColors.darkBlue};
+    border-width: ${({ isCompact = false }) => isCompact ? '2px' : '1px'} ;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     gap: 27px;
+    flex: ${({ flex = '0 1 auto' }) => flex};
 `
 
 export const LinkTouchableOpacity = styled.TouchableOpacity`
@@ -36,18 +38,23 @@ export function LinkButton({ text, color, size, alignSelf, onTap }) {
 export default function AppButton({
     textButton,
     isOutlined = false,
+    isCompact = false,
     SvgIcon,
-    onTap
+    onTap,
+    flex
 }) {
     return (
         <Button
             isOutlined={isOutlined}
             onPress={onTap}
+            isCompact={isCompact}
+            flex={flex}
+            activeOpacity={0.8}
         >
             {SvgIcon ? <SvgIcon /> : null}
             <TitleMedium
                 color={isOutlined ? AppColors.darkBlue : AppColors.white}
-                size={'14px'}
+                size={isCompact ? '12px' : '14px'}
             >{textButton}</TitleMedium>
         </Button>
     )
