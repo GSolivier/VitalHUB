@@ -7,6 +7,7 @@ import { TextSmall, TitleMedium } from '../../settings/AppFonts'
 import { AppColors } from '../../settings/AppColors'
 import SvgBell from '../../assets/icons/iconjs/bell'
 import { TouchableOpacity } from 'react-native'
+import { FlexPropertyValues } from '../../settings/AppEnums'
 
 export const HeaderBox = styled(LinearGradient)`
     width: 100%;
@@ -31,13 +32,17 @@ export default function HomeHeader({ imagePath, name, onTapNotification }) {
 
         <HeaderBox colors={['#60BFC5', '#496BBA']} start={{ x: 0.2, y: 0.1 }} locations={[0.1, 1]}>
 
-            <Row alignItems={'center'} alignSelf={'flex-end'} justifyContent={'space-between'} widht={'100%'}>
-                <Row alignItems={'center'}>
+            <Row 
+            alignItems={FlexPropertyValues.ALIGN_ITEMS.CENTER} 
+            alignSelf={FlexPropertyValues.ALIGN_SELF.FLEX_END} 
+            justifyContent={FlexPropertyValues.JUSTIFY_CONTENT.SPACE_BETWEEN} 
+            width={'100%'}>
+                <Row alignItems={FlexPropertyValues.ALIGN_ITEMS.CENTER}>
                     <ProfileImage source={imagePath} />
-                    <Spacing widht={'10px'} />
+                    <Spacing width={10} />
                     <Column>
                         <TextSmall>Bem-vindo</TextSmall>
-                        <TitleMedium size={'16px'} color={AppColors.white}>{name}</TitleMedium>
+                        <TitleMedium size={16} color={AppColors.white}>{name}</TitleMedium>
                     </Column>
                 </Row>
                 <TouchableOpacity onPress={onTapNotification}><SvgBell /></TouchableOpacity>

@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { AppColors } from "./AppColors";
+import { TextDecoration } from "./AppEnums";
 
 
 export const TitleLarge = styled.Text`
@@ -16,13 +17,13 @@ export const TitleBig = styled.Text`
  
 export const TitleMedium = styled.Text`
     font-family: 'MontserratAlternates_700Bold';
-    font-size: ${({size = '24px'}) => size};
+    font-size: ${({size = 24}) => `${size}px`};
     color: ${({color = AppColors.grayV1 }) => color};
 `
  
 export const TextBig = styled.Text`
     font-family: 'Quicksand_600SemiBold';
-    font-size: ${({size = '18px'}) => size};
+    font-size: ${({size = 18}) => `${size}px`};
     color: ${({color = AppColors.grayV1 }) => color};
 `
  
@@ -41,8 +42,8 @@ export const TextSmall = styled.Text`
 
 export const Link = styled.Text`
     font-family: 'MontserratAlternates_500Medium';
-    text-decoration: underline;
+    text-decoration: ${({textDecoration = TextDecoration.UNDERLINE}) => textDecoration};
     color: ${({color = AppColors.darkBlue }) => color};
-    font-size: ${({size = '14px'}) => size};
+    font-size: ${({size = 14}) => `${size}px`};
 `
  

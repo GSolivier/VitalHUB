@@ -23,10 +23,10 @@ export const LinkTouchableOpacity = styled.TouchableOpacity`
         padding-top: 3px ;
 `
 
-export function LinkButton({ text, color, size, alignSelf, onTap }) {
+export function LinkButton({ text, color, size, alignSelf, onTap, textDecoration }) {
     return (
         <LinkTouchableOpacity onPress={onTap} alignSelf={alignSelf}>
-            <Link color={color} size={size} >
+            <Link color={color} size={size} textDecoration={textDecoration} >
                 {text}
             </Link>
         </LinkTouchableOpacity>
@@ -54,7 +54,7 @@ export default function AppButton({
             {SvgIcon ? <SvgIcon /> : null}
             <TitleMedium
                 color={isOutlined ? AppColors.darkBlue : AppColors.white}
-                size={isCompact ? '12px' : '14px'}
+                size={isCompact ? 12 : 14}
             >{textButton}</TitleMedium>
         </Button>
     )

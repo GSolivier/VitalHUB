@@ -26,5 +26,10 @@ export default AppLocalizations = {
     signUp: 'signUp',
     cancel: 'cancel',
 
-    welcome: 'welcome'
+    welcome: 'welcome',
+    scheduled: 'scheduled',
+    carriedOut: 'carriedOut',
+    canceled: 'canceled',
+
+    seeMedicalRecord: 'seeMedicalRecord'
 }

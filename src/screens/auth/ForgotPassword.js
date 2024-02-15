@@ -10,6 +10,7 @@ import AppLocalizations from '../../settings/AppLocalizations';
 import AppInput from '../../components/AppInput';
 import AppButton from '../../components/AppButton';
 import { RouteKeys, pop, push } from '../../settings/AppRoutes';
+import { FlexPropertyValues } from '../../settings/AppEnums';
 
 export default function ForgotPassword({ navigation }) {
 
@@ -18,16 +19,16 @@ export default function ForgotPassword({ navigation }) {
     return (
         <AuthContainer hasLeading={true} onTap={() => { pop(navigation) }}>
             <Image source={AppAssets.appLogoDark} />
-            <Spacing height={'25px'}/>
-            <TitleMedium size={'20px'}>{translate(AppLocalizations.recoveryPassword)}</TitleMedium>
-            <Spacing height={'15px'}/>
-            <TextMedium textAlign={'center'}>{translate(AppLocalizations.recoveryPasswordHint)}</TextMedium>
-            <Spacing height={'20px'}/>
+            <Spacing height={25}/>
+            <TitleMedium size={20}>{translate(AppLocalizations.recoveryPassword)}</TitleMedium>
+            <Spacing height={15}/>
+            <TextMedium textAlign={FlexPropertyValues.ALIGN_ITEMS.CENTER}>{translate(AppLocalizations.recoveryPasswordHint)}</TextMedium>
+            <Spacing height={20}/>
             <AppInput 
             hint={translate(AppLocalizations.emailPlacehoder)} 
             textValue={email} 
             onEdit={setEmail}/>
-            <Spacing height={'30px'}/>
+            <Spacing height={30}/>
             <AppButton 
             textButton={translate(AppLocalizations.continueButton).toUpperCase()} 
             onTap={() => {push(navigation, RouteKeys.emailVerify, {email: email})}}

@@ -11,6 +11,7 @@ import AppButton, { LinkButton } from "../../components/AppButton";
 import { AppCodeInput } from "../../components/AppInput";
 import { useEffect, useState } from "react";
 import { RouteKeys, pop, push } from "../../settings/AppRoutes";
+import { FlexPropertyValues } from "../../settings/AppEnums";
 
 export default function EmailVerify({ navigation }) {
     const [codeValue, setCodeValue] = useState('');
@@ -20,15 +21,15 @@ export default function EmailVerify({ navigation }) {
     return (
         <AuthContainer hasLeading={true} isClosable={true} onTap={() => { pop(navigation) }}>
             <Image source={AppAssets.appLogoDark} />
-            <Spacing height={'25px'}/>
-            <TitleMedium size={'20px'}>{translate(AppLocalizations.emailVerify)}</TitleMedium>
-            <Spacing height={'15px'}/>
-            <TextMedium textAlign={'center'}>{translate(AppLocalizations.emailVerifyHint)} <TextMedium color={AppColors.darkBlue}>{params.email}</TextMedium></TextMedium>
-            <Spacing height={'20px'}/>
+            <Spacing height={25}/>
+            <TitleMedium size={20}>{translate(AppLocalizations.emailVerify)}</TitleMedium>
+            <Spacing height={15}/>
+            <TextMedium textAlign={FlexPropertyValues.ALIGN_ITEMS.CENTER}>{translate(AppLocalizations.emailVerifyHint)} <TextMedium color={AppColors.darkBlue}>{params.email}</TextMedium></TextMedium>
+            <Spacing height={20}/>
             <AppCodeInput onValueChange={setCodeValue}/>
-            <Spacing height={'30px'}/>
+            <Spacing height={30}/>
             <AppButton textButton={translate(AppLocalizations.enterButton).toUpperCase()} onTap={() => {push(navigation, RouteKeys.redefinePassword)}}/>
-            <Spacing height={'30px'}/>
+            <Spacing height={30}/>
             <LinkButton text={translate(AppLocalizations.resentCode)} color={AppColors.darkBlueV1} />
         </AuthContainer>
     );

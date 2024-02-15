@@ -10,19 +10,19 @@ export const Container = styled.SafeAreaView`
 `
 
 export const Spacing = styled.View`
-    width: ${({ widht = '0' }) => widht};
-    height: ${({ height = '0' }) => height};
+    width: ${({ width = 0 }) => `${width}px`};
+    height: ${({ height = 0 }) => `${height}px`};
 `
 
 export const Column = styled.View`
-    width: ${({ widht }) => widht};
+    width: ${({ width }) => width};
     flex-direction: column;
     align-items: ${({ alignItems }) => alignItems};
     justify-content: ${({ justifyContent }) => justifyContent};
     align-self: ${({ alignSelf }) => alignSelf};
 `
 export const Row = styled.View`
-    width: ${({ widht }) => widht};
+    width: ${({ width }) => width};
     flex-direction: row;
     align-items: ${({ alignItems }) => alignItems};
     justify-content: ${({ justifyContent }) => justifyContent};

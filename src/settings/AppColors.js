@@ -19,6 +19,7 @@ export const AppColors = {
     orange: '#F8AE3F',
 
     green: '#3CBD6A',
+    lightGreen: '#E8FCFD',
 
     blue: '#1058F1',
 

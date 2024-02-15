@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { Row, Spacing } from '../../components/Container';
 import AppButton from '../../components/AppButton';
+import translate from '../../locale'
+import AppLocalizations from '../../settings/AppLocalizations';
+import { FlexPropertyValues } from '../../settings/AppEnums';
 
 export default function HomeTopButtons({onChangedValue}) {
     const [selected, setSelected] = useState(1);
@@ -10,11 +13,11 @@ export default function HomeTopButtons({onChangedValue}) {
       onChangedValue(value)
    }
   return (
-    <Row justifyContent={'space-between'} width={'100%'}>
+    <Row justifyContent={FlexPropertyValues.JUSTIFY_CONTENT.SPACE_BETWEEN} width={'100%'}>
 
         <AppButton
          isOutlined={selected !== 1} 
-         textButton={'Agendadas'} 
+         textButton={translate(AppLocalizations.scheduled)} 
          flex={1} 
          isCompact={true}
          onTap={() => {
@@ -22,11 +25,11 @@ export default function HomeTopButtons({onChangedValue}) {
          }}
          />
 
-        <Spacing widht={'5px'} />
+        <Spacing width={5} />
 
         <AppButton
          isOutlined={selected !== 2} 
-         textButton={'Realizadas'} 
+         textButton={translate(AppLocalizations.carriedOut)} 
          flex={1} 
          isCompact={true}
          onTap={() => {
@@ -34,11 +37,11 @@ export default function HomeTopButtons({onChangedValue}) {
          }}
          />
 
-        <Spacing widht={'5px'} />
+        <Spacing width={5} />
 
         <AppButton 
         isOutlined={selected !== 3} 
-        textButton={'Canceladas'} 
+        textButton={translate(AppLocalizations.canceled)} 
         flex={1} 
         isCompact={true}
         onTap={() => {

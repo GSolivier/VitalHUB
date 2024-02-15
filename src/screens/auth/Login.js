@@ -11,6 +11,7 @@ import AuthContainer from './widgets/AuthContainer'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { RouteKeys, push } from '../../settings/AppRoutes'
+import { FlexPropertyValues } from '../../settings/AppEnums'
 
 
 export default function Login({navigation}) {
@@ -25,11 +26,11 @@ export default function Login({navigation}) {
 
       <Image source={AppAssets.appLogoDark} />
 
-          <Spacing height={'25px'} />
+          <Spacing height={25} />
 
-      <TitleMedium size={'20px'}>{translate(AppLocalizations.loginOrSignUp)}</TitleMedium>
+      <TitleMedium size={20}>{translate(AppLocalizations.loginOrSignUp)}</TitleMedium>
 
-          <Spacing height={'20px'} />
+          <Spacing height={20} />
 
       <AppInput hint={translate(AppLocalizations.emailPlacehoder)} 
       onEdit={handleEmailChange}
@@ -37,23 +38,23 @@ export default function Login({navigation}) {
       textValue={email}
       />
 
-          <Spacing height={'15px'} />
+          <Spacing height={15} />
 
       <AppInput hint={translate(AppLocalizations.passwordPlaceholder)} isObscure={true} />
 
-          <Spacing height={'10px'} />
+          <Spacing height={10} />
 
       <LinkButton 
-        size={'14px'} 
+        size={14} 
         color={AppColors.grayV4}
-        alignSelf={'flex-start'} 
+        alignSelf={FlexPropertyValues.ALIGN_SELF.FLEX_START} 
         text={translate(AppLocalizations.forgotPassword)} 
         onTap={()=> {
          push(navigation, RouteKeys.forgotPassword)
         }}
       />
 
-          <Spacing height={'30px'} />
+          <Spacing height={30} />
 
       <AppButton 
       textButton={translate(AppLocalizations.enterButton).toUpperCase()} 
@@ -65,14 +66,14 @@ export default function Login({navigation}) {
         }
       }} />
 
-          <Spacing height={'15px'} />
+          <Spacing height={15} />
 
       <AppButton textButton={translate(AppLocalizations.enterWithGoogle).toUpperCase()} isOutlined={true} SvgIcon={GoogleSvg} />
 
-          <Spacing height={'30px'} />
+          <Spacing height={30} />
           
       <TitleMedium 
-      size={'14px'} 
+      size={14} 
       color={AppColors.grayV2}>{translate(AppLocalizations.dontHaveAccount)} <LinkButton onTap={() => {push(navigation, RouteKeys.createAccount)}} color={AppColors.darkBlueV6} text={translate(AppLocalizations.createAccount)} /></TitleMedium>
 
     </AuthContainer>

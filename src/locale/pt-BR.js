@@ -27,7 +27,12 @@ const pt = {
     signUp: 'Cadastrar',
     cancel: 'Cancelar',
 
-    welcome: 'Bem-vindo'
+    welcome: 'Bem-vindo',
+    scheduled: 'Agendadas',
+    carriedOut: 'Realizadas',
+    canceled: 'Canceladas',
+
+    seeMedicalRecord: 'Ver prontuário'
   };
   
   export default pt;

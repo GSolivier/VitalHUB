@@ -26,7 +26,12 @@ const en = {
     signUp: 'Register',
     cancel: 'Cancel',
 
-    welcome: 'Welcome'
+    welcome: 'Welcome',
+    scheduled: 'Scheduled',
+    carriedOut: 'Carried Out',
+    canceled: 'Canceled',
+
+    seeMedicalRecord: 'See medical record'
   };
   
   export default en;
