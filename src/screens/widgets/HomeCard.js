@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import { AppColors } from '../../settings/AppColors'
 import { Column, Row, Spacing } from '../../components/Container'
 import { TextBig, TextSmall, TitleMedium } from '../../settings/AppFonts'
-import { Flex, FlexPropertyValues, HomeCardActionType, TextDecoration } from '../../settings/AppEnums'
+import { Flex, HomeCardActionType, TextDecoration } from '../../settings/AppEnums'
 import BlueClockSvg from '../../assets/icons/iconjs/blue-clock'
 import { LinkButton } from '../../components/AppButton'
 import translate from '../../locale'
@@ -28,6 +28,7 @@ export const SchedulesBox = styled.View`
     justify-content: center;
     flex-direction: row;
     padding: 4px;
+    width: 70%;
     background-color: ${({ actionCard = HomeCardActionType.scheduled }) => actionCard == HomeCardActionType.scheduled ? AppColors.lightGreen : AppColors.whiteGray};
 `
 
@@ -42,7 +43,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                         <Column>
                             <TitleMedium size={16}>{name}</TitleMedium>
                             <Spacing width={5} />
-                            <Row justifyContent={Flex.justifyContent.center}>
+                            <Row justifyContent={Flex.alignItems.flexStart} alignItems={Flex.alignItems.center}>
                                 <TextSmall>{age}</TextSmall>
                                 <Spacing width={7} />
                                 <TextSmall color={AppColors.grayV4}>•</TextSmall>
@@ -65,7 +66,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             color={AppColors.red}
                             text={translate(AppLocalizations.cancel)}
                             textDecoration={TextDecoration.none}
-                            alignSelf={Flex.alignSelf.flexEnd}
+                            alignSelf={Flex.alignItems.flexEnd}
                             onTap={actionTap}
                         />
                     )

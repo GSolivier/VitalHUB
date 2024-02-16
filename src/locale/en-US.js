@@ -31,7 +31,11 @@ const en = {
     carriedOut: 'Carried Out',
     canceled: 'Canceled',
 
-    seeMedicalRecord: 'See medical record'
+    seeMedicalRecord: 'See medical record',
+
+    cancelExam: 'Cancel appointment',
+    cancelExamHint: 'By canceling this appointment, you will open up possible availability at your time. Do you really want to cancel this appointment?',
+    confirm: 'Confirm'
   };
   
   export default en;

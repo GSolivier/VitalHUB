@@ -21,6 +21,7 @@ export default function CreateAccount({ navigation }) {
       <TitleMedium size={20}>{translate(AppLocalizations.createAccountTitle)}</TitleMedium>
       <Spacing height={15} />
       <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.createAccountHint)}</TextMedium>
+      <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.createAccountHint)}</TextMedium>
       <Spacing height={20} />
       <AppInput hint={translate(AppLocalizations.emailPlacehoder)} />
       <Spacing height={15} />

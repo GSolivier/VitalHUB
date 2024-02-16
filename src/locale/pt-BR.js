@@ -32,7 +32,11 @@ const pt = {
     carriedOut: 'Realizadas',
     canceled: 'Canceladas',
 
-    seeMedicalRecord: 'Ver prontuário'
+    seeMedicalRecord: 'Ver prontuário',
+
+    cancelExam: 'Cancelar consulta',
+    cancelExamHint: 'Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?',
+    confirm: 'Confirmar'
   };
   
   export default pt;
