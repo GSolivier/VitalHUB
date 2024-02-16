@@ -51,7 +51,7 @@ export default function AppButton({
             flex={flex}
             activeOpacity={0.8}
         >
-            {SvgIcon ? <SvgIcon /> : null}
+            {SvgIcon ? SvgIcon : null}
             <TitleMedium
                 color={isOutlined ? AppColors.darkBlue : AppColors.white}
                 size={isCompact ? 12 : 14}

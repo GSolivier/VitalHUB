@@ -5,13 +5,13 @@ import { Image } from 'react-native'
 import { AppAssets } from '../../assets/AppAssets'
 import { TitleMedium } from '../../settings/AppFonts'
 import AppButton, { LinkButton } from '../../components/AppButton'
-import GoogleSvg from '../../assets/icons/iconjs/google'
 import { AppColors } from '../../settings/AppColors'
 import AuthContainer from './widgets/AuthContainer'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { RouteKeys, push } from '../../settings/AppRoutes'
 import { Flex } from '../../settings/AppEnums'
+import { AntDesign } from '@expo/vector-icons';
 
 
 export default function Login({navigation}) {
@@ -68,7 +68,7 @@ export default function Login({navigation}) {
 
           <Spacing height={15} />
 
-      <AppButton textButton={translate(AppLocalizations.enterWithGoogle).toUpperCase()} isOutlined={true} SvgIcon={GoogleSvg} />
+      <AppButton textButton={translate(AppLocalizations.enterWithGoogle).toUpperCase()} isOutlined={true} SvgIcon={<AntDesign name='google' color={AppColors.darkBlueV6} size={15}/>} />
 
           <Spacing height={30} />
           
