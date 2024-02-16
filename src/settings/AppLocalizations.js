@@ -31,5 +31,9 @@ export default AppLocalizations = {
     carriedOut: 'carriedOut',
     canceled: 'canceled',
 
-    seeMedicalRecord: 'seeMedicalRecord'
+    seeMedicalRecord: 'seeMedicalRecord',
+
+    cancelExam: 'cancelExam',
+    cancelExamHint: 'cancelExamHint',
+    confirm: 'confirm'
 }

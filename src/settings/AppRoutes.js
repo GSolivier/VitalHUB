@@ -68,7 +68,7 @@ export function push(propNavigation, routeKey, data) {
 }
 
 export function pop(propNavigation, data) {
-    const popAction = StackActions.pop(1);
+    const popAction = StackActions.pop(1);a
 
     propNavigation.dispatch(popAction, data);
 }

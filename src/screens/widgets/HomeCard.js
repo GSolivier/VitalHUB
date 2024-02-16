@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import { AppColors } from '../../settings/AppColors'
 import { Column, Row, Spacing } from '../../components/Container'
 import { TextBig, TextSmall, TitleMedium } from '../../settings/AppFonts'
-import { FlexPropertyValues, HomeCardActionType, TextDecoration } from '../../settings/AppEnums'
+import { Flex, HomeCardActionType, TextDecoration } from '../../settings/AppEnums'
 import BlueClockSvg from '../../assets/icons/iconjs/blue-clock'
 import { LinkButton } from '../../components/AppButton'
 import translate from '../../locale'
@@ -28,21 +28,22 @@ export const SchedulesBox = styled.View`
     justify-content: center;
     flex-direction: row;
     padding: 4px;
+    width: 70%;
     background-color: ${({ actionCard = HomeCardActionType.scheduled }) => actionCard == HomeCardActionType.scheduled ? AppColors.lightGreen : AppColors.whiteGray};
 `
 
 export default function HomeCard({ imagePath, name, age, examType, schedule, actionType = HomeCardActionType.scheduled, actionTap }) {
     return (
         <CardBox>
-            <Row justifyContent={FlexPropertyValues.JUSTIFY_CONTENT.SPACE_BETWEEN}>
+            <Row justifyContent={Flex.justifyContent.spaceBetween}>
                 <Row>
                     <CardImage source={imagePath} />
                     <Spacing width={10} />
-                    <Column justifyContent={FlexPropertyValues.JUSTIFY_CONTENT.SPACE_BETWEEN}>
+                    <Column justifyContent={Flex.justifyContent.spaceBetween}>
                         <Column>
                             <TitleMedium size={16}>{name}</TitleMedium>
                             <Spacing width={5} />
-                            <Row justifyContent={FlexPropertyValues.ALIGN_ITEMS.CENTER}>
+                            <Row justifyContent={Flex.alignItems.flexStart} alignItems={Flex.alignItems.center}>
                                 <TextSmall>{age}</TextSmall>
                                 <Spacing width={7} />
                                 <TextSmall color={AppColors.grayV4}>•</TextSmall>
@@ -64,8 +65,8 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                         <LinkButton
                             color={AppColors.red}
                             text={translate(AppLocalizations.cancel)}
-                            textDecoration={TextDecoration.NONE}
-                            alignSelf={FlexPropertyValues.ALIGN_SELF.FLEX_END}
+                            textDecoration={TextDecoration.none}
+                            alignSelf={Flex.alignItems.flexEnd}
                             onTap={actionTap}
                         />
                     )
@@ -75,8 +76,8 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             <LinkButton
                                 color={AppColors.darkBlueV1}
                                 text={translate(AppLocalizations.seeMedicalRecord)}
-                                textDecoration={TextDecoration.NONE}
-                                alignSelf={FlexPropertyValues.ALIGN_SELF.FLEX_END}
+                                textDecoration={TextDecoration.none}
+                                alignSelf={Flex.alignSelf.flexEnd}
                                 onTap={actionTap}
                             />
                         ) : 

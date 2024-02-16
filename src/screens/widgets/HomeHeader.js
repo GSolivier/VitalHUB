@@ -2,12 +2,13 @@ import React from 'react'
 import styled from 'styled-components/native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Column, Row, Spacing } from '../../components/Container'
-import { AppAssets } from '../../assets/AppAssets'
 import { TextSmall, TitleMedium } from '../../settings/AppFonts'
 import { AppColors } from '../../settings/AppColors'
 import SvgBell from '../../assets/icons/iconjs/bell'
 import { TouchableOpacity } from 'react-native'
-import { FlexPropertyValues } from '../../settings/AppEnums'
+import { Flex } from '../../settings/AppEnums'
+import translate from '../../locale'
+import AppLocalizations from '../../settings/AppLocalizations'
 
 export const HeaderBox = styled(LinearGradient)`
     width: 100%;
@@ -33,15 +34,15 @@ export default function HomeHeader({ imagePath, name, onTapNotification }) {
         <HeaderBox colors={['#60BFC5', '#496BBA']} start={{ x: 0.2, y: 0.1 }} locations={[0.1, 1]}>
 
             <Row 
-            alignItems={FlexPropertyValues.ALIGN_ITEMS.CENTER} 
-            alignSelf={FlexPropertyValues.ALIGN_SELF.FLEX_END} 
-            justifyContent={FlexPropertyValues.JUSTIFY_CONTENT.SPACE_BETWEEN} 
+            alignItems={Flex.alignItems.center} 
+            alignSelf={Flex.alignSelf.flexEnd} 
+            justifyContent={Flex.justifyContent.spaceBetween} 
             width={'100%'}>
-                <Row alignItems={FlexPropertyValues.ALIGN_ITEMS.CENTER}>
+                <Row alignItems={Flex.alignItems.center}>
                     <ProfileImage source={imagePath} />
                     <Spacing width={10} />
                     <Column>
-                        <TextSmall>Bem-vindo</TextSmall>
+                        <TextSmall>{translate(AppLocalizations.welcome)}</TextSmall>
                         <TitleMedium size={16} color={AppColors.white}>{name}</TitleMedium>
                     </Column>
                 </Row>
