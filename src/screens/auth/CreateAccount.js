@@ -10,7 +10,7 @@ import AppInput from '../../components/AppInput'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import { StackActions } from '@react-navigation/routers'
 import { pop } from '../../settings/AppRoutes'
-import { FlexPropertyValues } from '../../settings/AppEnums'
+import { TextAlign } from '../../settings/AppEnums'
 
 export default function CreateAccount({ navigation }) {
   const popAction = StackActions.pop(1);
@@ -20,7 +20,7 @@ export default function CreateAccount({ navigation }) {
       <Spacing height={25} />
       <TitleMedium size={20}>{translate(AppLocalizations.createAccountTitle)}</TitleMedium>
       <Spacing height={15} />
-      <TextMedium textAlign={FlexPropertyValues.ALIGN_ITEMS.CENTER}>{translate(AppLocalizations.createAccountHint)}</TextMedium>
+      <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.createAccountHint)}</TextMedium>
       <Spacing height={20} />
       <AppInput hint={translate(AppLocalizations.emailPlacehoder)} />
       <Spacing height={15} />
@@ -31,6 +31,7 @@ export default function CreateAccount({ navigation }) {
       <AppButton textButton={translate(AppLocalizations.signUp).toUpperCase()} />
       <Spacing height={30} />
       <LinkButton text={translate(AppLocalizations.cancel)} onTap={() => pop(navigation)} />
+      
     </AuthContainer>
   )
 }

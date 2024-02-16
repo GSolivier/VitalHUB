@@ -4,47 +4,56 @@ export const HomeCardActionType = {
     carriedOut: 'carriedOut'
 }
 
-export const FlexPropertyValues = {
-    FLEX_DIRECTION: {
-        ROW: 'row',
-        ROW_REVERSE: 'row-reverse',
-        COLUMN: 'column',
-        COLUMN_REVERSE: 'column-reverse',
+export const Flex = {
+    flexDirection: {
+        row: 'row',
+        rowReverse: 'row-reverse',
+        column: 'column',
+        columnReverse: 'column-reverse',
     },
-    FLEX_WRAP: {
-        WRAP: 'wrap',
-        NOWRAP: 'nowrap',
-        WRAP_REVERSE: 'wrap-reverse',
+    flexWrap: {
+        wrap: 'wrap',
+        nowrap: 'nowrap',
+        wrapReverse: 'wrap-reverse',
     },
-    JUSTIFY_CONTENT: {
-        FLEX_START: 'flex-start',
-        FLEX_END: 'flex-end',
-        CENTER: 'center',
-        SPACE_BETWEEN: 'space-between',
-        SPACE_AROUND: 'space-around',
-        SPACE_EVENLY: 'space-evenly',
+    justifyContent: {
+        flexStart: 'flex-start',
+        flexEnd: 'flex-end',
+        center: 'center',
+        spaceBetween: 'space-between',
+        spaceAround: 'space-around',
+        spaceEvenly: 'space-evenly',
     },
-    ALIGN_ITEMS: {
-        FLEX_START: 'flex-start',
-        FLEX_END: 'flex-end',
-        CENTER: 'center',
-        BASELINE: 'baseline',
-        STRETCH: 'stretch',
+    alignItems: {
+        flexStart: 'flex-start',
+        flexEnd: 'flex-end',
+        center: 'center',
+        baseline: 'baseline',
+        stretch: 'stretch',
     },
-    ALIGN_SELF: {
-        AUTO: 'auto',
-        FLEX_START: 'flex-start',
-        FLEX_END: 'flex-end',
-        CENTER: 'center',
-        BASELINE: 'baseline',
-        STRETCH: 'stretch',
+    alignSelf: {
+        auto: 'auto',
+        flexStart: 'flex-start',
+        flexEnd: 'flex-end',
+        center: 'center',
+        baseline: 'baseline',
+        stretch: 'stretch',
     },
 }
 
 export const TextDecoration = {
-    NONE: 'none',
-    UNDERLINE: 'underline',
-    OVERLINE: 'overline',
-    LINE_THROUGH: 'line-through',
-    BLINK: 'blink',
+    none: 'none',
+    underline: 'underline',
+    overline: 'overline',
+    lineThrough: 'line-through',
+    blink: 'blink',
+};
+
+export const TextAlign = {
+    left: 'left',
+    right: 'right',
+    center: 'center',
+    justify: 'justify',
+    initial: 'initial',
+    inherit: 'inherit',
 };

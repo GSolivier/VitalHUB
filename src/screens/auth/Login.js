@@ -11,7 +11,7 @@ import AuthContainer from './widgets/AuthContainer'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { RouteKeys, push } from '../../settings/AppRoutes'
-import { FlexPropertyValues } from '../../settings/AppEnums'
+import { Flex } from '../../settings/AppEnums'
 
 
 export default function Login({navigation}) {
@@ -47,7 +47,7 @@ export default function Login({navigation}) {
       <LinkButton 
         size={14} 
         color={AppColors.grayV4}
-        alignSelf={FlexPropertyValues.ALIGN_SELF.FLEX_START} 
+        alignSelf={Flex.alignSelf.flexStart} 
         text={translate(AppLocalizations.forgotPassword)} 
         onTap={()=> {
          push(navigation, RouteKeys.forgotPassword)

@@ -22,6 +22,7 @@ export const AppColors = {
     lightGreen: '#E8FCFD',
 
     blue: '#1058F1',
+    
 
     gray: '#34323E',
     grayV1: '#4E4B59',
@@ -29,8 +30,7 @@ export const AppColors = {
     grayV4: '#8C8A97',
 
     whiteGray: '#F1F0F5',
+    whiteBlue: '#ECF2FF',
 
     white: '#fff',
-
-    gradient1: 'linear-gradient(45deg, rgba(73,179,186,1) 0%, rgba(191,232,235,1) 100%)'
 };

@@ -9,9 +9,9 @@ import AppLocalizations from "../../settings/AppLocalizations";
 import { AppColors } from "../../settings/AppColors";
 import AppButton, { LinkButton } from "../../components/AppButton";
 import { AppCodeInput } from "../../components/AppInput";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RouteKeys, pop, push } from "../../settings/AppRoutes";
-import { FlexPropertyValues } from "../../settings/AppEnums";
+import { TextAlign } from "../../settings/AppEnums";
 
 export default function EmailVerify({ navigation }) {
     const [codeValue, setCodeValue] = useState('');
@@ -24,7 +24,7 @@ export default function EmailVerify({ navigation }) {
             <Spacing height={25}/>
             <TitleMedium size={20}>{translate(AppLocalizations.emailVerify)}</TitleMedium>
             <Spacing height={15}/>
-            <TextMedium textAlign={FlexPropertyValues.ALIGN_ITEMS.CENTER}>{translate(AppLocalizations.emailVerifyHint)} <TextMedium color={AppColors.darkBlue}>{params.email}</TextMedium></TextMedium>
+            <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.emailVerifyHint)} <TextMedium color={AppColors.darkBlue}>{params.email}</TextMedium></TextMedium>
             <Spacing height={20}/>
             <AppCodeInput onValueChange={setCodeValue}/>
             <Spacing height={30}/>

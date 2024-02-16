@@ -10,7 +10,7 @@ import AppLocalizations from '../../settings/AppLocalizations';
 import AppInput from '../../components/AppInput';
 import AppButton from '../../components/AppButton';
 import { RouteKeys, pop, push } from '../../settings/AppRoutes';
-import { FlexPropertyValues } from '../../settings/AppEnums';
+import { FlexPropertyValues, TextAlign } from '../../settings/AppEnums';
 
 export default function ForgotPassword({ navigation }) {
 
@@ -22,7 +22,7 @@ export default function ForgotPassword({ navigation }) {
             <Spacing height={25}/>
             <TitleMedium size={20}>{translate(AppLocalizations.recoveryPassword)}</TitleMedium>
             <Spacing height={15}/>
-            <TextMedium textAlign={FlexPropertyValues.ALIGN_ITEMS.CENTER}>{translate(AppLocalizations.recoveryPasswordHint)}</TextMedium>
+            <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.recoveryPasswordHint)}</TextMedium>
             <Spacing height={20}/>
             <AppInput 
             hint={translate(AppLocalizations.emailPlacehoder)} 

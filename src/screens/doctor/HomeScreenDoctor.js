@@ -15,14 +15,7 @@ export default function HomeScreenDoctor() {
     <HomeContainer name={'Dr. Claudio'} imagePath={AppAssets.placeholder}>
 
       
-        <HomeTopButtons onChangedValue={(value) => console.log(value)}/>
-        <HomeCard 
-        imagePath={AppAssets.placeholder} 
-        name={'Nicole Sarga'} 
-        age={'22 anos'} 
-        examType={'Rotina'} 
-        schedule={'14:00'} 
-        actionType={HomeCardActionType.carriedOut}/>
+
 
     </HomeContainer>
   )

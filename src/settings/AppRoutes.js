@@ -61,13 +61,13 @@ export default function AppRoutes() {
 }
 
 
-export function push(propNavigation, routeKey, data) {
+export async function push(propNavigation, routeKey, data) {
     const pushAction = StackActions.push(routeKey, data);
 
     propNavigation.dispatch(pushAction)
 }
 
-export function pop(propNavigation, data) {
+export async function pop(propNavigation, data) {
     const popAction = StackActions.pop(1);
 
     propNavigation.dispatch(popAction, data);
