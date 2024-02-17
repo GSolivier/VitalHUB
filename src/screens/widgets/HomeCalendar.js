@@ -5,7 +5,7 @@ import CalendarStrip from "react-native-calendar-strip";
 import styled from "styled-components/native";
 
 export const StyledCalendarStrip = styled(CalendarStrip)`
-  flex: 0.25;
+  flex: 0.20;
   width: 100%;
 `
 moment.updateLocale("pt-br", {

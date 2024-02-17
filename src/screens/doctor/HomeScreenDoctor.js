@@ -22,7 +22,7 @@ export default function HomeScreenDoctor({navigation}) {
     <Spacing height={20}/>
     <HomeTopButtons selected={selectedTab} handleTabSelected={handleTabSelected}/>
     <Spacing height={20}/>
-      <AppointmentList/>
+    <AppointmentList/>
        <CancelExamDialog visible={cancelModalIsVisible} onClose={() => setCancelModalIsVisible(false)}/>
     </HomeContainer>
   )

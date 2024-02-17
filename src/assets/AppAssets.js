@@ -1,5 +1,4 @@
 const imagePath = './images'
-const iconPath = './icons'
 
 export const AppAssets = {
 

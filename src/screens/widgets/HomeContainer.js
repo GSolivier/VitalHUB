@@ -9,7 +9,7 @@ export default function HomeContainer({ children, name, imagePath, onTap }) {
     return (
         <>
             <HomeHeader name={name} imagePath={imagePath} onTapNotification={onTap} />
-            <Container justifyContent={Flex.justifyContent.flexStart}>
+            <Container justifyContent={Flex.justifyContent.flexStart} paddingBottom={0}>
                 {children}
             </Container>
             <HomeBottomNavigation selectedTab={selectedTab} handleTabSelected={setSelectedTab}/>

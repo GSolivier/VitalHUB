@@ -11,7 +11,7 @@ import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { RouteKeys, push } from '../../settings/AppRoutes'
 import { Flex } from '../../settings/AppEnums'
-import { IconFamily, IconNames, SvgIcon } from '../../assets/icons/Icons'
+import { IconName, SvgIcon } from '../../assets/icons/Icons'
 
 
 export default function Login({navigation}) {
@@ -71,7 +71,9 @@ export default function Login({navigation}) {
       <AppButton 
       textButton={translate(AppLocalizations.enterWithGoogle).toUpperCase()} 
       isOutlined={true} 
-      SvgIcon={<SvgIcon iconFamily={IconFamily.antDesign} name={IconNames.google} 
+      SvgIcon={
+      <SvgIcon 
+      name={IconName.google} 
       color={AppColors.darkBlueV6} 
       size={15}/>
       } />

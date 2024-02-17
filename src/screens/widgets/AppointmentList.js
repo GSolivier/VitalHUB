@@ -4,6 +4,7 @@ import HomeCard from './HomeCard';
 import { AppAssets } from '../../assets/AppAssets';
 import styled from 'styled-components/native';
 import { Spacing } from '../../components/Container';
+import { AppColors } from '../../settings/AppColors';
 
 export const DATA = [
     {
@@ -89,7 +90,7 @@ export const DATA = [
 ];
 
 export const List = styled.View`
-    flex: 0.85;
+    flex: 0.9;
 `
 
 export default function AppointmentList() {
@@ -97,9 +98,11 @@ export default function AppointmentList() {
   return (
     <List>
       <FlatList
+        endFillColor={AppColors.white}
         data={DATA}
         renderItem={({item}) => (<HomeCard imagePath={AppAssets.placeholder} name={item.name} age={item.age} examType={item.examType} schedule={item.time}/>)}
         keyExtractor={item => item.id}
+        ItemSeparatorComponent={<Spacing height={10}/>}
       />
       </List>
   )

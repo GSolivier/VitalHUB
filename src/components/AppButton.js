@@ -20,14 +20,15 @@ export const Button = styled.TouchableOpacity`
 
 export const LinkTouchableOpacity = styled.TouchableOpacity`
         align-self: ${({ alignSelf = 'auto' }) => alignSelf};
+        justify-self: ${({ justifySelf = 'auto' }) => justifySelf};;
         padding-top: 3px ;
         align-items: center;
         justify-content: center;
 `
 
-export function LinkButton({ text, color, size, alignSelf, onTap, textDecoration }) {
+export function LinkButton({ text, color, size, alignSelf, onTap, textDecoration, justifySelf }) {
     return (
-        <LinkTouchableOpacity onPress={onTap} alignSelf={alignSelf}>
+        <LinkTouchableOpacity onPress={onTap} alignSelf={alignSelf} justifySelf={justifySelf}>
             <Link color={color} size={size} textDecoration={textDecoration} >
                 {text}
             </Link>

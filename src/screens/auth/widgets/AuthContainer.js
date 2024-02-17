@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { Container } from "../../../components/Container";
-import { IconFamily, IconNames, SvgIcon } from "../../../assets/icons/Icons";
+import { IconName, SvgIcon } from "../../../assets/icons/Icons";
 import { AppColors } from "../../../settings/AppColors";
 
 export const Leading = styled.TouchableOpacity`
@@ -15,7 +15,7 @@ export const Leading = styled.TouchableOpacity`
 export default function AuthContainer({isClosable = false,hasLeading = false, children, onTap}){
     return(
         <Container>
-            {hasLeading ? <Leading onPress={onTap} >{isClosable ? <SvgIcon iconFamily={IconFamily.antDesign} name={IconNames.close} color={AppColors.lightBlueV1}></SvgIcon> : <SvgIcon iconFamily={IconFamily.antDesign} name={IconNames.arrowLeft} color={AppColors.lightBlueV1}></SvgIcon>}</Leading> : null}
+            {hasLeading ? <Leading onPress={onTap} >{isClosable ? <SvgIcon  name={IconName.close} color={AppColors.lightBlueV1}></SvgIcon> : <SvgIcon  name={IconName.arrowLeft} color={AppColors.lightBlueV1}></SvgIcon>}</Leading> : null}
             {children}
         </Container>
     );

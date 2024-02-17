@@ -7,15 +7,14 @@ import { Flex, HomeCardActionType, TextDecoration } from '../../settings/AppEnum
 import { LinkButton } from '../../components/AppButton'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
-import { IconFamily, IconNames, SvgIcon } from '../../assets/icons/Icons'
+import { IconName, SvgIcon } from '../../assets/icons/Icons'
 
 export const CardBox = styled.View`
     width: 100%;
     elevation: 5px;
-    padding: 11px 20px 11px 10px;
+    padding: 5px 20px 11px 5px;
     border-radius: 5px;
     background-color: ${AppColors.white};
-    margin: 10px;
 `
 
 export const CardImage = styled.Image`
@@ -45,7 +44,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             <TitleMedium size={16}>{name}</TitleMedium>
                             <Spacing width={5} />
                             <Row justifyContent={Flex.alignItems.flexStart} alignItems={Flex.alignItems.center}>
-                                <TextSmall>{`${age}`}</TextSmall>
+                                <TextSmall>{`${age} anos`}</TextSmall>
                                 <Spacing width={7} />
                                 <TextSmall color={AppColors.grayV4}>•</TextSmall>
                                 <Spacing width={7} />
@@ -53,7 +52,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             </Row>
                         </Column>
                         <SchedulesBox actionCard={actionType}>
-                            <SvgIcon iconFamily={IconFamily.materialCommunityIcons} name={IconNames.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} />
+                            <SvgIcon name={IconName.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} />
                             <Spacing width={6} />
                             <TextBig color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} size={14}>{schedule}</TextBig>
                         </SchedulesBox>
@@ -68,6 +67,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             text={translate(AppLocalizations.cancel)}
                             textDecoration={TextDecoration.none}
                             alignSelf={Flex.alignItems.flexEnd}
+                            justifySelf={Flex.justifyContent.flexEnd}
                             onTap={actionTap}
                         />
                     )
@@ -79,6 +79,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                                 text={translate(AppLocalizations.seeMedicalRecord)}
                                 textDecoration={TextDecoration.none}
                                 alignSelf={Flex.alignSelf.flexEnd}
+                                justifySelf={Flex.justifyContent.flexEnd}
                                 onTap={actionTap}
                             />
                         ) : 

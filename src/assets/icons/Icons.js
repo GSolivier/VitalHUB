@@ -15,68 +15,91 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { Zocial } from '@expo/vector-icons';
 
 export const IconFamily = {
-    antDesign: 'AntDesign',
-    entypo: 'Entypo',
-    evilIcons: 'EvilIcons',
-    feather: 'Feather',
-    fontAwesome: 'FontAwesome',
-    fontAwesome5: 'FontAwesome5',
-    fontAwesome6: 'FontAwesome6',
-    fontisto: 'Fontisto',
-    foundation: 'Foundation',
-    ionIcons: 'Ionicons',
-    materialCommunityIcons: 'MaterialCommunityIcons',
-    materialIcons: 'MaterialIcons',
-    octicons: 'Octicons',
-    simpleLineIcons: 'SimpleLineIcons',
-    zocial: 'Zocial'
+    antDesign: AntDesign,
+    entypo: Entypo,
+    evilIcons: EvilIcons,
+    feather: Feather,
+    fontAwesome: FontAwesome,
+    fontAwesome5: FontAwesome5,
+    fontAwesome6: FontAwesome6,
+    fontisto: Fontisto,
+    foundation: Foundation,
+    ionIcons: Ionicons,
+    materialCommunityIcons: MaterialCommunityIcons,
+    materialIcons: MaterialIcons,
+    octicons: Octicons,
+    simpleLineIcons: SimpleLineIcons,
+    zocial: Zocial
 };
 
-export const IconNames = {
-    google: 'google',
-    arrowLeft: 'arrowleft',
-    close: 'close',
-    notifications: 'notifications',
-    clock: 'clock',
-    calendarCheck: 'calendar-check',
-    hospital: 'hospital',
-    circleUser: 'circle-user',
-}
+export const IconName = {
+    google: {
+        name: 'google',
+        family: 'antDesign'
+    },
+    arrowLeft: {
+        name: 'arrowleft',
+        family: 'antDesign'
+    },
+    close: {
+        name: 'close',
+        family: 'antDesign'
+    },
+    notifications: {
+        name: 'notifications',
+        family: 'ionIcons'
+    },
+    clock: {
+        name: 'clock',
+        family: 'materialCommunityIcons'
+    },
+    calendarCheck: {
+        name: 'calendar-check',
+        family: 'fontAwesome6'
+    },
+    hospital: {
+        name: 'hospital',
+        family: 'fontAwesome6'
+    },
+    circleUser: {
+        name: 'circle-user',
+        family: 'fontAwesome6'
+    },
+    stethoscope: {
+        name: 'stethoscope',
+        family: 'antDesign'
+    },
+    star: {
+        name: 'star',
+        family: 'antDesign',
+    },
+    calendar: {
+        name: 'calendar',
+        family: 'materialCommunityIcons'
+    },
+    arrowDropDown: {
+        name: 'sort-down',
+        family: 'fontAwesome5'
+    },
+    cameraPlus: {
+        name: 'camera-plus-outline',
+        family: 'materialCommunityIcons'
+    },
+    fileAlert: {
+        name: 'file-alert-outline',
+        family: 'materialCommunityIcons'
+    },
+};
 
 
-export function SvgIcon({ iconFamily, name, size = 24, color = "black" }) {
-    switch (iconFamily) {
-        case IconFamily.antDesign:
-            return <AntDesign name={name} size={size} color={color} />;
-        case IconFamily.entypo:
-            return <Entypo name={name} size={size} color={color} />;
-        case IconFamily.evilIcons:
-            return <EvilIcons name={name} size={size} color={color} />;
-        case IconFamily.feather:
-            return <Feather name={name} size={size} color={color} />;
-        case IconFamily.fontAwesome:
-            return <FontAwesome name={name} size={size} color={color} />;
-        case IconFamily.fontAwesome5:
-            return <FontAwesome5 name={name} size={size} color={color} />;
-        case IconFamily.fontAwesome6:
-            return <FontAwesome6 name={name} size={size} color={color} />;
-        case IconFamily.fontisto:
-            return <Fontisto name={name} size={size} color={color} />;
-        case IconFamily.foundation:
-            return <Foundation name={name} size={size} color={color} />;
-        case IconFamily.ionIcons:
-            return <Ionicons name={name} size={size} color={color} />;
-        case IconFamily.materialCommunityIcons:
-            return <MaterialCommunityIcons name={name} size={size} color={color} />;
-        case IconFamily.materialIcons:
-            return <MaterialIcons name={name} size={size} color={color} />;
-        case IconFamily.octicons:
-            return <Octicons name={name} size={size} color={color} />;
-        case IconFamily.simpleLineIcons:
-            return <SimpleLineIcons name={name} size={size} color={color} />;
-        case IconFamily.zocial:
-            return <Zocial name={name} size={size} color={color} />;
-        default:
-            return null;
-    }
+
+export function SvgIcon({ name, size = 24, color = "black" }) {
+
+    const iconName = name.name;
+    const iconFamily = name.family;
+
+    const IconComponent = IconFamily[iconFamily];
+
+    return <IconComponent name={iconName} size={size} color={color} />;
+
 }
