@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, FlatList } from 'react-native'
+import { FlatList } from 'react-native'
 import React from 'react'
 import HomeCard from './HomeCard';
 import { AppAssets } from '../../assets/AppAssets';

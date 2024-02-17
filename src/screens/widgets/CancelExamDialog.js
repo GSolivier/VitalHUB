@@ -1,5 +1,4 @@
-import { View, Text } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import Dialog from "react-native-dialog";
 import AppButton, { LinkButton } from '../../components/AppButton';
 import { Flex, TextAlign, TextDecoration } from '../../settings/AppEnums';

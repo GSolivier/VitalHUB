@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../../settings/AppColors'
 import { TextSmall } from '../../settings/AppFonts'

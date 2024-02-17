@@ -1,4 +1,4 @@
-import { StackActions, useRoute } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 import AuthContainer from "./widgets/AuthContainer";
 import { Image } from "react-native";
 import { Spacing } from "../../components/Container";

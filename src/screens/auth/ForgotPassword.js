@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import AuthContainer from './widgets/AuthContainer'
 import { AppAssets } from '../../assets/AppAssets'
 import { Image } from 'react-native'
-import { StackActions } from '@react-navigation/routers';
 import { Spacing } from '../../components/Container';
 import { TextMedium, TitleMedium } from '../../settings/AppFonts';
 import translate from '../../locale';
