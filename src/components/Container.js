@@ -1,10 +1,11 @@
 import styled from 'styled-components/native'
 import { AppColors } from '../settings/AppColors'
+import { Flex } from '../settings/AppEnums'
 
 export const Container = styled.SafeAreaView`
     padding: 20px;
-    align-items: center;
-    justify-content: center;
+    align-items: ${({ alignItems = Flex.alignItems.center }) => alignItems};
+    justify-content: ${({ justifyContent = Flex.justifyContent.center }) => justifyContent};
     background-color: ${AppColors.white};
     flex: 1;
 `

@@ -5,13 +5,7 @@ import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations';
 import { Flex } from '../../settings/AppEnums';
 
-export default function HomeTopButtons({onChangedValue}) {
-    const [selected, setSelected] = useState(1);
-
-   handleTabSelected = (value) =>{
-      setSelected(value)
-      onChangedValue(value)
-   }
+export default function HomeTopButtons({selected, handleTabSelected}) {
   return (
     <Row justifyContent={Flex.justifyContent.spaceBetween} width={'100%'}>
 

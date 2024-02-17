@@ -2,11 +2,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../../settings/AppColors'
-import ScheduleSvg from '../../assets/icons/iconjs/schedule'
-import ClinicSvg from '../../assets/icons/iconjs/clinic'
-import ProfileSvg from '../../assets/icons/iconjs/profile'
 import { TextSmall } from '../../settings/AppFonts'
 import { Spacing } from '../../components/Container'
+import { IconFamily, IconNames, SvgIcon } from '../../assets/icons/Icons'
+import { BottomNavigationRoute } from '../../settings/AppEnums'
 
 export const NavigationBox = styled.View`
     elevation: 30;
@@ -29,33 +28,28 @@ export const IconButton = styled.TouchableOpacity`
     gap: 5px;
 `
 
-export default function HomeBottomNavigation({onChangedValue}) {
-    const [selected, setSelected] = useState(1);
+export default function HomeBottomNavigation({ selectedTab, handleTabSelected }) {
 
-    handleTabSelected = (value) => {
-        setSelected(value)
-        onChangedValue(value)
-    }
     return (
         <NavigationBox>
-            <IconButton isSelected={selected == 1} onPress={() => handleTabSelected(1)}>
-                <ScheduleSvg fill={selected == 1 ? AppColors.darkBlueV2 : AppColors.grayV2} />
-                {selected == 1 ? (<TextSmall color={AppColors.darkBlueV2}>Agenda</TextSmall>) : (<Spacing />)}
+            <IconButton isSelected={selectedTab == BottomNavigationRoute.schedule} onPress={() => handleTabSelected(BottomNavigationRoute.schedule)}>
+                <SvgIcon iconFamily={IconFamily.fontAwesome6} name={IconNames.calendarCheck} color={selectedTab == BottomNavigationRoute.schedule ? AppColors.darkBlueV2 : AppColors.grayV2} />
+                {selectedTab == BottomNavigationRoute.schedule ? (<TextSmall color={AppColors.darkBlueV2}>Agenda</TextSmall>) : (<Spacing />)}
             </IconButton>
 
-            <IconButton isSelected={selected == 2} onPress={() => handleTabSelected(2)}>
+            <IconButton isSelected={selectedTab == BottomNavigationRoute.clinic} onPress={() => handleTabSelected(BottomNavigationRoute.clinic)}>
 
-                <ClinicSvg fill={selected == 2 ? AppColors.darkBlueV2 : AppColors.grayV2} />
+                <SvgIcon iconFamily={IconFamily.fontAwesome6} name={IconNames.hospital} color={selectedTab == BottomNavigationRoute.clinic ? AppColors.darkBlueV2 : AppColors.grayV2} />
 
-                {selected == 2 ? (<TextSmall color={AppColors.darkBlueV2}>Clinica</TextSmall>) : (<Spacing />)}
+                {selectedTab == BottomNavigationRoute.clinic ? (<TextSmall color={AppColors.darkBlueV2}>Clinica</TextSmall>) : (<Spacing />)}
 
             </IconButton>
 
-            <IconButton isSelected={selected == 3} onPress={() => handleTabSelected(3)}>
+            <IconButton isSelected={selectedTab == BottomNavigationRoute.profile} onPress={() => handleTabSelected(BottomNavigationRoute.profile)}>
             
-                <ProfileSvg fill={selected == 3 ? AppColors.darkBlueV2 : AppColors.grayV2} />
+                <SvgIcon iconFamily={IconFamily.fontAwesome6} name={IconNames.circleUser} color={selectedTab == BottomNavigationRoute.profile ? AppColors.darkBlueV2 : AppColors.grayV2} />
 
-                {selected == 3 ? (<TextSmall color={AppColors.darkBlueV2}>Perfil</TextSmall>) : (<Spacing />)}
+                {selectedTab == BottomNavigationRoute.profile ? (<TextSmall color={AppColors.darkBlueV2}>Perfil</TextSmall>) : (<Spacing />)}
 
             </IconButton>
         </NavigationBox>

@@ -6,21 +6,23 @@ import HomeCard from '../widgets/HomeCard'
 import { HomeCardActionType } from '../../settings/AppEnums'
 import HomeCalendar from '../widgets/HomeCalendar'
 import CancelExamDialog from '../widgets/CancelExamDialog'
+import { Spacing } from '../../components/Container'
+import AppointmentList from '../widgets/AppointmentList'
 
 export default function HomeScreenDoctor({navigation}) {
+  const [selectedTab, setSelectedTab] = useState(1);
   const [cancelModalIsVisible, setCancelModalIsVisible] = useState(false)
+
+  const handleTabSelected = (value) => {
+    setSelectedTab(value);
+  };
   return (
     <HomeContainer name={'Dr. Claudio'} imagePath={AppAssets.placeholder}>
-      <HomeCard
-       imagePath={AppAssets.placeholder} 
-       name={'Guilherme Sousa'} age={'22 anos'} 
-       examType={'Urgente'} 
-       schedule={'11:00'}
-       actionType={HomeCardActionType.scheduled}
-       actionTap={() => {
-          setCancelModalIsVisible(true)
-       }}
-       />
+    <HomeCalendar/>
+    <Spacing height={20}/>
+    <HomeTopButtons selected={selectedTab} handleTabSelected={handleTabSelected}/>
+    <Spacing height={20}/>
+      <AppointmentList/>
        <CancelExamDialog visible={cancelModalIsVisible} onClose={() => setCancelModalIsVisible(false)}/>
     </HomeContainer>
   )

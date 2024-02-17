@@ -4,11 +4,11 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { Column, Row, Spacing } from '../../components/Container'
 import { TextSmall, TitleMedium } from '../../settings/AppFonts'
 import { AppColors } from '../../settings/AppColors'
-import SvgBell from '../../assets/icons/iconjs/bell'
 import { TouchableOpacity } from 'react-native'
 import { Flex } from '../../settings/AppEnums'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
+import { IconFamily, IconNames, SvgIcon } from '../../assets/icons/Icons'
 
 export const HeaderBox = styled(LinearGradient)`
     width: 100%;
@@ -46,7 +46,7 @@ export default function HomeHeader({ imagePath, name, onTapNotification }) {
                         <TitleMedium size={16} color={AppColors.white}>{name}</TitleMedium>
                     </Column>
                 </Row>
-                <TouchableOpacity onPress={onTapNotification}><SvgBell /></TouchableOpacity>
+                <TouchableOpacity onPress={onTapNotification}><SvgIcon iconFamily={IconFamily.ionIcons} name={IconNames.notifications} color={AppColors.white}/></TouchableOpacity>
 
             </Row>
 

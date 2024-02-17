@@ -4,10 +4,10 @@ import { AppColors } from '../../settings/AppColors'
 import { Column, Row, Spacing } from '../../components/Container'
 import { TextBig, TextSmall, TitleMedium } from '../../settings/AppFonts'
 import { Flex, HomeCardActionType, TextDecoration } from '../../settings/AppEnums'
-import BlueClockSvg from '../../assets/icons/iconjs/blue-clock'
 import { LinkButton } from '../../components/AppButton'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
+import { IconFamily, IconNames, SvgIcon } from '../../assets/icons/Icons'
 
 export const CardBox = styled.View`
     width: 100%;
@@ -15,6 +15,7 @@ export const CardBox = styled.View`
     padding: 11px 20px 11px 10px;
     border-radius: 5px;
     background-color: ${AppColors.white};
+    margin: 10px;
 `
 
 export const CardImage = styled.Image`
@@ -28,7 +29,7 @@ export const SchedulesBox = styled.View`
     justify-content: center;
     flex-direction: row;
     padding: 4px;
-    width: 70%;
+    width: 100px;
     background-color: ${({ actionCard = HomeCardActionType.scheduled }) => actionCard == HomeCardActionType.scheduled ? AppColors.lightGreen : AppColors.whiteGray};
 `
 
@@ -44,7 +45,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             <TitleMedium size={16}>{name}</TitleMedium>
                             <Spacing width={5} />
                             <Row justifyContent={Flex.alignItems.flexStart} alignItems={Flex.alignItems.center}>
-                                <TextSmall>{age}</TextSmall>
+                                <TextSmall>{`${age}`}</TextSmall>
                                 <Spacing width={7} />
                                 <TextSmall color={AppColors.grayV4}>•</TextSmall>
                                 <Spacing width={7} />
@@ -52,7 +53,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             </Row>
                         </Column>
                         <SchedulesBox actionCard={actionType}>
-                            <BlueClockSvg fill={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} />
+                            <SvgIcon iconFamily={IconFamily.materialCommunityIcons} name={IconNames.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} />
                             <Spacing width={6} />
                             <TextBig color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} size={14}>{schedule}</TextBig>
                         </SchedulesBox>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Spacing } from '../../components/Container'
+import { Row, Spacing } from '../../components/Container'
 import AppInput from '../../components/AppInput'
 import { Image } from 'react-native'
 import { AppAssets } from '../../assets/AppAssets'
@@ -11,7 +11,7 @@ import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { RouteKeys, push } from '../../settings/AppRoutes'
 import { Flex } from '../../settings/AppEnums'
-import { AntDesign } from '@expo/vector-icons';
+import { IconFamily, IconNames, SvgIcon } from '../../assets/icons/Icons'
 
 
 export default function Login({navigation}) {
@@ -68,13 +68,24 @@ export default function Login({navigation}) {
 
           <Spacing height={15} />
 
-      <AppButton textButton={translate(AppLocalizations.enterWithGoogle).toUpperCase()} isOutlined={true} SvgIcon={<AntDesign name='google' color={AppColors.darkBlueV6} size={15}/>} />
+      <AppButton 
+      textButton={translate(AppLocalizations.enterWithGoogle).toUpperCase()} 
+      isOutlined={true} 
+      SvgIcon={<SvgIcon iconFamily={IconFamily.antDesign} name={IconNames.google} 
+      color={AppColors.darkBlueV6} 
+      size={15}/>
+      } />
 
           <Spacing height={30} />
-          
+
+      <Row alignItems={Flex.alignItems.center} >
       <TitleMedium 
       size={14} 
-      color={AppColors.grayV2}>{translate(AppLocalizations.dontHaveAccount)} <LinkButton onTap={() => {push(navigation, RouteKeys.createAccount)}} color={AppColors.darkBlueV6} text={translate(AppLocalizations.createAccount)} /></TitleMedium>
+      color={AppColors.grayV2}>{translate(AppLocalizations.dontHaveAccount)} </TitleMedium>
+      <LinkButton onTap={() => {push(navigation, RouteKeys.createAccount)}} color={AppColors.darkBlueV6} text={translate(AppLocalizations.createAccount)} />
+        
+      </Row>
+          
 
     </AuthContainer>
   )

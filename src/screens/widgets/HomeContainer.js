@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container } from '../../components/Container'
 import HomeHeader from './HomeHeader'
 import HomeBottomNavigation from './HomeBottomNavigation'
+import { BottomNavigationRoute, Flex } from '../../settings/AppEnums';
 
 export default function HomeContainer({ children, name, imagePath, onTap }) {
+    const [selectedTab, setSelectedTab] = useState(BottomNavigationRoute.schedule);
     return (
         <>
             <HomeHeader name={name} imagePath={imagePath} onTapNotification={onTap} />
-            <Container>
+            <Container justifyContent={Flex.justifyContent.flexStart}>
                 {children}
             </Container>
-            <HomeBottomNavigation onChangedValue={(value) => console.log(value)}/>
+            <HomeBottomNavigation selectedTab={selectedTab} handleTabSelected={setSelectedTab}/>
         </>
     )
 }

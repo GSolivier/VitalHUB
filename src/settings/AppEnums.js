@@ -4,6 +4,12 @@ export const HomeCardActionType = {
     carriedOut: 'carriedOut'
 }
 
+export const BottomNavigationRoute ={
+    schedule: 'schedule',
+    clinic: 'clinic',
+    profile: 'profile'
+}
+
 export const Flex = {
     flexDirection: {
         row: 'row',

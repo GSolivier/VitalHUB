@@ -5,10 +5,8 @@ import CalendarStrip from "react-native-calendar-strip";
 import styled from "styled-components/native";
 
 export const StyledCalendarStrip = styled(CalendarStrip)`
-  height: 100px;
+  flex: 0.25;
   width: 100%;
-  margin: 100px 0px;
-  padding: 0px;
 `
 moment.updateLocale("pt-br", {
 
@@ -114,9 +112,6 @@ export default function HomeCalendar() {
             highlightDateNameStyle={styles.selectedDateNameStyle}
             highlightDateNumberStyle={styles.selectedDateNumberStyle}
             highlightDateContainerStyle={styles.selectedContainerStyle}
-
-            //tamanho do container
-            iconContainer={{ flex: 0.1 }}
 
             //scroll da barra
             scrollable={true}
