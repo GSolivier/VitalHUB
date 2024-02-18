@@ -4,7 +4,7 @@ import styled from 'styled-components/native'
 import { AppColors } from '../../settings/AppColors'
 import { TextSmall } from '../../settings/AppFonts'
 import { Spacing } from '../../components/Container'
-import {  IconName, SvgIcon } from '../../assets/icons/Icons'
+import {  Icon, SvgIcon } from '../../assets/icons/Icons'
 import { BottomNavigationRoute } from '../../settings/AppEnums'
 
 export const NavigationBox = styled.View`
@@ -33,13 +33,13 @@ export default function HomeBottomNavigation({ selectedTab, handleTabSelected })
     return (
         <NavigationBox>
             <IconButton isSelected={selectedTab == BottomNavigationRoute.schedule} onPress={() => handleTabSelected(BottomNavigationRoute.schedule)}>
-                <SvgIcon name={IconName.calendarCheck} color={selectedTab == BottomNavigationRoute.schedule ? AppColors.darkBlueV2 : AppColors.grayV2} />
+                <SvgIcon name={Icon.calendarCheck} color={selectedTab == BottomNavigationRoute.schedule ? AppColors.darkBlueV2 : AppColors.grayV2} />
                 {selectedTab == BottomNavigationRoute.schedule ? (<TextSmall color={AppColors.darkBlueV2}>Agenda</TextSmall>) : (<Spacing />)}
             </IconButton>
 
             <IconButton isSelected={selectedTab == BottomNavigationRoute.clinic} onPress={() => handleTabSelected(BottomNavigationRoute.clinic)}>
 
-                <SvgIcon name={IconName.hospital} color={selectedTab == BottomNavigationRoute.clinic ? AppColors.darkBlueV2 : AppColors.grayV2} />
+                <SvgIcon name={Icon.hospital} color={selectedTab == BottomNavigationRoute.clinic ? AppColors.darkBlueV2 : AppColors.grayV2} />
 
                 {selectedTab == BottomNavigationRoute.clinic ? (<TextSmall color={AppColors.darkBlueV2}>Clinica</TextSmall>) : (<Spacing />)}
 
@@ -47,7 +47,7 @@ export default function HomeBottomNavigation({ selectedTab, handleTabSelected })
 
             <IconButton isSelected={selectedTab == BottomNavigationRoute.profile} onPress={() => handleTabSelected(BottomNavigationRoute.profile)}>
             
-                <SvgIcon name={IconName.circleUser} color={selectedTab == BottomNavigationRoute.profile ? AppColors.darkBlueV2 : AppColors.grayV2} />
+                <SvgIcon name={Icon.circleUser} color={selectedTab == BottomNavigationRoute.profile ? AppColors.darkBlueV2 : AppColors.grayV2} />
 
                 {selectedTab == BottomNavigationRoute.profile ? (<TextSmall color={AppColors.darkBlueV2}>Perfil</TextSmall>) : (<Spacing />)}
 

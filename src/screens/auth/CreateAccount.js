@@ -8,12 +8,10 @@ import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import AppInput from '../../components/AppInput'
 import AppButton, { LinkButton } from '../../components/AppButton'
-import { StackActions } from '@react-navigation/routers'
-import { pop } from '../../settings/AppRoutes'
 import { TextAlign } from '../../settings/AppEnums'
+import { pop } from '../../settings/RouteActions'
 
 export default function CreateAccount({ navigation }) {
-  const popAction = StackActions.pop(1);
   return (
     <AuthContainer>
       <Image source={AppAssets.appLogoDark} />

@@ -10,8 +10,8 @@ import { AppColors } from "../../settings/AppColors";
 import AppButton, { LinkButton } from "../../components/AppButton";
 import { AppCodeInput } from "../../components/AppInput";
 import { useState } from "react";
-import { RouteKeys, pop, push } from "../../settings/AppRoutes";
 import { TextAlign } from "../../settings/AppEnums";
+import { RouteKeys, pop, push } from "../../settings/RouteActions";
 
 export default function EmailVerify({ navigation }) {
     const [codeValue, setCodeValue] = useState('');

@@ -6,21 +6,11 @@ import ForgotPassword from '../screens/auth/ForgotPassword';
 import EmailVerify from '../screens/auth/EmailVerify';
 import RedefinePassword from '../screens/auth/RedefinePassword';
 import CreateAccount from '../screens/auth/CreateAccount';
-import { StackActions } from '@react-navigation/native';
 import HomeScreenDoctor from '../screens/doctor/HomeScreenDoctor';
 import HomeScreenPatient from '../screens/patient/HomeScreenPatient';
+import { RouteKeys } from './RouteActions';
 
 const Stack = createNativeStackNavigator();
-
-export const RouteKeys = {
-    loginScreen: 'Login',
-    forgotPassword: 'ForgotPassword',
-    emailVerify: 'EmailVerify',
-    redefinePassword: 'RedefinePassword',
-    createAccount: 'CreateAccount',
-    homeScreenDoctor: 'HomeScreenDoctor',
-    homeScreenPatient: 'HomeScreenPatient'
-}
 
 export default function AppRoutes() {
 
@@ -59,20 +49,6 @@ export default function AppRoutes() {
         </NavigationContainer>
     )
 }
-
-
-export async function push(propNavigation, routeKey, data) {
-    const pushAction = StackActions.push(routeKey, data);
-
-    propNavigation.dispatch(pushAction)
-}
-
-export async function pop(propNavigation, data) {
-    const popAction = StackActions.pop(1);
-
-    propNavigation.dispatch(popAction, data);
-}
-
 
 
 

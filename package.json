@@ -27,7 +27,8 @@
     "react-native-calendar-strip": "^2.2.6",
     "react-native-confirmation-code-field": "^7.3.2",
     "react-native-dialog": "^9.3.0",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "@types/react": "~18.2.45"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

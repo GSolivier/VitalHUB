@@ -9,9 +9,9 @@ import { AppColors } from '../../settings/AppColors'
 import AuthContainer from './widgets/AuthContainer'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
-import { RouteKeys, push } from '../../settings/AppRoutes'
 import { Flex } from '../../settings/AppEnums'
-import { IconName, SvgIcon } from '../../assets/icons/Icons'
+import { Icon, SvgIcon } from '../../assets/icons/Icons'
+import { RouteKeys, push } from '../../settings/RouteActions'
 
 
 export default function Login({navigation}) {
@@ -73,7 +73,7 @@ export default function Login({navigation}) {
       isOutlined={true} 
       SvgIcon={
       <SvgIcon 
-      name={IconName.google} 
+      name={Icon.google} 
       color={AppColors.darkBlueV6} 
       size={15}/>
       } />

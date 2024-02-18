@@ -7,12 +7,12 @@ import { Flex, HomeCardActionType, TextDecoration } from '../../settings/AppEnum
 import { LinkButton } from '../../components/AppButton'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
-import { IconName, SvgIcon } from '../../assets/icons/Icons'
+import { Icon, SvgIcon } from '../../assets/icons/Icons'
 
 export const CardBox = styled.View`
     width: 100%;
     elevation: 5px;
-    padding: 5px 20px 11px 5px;
+    padding: 5px 10px 11px 5px;
     border-radius: 5px;
     background-color: ${AppColors.white};
 `
@@ -52,9 +52,9 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             </Row>
                         </Column>
                         <SchedulesBox actionCard={actionType}>
-                            <SvgIcon name={IconName.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} />
+                            <SvgIcon name={Icon.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} />
                             <Spacing width={6} />
-                            <TextBig color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} size={14}>{schedule}</TextBig>
+                            <TextBig alignSelf={Flex.alignSelf.center} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} size={14}>{schedule}</TextBig>
                         </SchedulesBox>
                     </Column>
                 </Row>
@@ -67,7 +67,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             text={translate(AppLocalizations.cancel)}
                             textDecoration={TextDecoration.none}
                             alignSelf={Flex.alignItems.flexEnd}
-                            justifySelf={Flex.justifyContent.flexEnd}
+                            
                             onTap={actionTap}
                         />
                     )

@@ -18,7 +18,7 @@ export const DialogContainer = styled(Dialog.Container)`
     
 `
 
-export default function CancelExamDialog({ visible, onClose }) {
+export default function CancelExamDialog({ visible, onClose, appointment }) {
 
     return (
         <DialogContainer visible={visible} onBackdropPress={onClose}>
@@ -27,7 +27,7 @@ export default function CancelExamDialog({ visible, onClose }) {
                 <Spacing height={15} />
                 <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.cancelExamHint)}</TextMedium>
                 <Spacing height={30} />
-                <AppButton textButton={translate(AppLocalizations.confirm).toUpperCase()} />
+                <AppButton textButton={translate(AppLocalizations.confirm).toUpperCase()} onTap={() => console.log(appointment)} />
                 <Spacing height={30} />
                 <LinkButton
                     text={translate(AppLocalizations.cancel)}

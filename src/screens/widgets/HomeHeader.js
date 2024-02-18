@@ -8,7 +8,7 @@ import { TouchableOpacity } from 'react-native'
 import { Flex } from '../../settings/AppEnums'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
-import { IconName, SvgIcon } from '../../assets/icons/Icons'
+import { Icon, SvgIcon } from '../../assets/icons/Icons'
 
 export const HeaderBox = styled(LinearGradient)`
     width: 100%;
@@ -46,7 +46,7 @@ export default function HomeHeader({ imagePath, name, onTapNotification }) {
                         <TitleMedium size={16} color={AppColors.white}>{name}</TitleMedium>
                     </Column>
                 </Row>
-                <TouchableOpacity onPress={onTapNotification}><SvgIcon name={IconName.notifications} color={AppColors.white}/></TouchableOpacity>
+                <TouchableOpacity onPress={onTapNotification}><SvgIcon name={Icon.notifications} color={AppColors.white}/></TouchableOpacity>
 
             </Row>
 

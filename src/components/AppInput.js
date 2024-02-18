@@ -4,8 +4,6 @@ import { AppColors } from '../settings/AppColors'
 import { TextBig } from '../settings/AppFonts'
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field'
 
-
-
 export const Input = styled.TextInput`
     width: 100%;
     height: ${({ isTextArea = false }) => isTextArea == true ? '120px' : '60px'};

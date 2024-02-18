@@ -29,6 +29,7 @@ export const TextBig = styled.Text`
     font-size: ${({size = 18}) => `${size}px`};
     color: ${({color = AppColors.grayV1 }) => color};
     text-align: ${({textAlign = 'auto'}) => textAlign};
+    align-self: ${({alignSelf = 'auto'}) => alignSelf};
 `
  
 export const TextMedium = styled.Text`

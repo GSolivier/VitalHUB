@@ -32,7 +32,7 @@ export const IconFamily = {
     zocial: Zocial
 };
 
-export const IconName = {
+export const Icon = {
     google: {
         name: 'google',
         family: 'antDesign'
