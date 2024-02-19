@@ -7,7 +7,7 @@ import { Flex, HomeCardActionType, TextDecoration } from '../../settings/AppEnum
 import { LinkButton } from '../../components/AppButton'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
-import { Icon, SvgIcon } from '../../assets/icons/Icons'
+import SvgIcon, { Icon } from '../../assets/icons/Icons'
 
 export const CardBox = styled.View`
     width: 100%;

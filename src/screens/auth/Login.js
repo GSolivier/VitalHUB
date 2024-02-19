@@ -10,7 +10,7 @@ import AuthContainer from './widgets/AuthContainer'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { Flex } from '../../settings/AppEnums'
-import { Icon, SvgIcon } from '../../assets/icons/Icons'
+import SvgIcon, { Icon } from '../../assets/icons/Icons'
 import { RouteKeys, push } from '../../settings/RouteActions'
 
 
@@ -81,13 +81,13 @@ export default function Login({navigation}) {
           <Spacing height={30} />
 
       <Row alignItems={Flex.alignItems.center} >
-      <TitleMedium 
-      size={14} 
+      <TitleMedium
+      size={14}
       color={AppColors.grayV2}>{translate(AppLocalizations.dontHaveAccount)} </TitleMedium>
       <LinkButton onTap={() => {push(navigation, RouteKeys.createAccount)}} color={AppColors.darkBlueV6} text={translate(AppLocalizations.createAccount)} />
-        
+
       </Row>
-          
+
 
     </AuthContainer>
   )

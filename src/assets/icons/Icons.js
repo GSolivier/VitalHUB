@@ -35,70 +35,70 @@ export const IconFamily = {
 export const Icon = {
     google: {
         name: 'google',
-        family: 'antDesign'
+        family: IconFamily.antDesign
     },
     arrowLeft: {
         name: 'arrowleft',
-        family: 'antDesign'
+        family: IconFamily.antDesign
     },
     close: {
         name: 'close',
-        family: 'antDesign'
+        family: IconFamily.antDesign
     },
     notifications: {
         name: 'notifications',
-        family: 'ionIcons'
+        family: IconFamily.ionIcons
     },
     clock: {
         name: 'clock',
-        family: 'materialCommunityIcons'
+        family: IconFamily.materialCommunityIcons
     },
     calendarCheck: {
         name: 'calendar-check',
-        family: 'fontAwesome6'
+        family: IconFamily.fontAwesome6
     },
     hospital: {
         name: 'hospital',
-        family: 'fontAwesome6'
+        family: IconFamily.fontAwesome6
     },
     circleUser: {
         name: 'circle-user',
-        family: 'fontAwesome6'
+        family: IconFamily.fontAwesome6
     },
     stethoscope: {
         name: 'stethoscope',
-        family: 'antDesign'
+        family: IconFamily.antDesign
     },
     star: {
         name: 'star',
-        family: 'antDesign',
+        family: IconFamily.antDesign
     },
     calendar: {
         name: 'calendar',
-        family: 'materialCommunityIcons'
+        family: IconFamily.materialCommunityIcons
     },
     arrowDropDown: {
         name: 'sort-down',
-        family: 'fontAwesome5'
+        family: IconFamily.fontAwesome5
     },
     cameraPlus: {
         name: 'camera-plus-outline',
-        family: 'materialCommunityIcons'
+        family: IconFamily.materialCommunityIcons
     },
     fileAlert: {
         name: 'file-alert-outline',
-        family: 'materialCommunityIcons'
+        family: IconFamily.materialCommunityIcons
     },
 };
 
 
 
-export function SvgIcon({ name, size = 24, color = "black" }) {
+export default function SvgIcon({ name, size = 24, color = "black" }) {
 
     const iconName = name.name;
     const iconFamily = name.family;
 
-    const IconComponent = IconFamily[iconFamily];
+    const IconComponent = iconFamily;
 
     return <IconComponent name={iconName} size={size} color={color} />;
 

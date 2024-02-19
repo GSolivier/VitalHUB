@@ -8,7 +8,7 @@ import { TouchableOpacity } from 'react-native'
 import { Flex } from '../../settings/AppEnums'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
-import { Icon, SvgIcon } from '../../assets/icons/Icons'
+import SvgIcon, { Icon } from '../../assets/icons/Icons'
 
 export const HeaderBox = styled(LinearGradient)`
     width: 100%;

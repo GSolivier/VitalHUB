@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { Container } from "../../../components/Container";
-import { Icon, SvgIcon } from "../../../assets/icons/Icons";
 import { AppColors } from "../../../settings/AppColors";
+import SvgIcon, { Icon } from "../../../assets/icons/Icons";
 
 export const Leading = styled.TouchableOpacity`
     background-color: rgba(73, 179, 186, 0.15);

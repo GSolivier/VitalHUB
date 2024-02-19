@@ -4,7 +4,7 @@ import styled from 'styled-components/native'
 import { AppColors } from '../../settings/AppColors'
 import { TextSmall } from '../../settings/AppFonts'
 import { Spacing } from '../../components/Container'
-import {  Icon, SvgIcon } from '../../assets/icons/Icons'
+import SvgIcon, { Icon } from '../../assets/icons/Icons'
 import { BottomNavigationRoute } from '../../settings/AppEnums'
 
 export const NavigationBox = styled.View`
