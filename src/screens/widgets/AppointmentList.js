@@ -8,6 +8,7 @@ import { AppColors } from '../../settings/AppColors';
 
 export const List = styled.View`
     flex: 0.9;
+    width: 100%
 `
 
 export default function AppointmentList({DATA, tapAction}) {
@@ -17,10 +18,14 @@ export default function AppointmentList({DATA, tapAction}) {
       <FlatList
         endFillColor={AppColors.white}
         data={DATA}
-        renderItem={({item}) => (<HomeCard imagePath={AppAssets.placeholder} name={item.name} age={item.age} examType={item.examType} schedule={item.time} actionTap={() => tapAction(item)} />)}
+        renderItem={({item}) => 
+        (
+          <HomeCard 
+          imagePath={item.imagePath} name={item.name} age={item.age} examType={item.examType} actionType={item.appointmentStatus} schedule={item.time} actionTap={() => tapAction(item)} />)}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={<Spacing height={10}/>}
-        contentContainerStyle={{ paddingVertical: 20, paddingHorizontal: 5 }}
+        contentContainerStyle={{ paddingVertical: 5, paddingHorizontal: 5 }}
+        showsVerticalScrollIndicator={false}
       />
       </List>
   )

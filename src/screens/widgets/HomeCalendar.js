@@ -7,6 +7,7 @@ import styled from "styled-components/native";
 export const StyledCalendarStrip = styled(CalendarStrip)`
   flex: 0.20;
   width: 100%;
+
 `
 moment.updateLocale("pt-br", {
 

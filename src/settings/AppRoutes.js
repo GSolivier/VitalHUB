@@ -18,12 +18,12 @@ export default function AppRoutes() {
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen
-                    name={RouteKeys.loginScreen}
-                    component={Login}
-                />
-                <Stack.Screen
                     name={RouteKeys.homeScreenDoctor}
                     component={HomeScreenDoctor}
+                />
+                <Stack.Screen
+                    name={RouteKeys.loginScreen}
+                    component={Login}
                 />
                 <Stack.Screen
                     name={RouteKeys.forgotPassword}

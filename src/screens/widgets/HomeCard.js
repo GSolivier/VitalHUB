@@ -12,7 +12,7 @@ import SvgIcon, { Icon } from '../../assets/icons/Icons'
 export const CardBox = styled.View`
     width: 100%;
     elevation: 5px;
-    padding: 5px 10px 11px 5px;
+    padding: 11px 20px 11px 10px;
     border-radius: 5px;
     background-color: ${AppColors.white};
 `
@@ -37,7 +37,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
         <CardBox>
             <Row justifyContent={Flex.justifyContent.spaceBetween}>
                 <Row>
-                    <CardImage source={imagePath} />
+                    <CardImage source={{uri: imagePath}} />
                     <Spacing width={10} />
                     <Column justifyContent={Flex.justifyContent.spaceBetween}>
                         <Column>
@@ -51,40 +51,42 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                                 <TextBig size={14}>{examType}</TextBig>
                             </Row>
                         </Column>
-                        <SchedulesBox actionCard={actionType}>
-                            <SvgIcon name={Icon.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} />
-                            <Spacing width={6} />
-                            <TextBig alignSelf={Flex.alignSelf.center} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} size={14}>{schedule}</TextBig>
-                        </SchedulesBox>
+
+                        <Row width={'81%'} justifyContent={Flex.justifyContent.spaceBetween} alignItems={Flex.alignItems.center}>
+                            <SchedulesBox actionCard={actionType}>
+                                <SvgIcon name={Icon.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} />
+                                <Spacing width={6} />
+                                <TextBig alignSelf={Flex.alignSelf.center} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} size={14}>{schedule}</TextBig>
+                            </SchedulesBox>
+                            {
+                                actionType == HomeCardActionType.scheduled ?
+                                    (
+                                        <LinkButton
+                                            color={AppColors.red}
+                                            text={translate(AppLocalizations.cancel)}
+                                            textDecoration={TextDecoration.none}
+                                            alignSelf={Flex.alignItems.flexEnd}
+
+                                            onTap={actionTap}
+                                        />
+                                    )
+                                    :
+                                    actionType == HomeCardActionType.carriedOut ?
+                                        (
+                                            <LinkButton
+                                                color={AppColors.darkBlueV1}
+                                                text={translate(AppLocalizations.seeMedicalRecord)}
+                                                textDecoration={TextDecoration.none}
+                                                alignSelf={Flex.alignSelf.flexEnd}
+                                                justifySelf={Flex.justifyContent.flexEnd}
+                                                onTap={actionTap}
+                                            />
+                                        ) :
+                                        (<Spacing />)}
+
+                        </Row>
                     </Column>
                 </Row>
-
-                {
-                actionType == HomeCardActionType.scheduled ?
-                    (
-                        <LinkButton
-                            color={AppColors.red}
-                            text={translate(AppLocalizations.cancel)}
-                            textDecoration={TextDecoration.none}
-                            alignSelf={Flex.alignItems.flexEnd}
-                            
-                            onTap={actionTap}
-                        />
-                    )
-                    :
-                    actionType == HomeCardActionType.carriedOut ?
-                        (
-                            <LinkButton
-                                color={AppColors.darkBlueV1}
-                                text={translate(AppLocalizations.seeMedicalRecord)}
-                                textDecoration={TextDecoration.none}
-                                alignSelf={Flex.alignSelf.flexEnd}
-                                justifySelf={Flex.justifyContent.flexEnd}
-                                onTap={actionTap}
-                            />
-                        ) : 
-                        (<Spacing />)}
-
             </Row>
         </CardBox>
     )
