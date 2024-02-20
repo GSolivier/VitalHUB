@@ -19,6 +19,10 @@ export default function AppRoutes() {
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen
+                    name={RouteKeys.homeScreenPatient}
+                    component={HomeScreenPatient}
+                />
+                <Stack.Screen
                     name={RouteKeys.homeScreenDoctor}
                     component={HomeScreenDoctor}
                 />
@@ -41,10 +45,6 @@ export default function AppRoutes() {
                 <Stack.Screen
                     name={RouteKeys.createAccount}
                     component={CreateAccount}
-                />
-                <Stack.Screen
-                    name={RouteKeys.homeScreenPatient}
-                    component={HomeScreenPatient}
                 />
                 <Stack.Screen
                     name={RouteKeys.insertMedicalRecordScreen}

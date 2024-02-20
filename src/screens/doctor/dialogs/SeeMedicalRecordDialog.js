@@ -8,6 +8,7 @@ import translate from '../../../locale'
 import styled from 'styled-components/native'
 import AppDialog from '../../../components/AppDialog'
 import { RouteKeys, push } from '../../../settings/RouteActions'
+import AppLocalizations from '../../../settings/AppLocalizations'
 
 export const ImageModal = styled.Image`
     width: 100%;
@@ -35,11 +36,11 @@ export default function SeeMedicalRecordDialog({ visible, onClose, appointment, 
             <Spacing height={15} />
             <Row justifyContent={Flex.justifyContent.spaceAround}>
 
-                <TextSmall textAlign={TextAlign.center}>{appointment.age} anos</TextSmall>
+                <TextSmall textAlign={TextAlign.center}>{appointment.age} {translate(AppLocalizations.yearsOld)}</TextSmall>
                 <TextSmall textAlign={TextAlign.center}>{appointment.email}</TextSmall>
             </Row>
             <Spacing height={30} />
-            <AppButton textButton={"Inserir Prontuário".toUpperCase()}
+            <AppButton textButton={translate(AppLocalizations.insertMedicalRecordButton).toUpperCase()}
                 onTap={handleInsertMedicalRecord}/>
             <Spacing height={30} />
             <LinkButton

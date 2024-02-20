@@ -32,5 +32,8 @@ export const AppColors = {
     whiteGray: '#F1F0F5',
     whiteBlue: '#ECF2FF',
 
+    whiteDarker: '#F5F3F3',
     white: '#fff',
+
+    transparent: '#00000000',
 };

@@ -67,7 +67,7 @@ export const Icon = {
     },
     stethoscope: {
         name: 'stethoscope',
-        family: IconFamily.antDesign
+        family: IconFamily.fontAwesome5
     },
     star: {
         name: 'star',

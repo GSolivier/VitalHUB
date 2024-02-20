@@ -31,9 +31,66 @@ export default AppLocalizations = {
     carriedOut: 'carriedOut',
     canceled: 'canceled',
 
+    schedule: 'schedule',
+    clinic: 'clinic',
+    profile: 'profile',
+
+    yearsOld: 'yearsOld',
+
     seeMedicalRecord: 'seeMedicalRecord',
 
     cancelExam: 'cancelExam',
     cancelExamHint: 'cancelExamHint',
-    confirm: 'confirm'
+    confirm: 'confirm',
+    insertMedicalRecordButton: 'insertMedicalRecordButton',
+
+    appointDescriptionLabel: 'appointDescriptionLabel',
+    descriptionHint: 'descriptionHint',
+    patientDiagnosisLabel: 'patientDiagnosisLabel',
+    diagnosisLabel: 'diagnosisLabel',
+    doctorPrescriptionLabel: 'doctorPrescriptionLabel',
+    saveButton: 'saveButton',
+    editButton: 'editButton',
+
+    january: 'january',
+    february: 'february',
+    march: 'march',
+    april: 'april',
+    may: 'may',
+    june: 'june',
+    july: 'july',
+    august: 'august',
+    september: 'september',
+    october: 'october',
+    november: 'november',
+    december: 'december',
+
+    jan: 'jan',
+    feb: 'feb',
+    mar: 'mar',
+    apr: 'apr',
+    may: 'may',
+    jun: 'jun',
+    jul: 'jul',
+    aug: 'aug',
+    sep: 'sep',
+    oct: 'oct',
+    nov: 'nov',
+    dec: 'dec',
+
+    sunday: 'sunday',
+    monday: 'monday',
+    tuesday: 'tuesday',
+    wednesday: 'wednesday',
+    thursday: 'thursday',
+    friday: 'friday',
+    saturday: 'saturday',
+
+    sun: 'sun',
+    mon: 'mon',
+    tue: 'tue',
+    wed: 'wed',
+    thu: 'thu',
+    fri: 'fri',
+    sat: 'sat'
 }

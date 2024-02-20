@@ -29,6 +29,7 @@ export const SchedulesBox = styled.View`
     flex-direction: row;
     padding: 4px;
     width: 100px;
+    border-radius: 5px;
     background-color: ${({ actionCard = HomeCardActionType.scheduled }) => actionCard == HomeCardActionType.scheduled ? AppColors.lightGreen : AppColors.whiteGray};
 `
 
@@ -44,7 +45,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             <TitleMedium size={16}>{name}</TitleMedium>
                             <Spacing width={5} />
                             <Row justifyContent={Flex.alignItems.flexStart} alignItems={Flex.alignItems.center}>
-                                <TextSmall>{`${age} anos`}</TextSmall>
+                                <TextSmall>{age} {translate(AppLocalizations.yearsOld)}</TextSmall>
                                 <Spacing width={7} />
                                 <TextSmall color={AppColors.grayV4}>•</TextSmall>
                                 <Spacing width={7} />
@@ -79,6 +80,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                                                 textDecoration={TextDecoration.none}
                                                 alignSelf={Flex.alignSelf.flexEnd}
                                                 justifySelf={Flex.justifyContent.flexEnd}
+                                                size={12}
                                                 onTap={actionTap}
                                             />
                                         ) :

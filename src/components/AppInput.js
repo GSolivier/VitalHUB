@@ -9,10 +9,11 @@ export const Input = styled.TextInput`
     height: ${({ isTextArea = false }) => isTextArea ? '120px' : '60px'};
     border-radius: 5px;
     border-width: 2px;
-    border-color: ${({ borderColor = AppColors.lightBlue, isValid = true }) => isValid ? borderColor : AppColors.red};
+    border-color: ${({ borderColor = AppColors.lightBlue, isValid = true, isEditable = true }) => isValid ? borderColor : AppColors.red};
     padding: 16px;
     font-family: 'MontserratAlternates_700Bold';
     color: ${({ color = AppColors.lightBlueV1, isValid = true }) => isValid ? color : AppColors.red};
+    background-color: ${({isEditable = true}) => isEditable ? AppColors.transparent : AppColors.whiteDarker };
     `
 
 export const InputBox = styled.View`
@@ -27,13 +28,14 @@ export default function AppInput({
     borderColor,
     isObscure = false,
     isTextArea = false,
+    isEditable = true,
     hasLabel = false,
     textValue,
     onEdit,
     focus = null,
     focusOut = null,
     isValid = true,
-    onChange = null
+    onChange = null,
 }) {
     const handleInputChange = (value) => {
         onEdit === null ? null : onEdit(value);
@@ -44,7 +46,7 @@ export default function AppInput({
             {hasLabel ? (<TextBig size={16}>{lable}</TextBig>) : null}
             <Input
                 placeholder={hint}
-                placeholderTextColor={isValid ? textColor : AppColors.red}
+                placeholderTextColor={isEditable ? textColor : AppColors.grayV2}
                 color={isValid ? textColor : AppColors.red}
                 secureTextEntry={isObscure}
                 multiline={isTextArea}
@@ -54,10 +56,12 @@ export default function AppInput({
                 value={textValue}
                 onChangeText={handleInputChange}
                 onChange={onChange}
-                borderColor={borderColor}
+                borderColor={isEditable ? borderColor : AppColors.transparent}
                 onFocus={focus}
                 onBlur={focusOut}
                 isValid={isValid}
+                editable={isEditable}
+                isEditable={isEditable}
             />
         </InputBox>
     )

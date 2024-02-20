@@ -8,6 +8,8 @@ import AppInput from '../../components/AppInput';
 import { ScrollView } from 'react-native';
 import AppButton, { LinkButton } from '../../components/AppButton';
 import { pop } from '../../settings/RouteActions';
+import translate from '../../locale';
+import AppLocalizations from '../../settings/AppLocalizations';
 
 export const HeaderImage = styled.Image`
     width: 100%;
@@ -23,21 +25,21 @@ export default function InsertMedicalRecord({navigation}) {
             <Container justifyContent={Flex.justifyContent.flexStart}>
                 <TitleMedium>{params.appointment.name}</TitleMedium>
                 <Spacing height={10}/>
-                <Row justifyContent={Flex.justifyContent.spaceAround} width={'90%'}>
+                <Row justifyContent={Flex.justifyContent.spaceAround} width={'85%'}>
 
-                    <TextSmall textAlign={TextAlign.center}>{params.appointment.age} anos</TextSmall>
+                    <TextSmall textAlign={TextAlign.center}>{params.appointment.age} {translate(AppLocalizations.yearsOld)}</TextSmall>
                     <TextSmall textAlign={TextAlign.center}>{params.appointment.email}</TextSmall>
                 </Row>
                 <Spacing height={24}/>
-                <AppInput hasLabel={true} lable='Descrição da consulta' hint={'Descrição'} isTextArea={true} onEdit={() => {}}/>
+                <AppInput hasLabel={true} lable={translate(AppLocalizations.appointDescriptionLabel)} hint={translate(AppLocalizations.descriptionHint)} isTextArea={true} onEdit={() => {}}/>
                 <Spacing height={20}/>
-                <AppInput hasLabel={true} lable='Diagnóstico do paciente' hint={'Diagnóstico'} onEdit={() => {}}/>
+                <AppInput hasLabel={true} lable={translate(AppLocalizations.patientDiagnosisLabel)} hint={translate(AppLocalizations.diagnosisLabel)} onEdit={() => {}}/>
                 <Spacing height={20}/>
-                <AppInput hasLabel={true} lable='Prescrição médica' hint={'Prescrição médica'} isTextArea={true} onEdit={() => {}}/>
+                <AppInput hasLabel={true} lable={translate(AppLocalizations.doctorPrescriptionLabel)} hint={translate(AppLocalizations.doctorPrescriptionLabel)} isTextArea={true} onEdit={() => {}}/>
                 <Spacing height={30}/>
-                <AppButton textButton={'SALVAR'}/>
+                <AppButton textButton={translate(AppLocalizations.saveButton)}/>
                 <Spacing height={30}/>
-                <LinkButton text={'Cancelar'} onTap={() => pop(navigation)}/>
+                <LinkButton text={translate(AppLocalizations.cancel)} onTap={() => pop(navigation)}/>
             </Container>
         </ScrollView>
         </>

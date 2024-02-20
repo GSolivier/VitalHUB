@@ -32,11 +32,68 @@ const pt = {
     carriedOut: 'Realizadas',
     canceled: 'Canceladas',
 
+    schedule: 'Agenda',
+    clinic: 'Clinica',
+    profile: 'Perfil',
+
+    yearsOld: 'anos',
+
     seeMedicalRecord: 'Ver prontuário',
 
     cancelExam: 'Cancelar consulta',
     cancelExamHint: 'Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?',
-    confirm: 'Confirmar'
+    confirm: 'Confirmar',
+    insertMedicalRecordButton: 'Inserir prontuário',
+
+    appointDescriptionLabel: 'Descrição da consulta',
+    descriptionHint: 'Descrição',
+    patientDiagnosisLabel: 'Diagnóstico do paciente',
+    diagnosisLabel: 'Diagnóstico',
+    doctorPrescriptionLabel: 'Prescrição médica',
+    saveButton: 'Salvar',
+    editButton: 'Editar',
+
+    january: 'Janeiro',
+    february: 'Fevereiro',
+    march: 'Março',
+    april: 'Abril',
+    may: 'Maio',
+    june: 'Junho',
+    july: 'Julho',
+    august: 'Agosto',
+    september: 'Setembro',
+    october: 'Outubro',
+    november: 'Novembro',
+    december: 'Dezembro',
+
+    jan: 'Jan',
+    feb: 'Fev',
+    mar: 'Mar',
+    apr: 'Abr',
+    may: 'Mai',
+    jun: 'Jun',
+    jul: 'Jul',
+    aug: 'Ago',
+    sep: 'Set',
+    oct: 'Out',
+    nov: 'Nov',
+    dec: 'Dez',
+
+    sunday: 'Domingo',
+    monday: 'Segunda-feira',
+    tuesday: 'Terça-feira',
+    wednesday: 'Quarta-feira',
+    thursday: 'Quinta-feira',
+    friday: 'Sexta-feira',
+    saturday: 'Sábado',
+
+    sun: 'Dom',
+    mon: 'Seg',
+    tue: 'Ter',
+    wed: 'Qua',
+    thu: 'Qui',
+    fri: 'Sex',
+    sat: 'Sáb'
   };
   
   export default pt;

@@ -12,7 +12,7 @@ export default function HomeContainer({ children, name, imagePath, onTap }) {
             <Container justifyContent={Flex.justifyContent.flexStart} paddingBottom={0}>
                 {children}
             </Container>
-            <HomeBottomNavigation selectedTab={selectedTab} handleTabSelected={setSelectedTab}/>
+            <HomeBottomNavigation selectedTab={selectedTab} handleTabSelected={setSelectedTab} />
         </>
     )
 }

@@ -3,6 +3,8 @@ import moment from "moment";
 import { StyleSheet } from "react-native";
 import CalendarStrip from "react-native-calendar-strip";
 import styled from "styled-components/native";
+import translate from "../../locale";
+import AppLocalizations from "../../settings/AppLocalizations";
 
 export const StyledCalendarStrip = styled(CalendarStrip)`
   flex: 0.20;
@@ -10,28 +12,18 @@ export const StyledCalendarStrip = styled(CalendarStrip)`
 
 `
 moment.updateLocale("pt-br", {
-
-    //meses
-    months:
-        "Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro".split(
-            "_"
-        ),
-
-    //abreviação de meses
-    monthsShort: "jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez".split("_"),
-
-    //dias da semana
-    weekdays:
-        "domingo_segunda-feira_terça-feira_quarta-feira_quinta-feira_sexta-feira_sábado".split(
-            "_"
-        ),
-
-    //abreviação dias da semana
-    weekdaysShort: "Dom_Seg_Ter_Qua_Qui_Sex_Sáb".split("_"),
-
-    //abreviação dias da semana 
-    weekdaysMin: 'dom_2ª_3ª_4ª_5ª_6ª_sáb'.split('_'),
+    // Meses
+    months: `${translate(AppLocalizations.january)}_${translate(AppLocalizations.february)}_${translate(AppLocalizations.march)}_${translate(AppLocalizations.april)}_${translate(AppLocalizations.may)}_${translate(AppLocalizations.june)}_${translate(AppLocalizations.july)}_${translate(AppLocalizations.august)}_${translate(AppLocalizations.september)}_${translate(AppLocalizations.october)}_${translate(AppLocalizations.november)}_${translate(AppLocalizations.december)}`.split("_"),
+    // Abreviação de meses
+    monthsShort: `${translate(AppLocalizations.jan)}_${translate(AppLocalizations.feb)}_${translate(AppLocalizations.mar)}_${translate(AppLocalizations.apr)}_${translate(AppLocalizations.may)}_${translate(AppLocalizations.jun)}_${translate(AppLocalizations.jul)}_${translate(AppLocalizations.aug)}_${translate(AppLocalizations.sep)}_${translate(AppLocalizations.oct)}_${translate(AppLocalizations.nov)}_${translate(AppLocalizations.dec)}`.split("_"),
+    // Dias da semana
+    weekdays: `${translate(AppLocalizations.sunday)}_${translate(AppLocalizations.monday)}_${translate(AppLocalizations.tuesday)}_${translate(AppLocalizations.wednesday)}_${translate(AppLocalizations.thursday)}_${translate(AppLocalizations.friday)}_${translate(AppLocalizations.saturday)}`.split("_"),
+    // Abreviação dias da semana
+    weekdaysShort: `${translate(AppLocalizations.sun)}_${translate(AppLocalizations.mon)}_${translate(AppLocalizations.tue)}_${translate(AppLocalizations.wed)}_${translate(AppLocalizations.thu)}_${translate(AppLocalizations.fri)}_${translate(AppLocalizations.sat)}`.split("_"),
+    // Abreviação dias da semana 
+    weekdaysMin: `${translate(AppLocalizations.sun)}_2ª_3ª_4ª_5ª_6ª_${translate(AppLocalizations.sat)}`.split("_")
 });
+
 
 //instância da data atual
 const currentDate = new Date();

@@ -31,11 +31,68 @@ const en = {
     carriedOut: 'Carried Out',
     canceled: 'Canceled',
 
+    schedule: 'Schedule',
+    clinic: 'Clinic',
+    profile: 'Profile',
+
+    yearsOld: 'years',
+
     seeMedicalRecord: 'See medical record',
 
     cancelExam: 'Cancel appointment',
     cancelExamHint: 'By canceling this appointment, you will open up possible availability at your time. Do you really want to cancel this appointment?',
-    confirm: 'Confirm'
+    confirm: 'Confirm',
+    insertMedicalRecordButton: 'Insert medical record',
+
+    appointDescriptionLabel: 'Appointment description',
+    descriptionHint: 'Description',
+    patientDiagnosisLabel: 'Patient diagnosis',
+    diagnosisLabel: 'Diagnosis',
+    doctorPrescriptionLabel: 'Doctor\'s prescription',
+    saveButton: 'Save',
+    editButton: 'Edit',
+
+    january: 'January',
+    february: 'February',
+    march: 'March',
+    april: 'April',
+    may: 'May',
+    june: 'June',
+    july: 'July',
+    august: 'August',
+    september: 'September',
+    october: 'October',
+    november: 'November',
+    december: 'December',
+
+    jan: 'Jan',
+    feb: 'Feb',
+    mar: 'Mar',
+    apr: 'Apr',
+    may: 'May',
+    jun: 'Jun',
+    jul: 'Jul',
+    aug: 'Aug',
+    sep: 'Sep',
+    oct: 'Oct',
+    nov: 'Nov',
+    dec: 'Dec',
+
+    sunday: 'Sunday',
+    monday: 'Monday',
+    tuesday: 'Tuesday',
+    wednesday: 'Wednesday',
+    thursday: 'Thursday',
+    friday: 'Friday',
+    saturday: 'Saturday',
+
+    sun: 'Sun',
+    mon: 'Mon',
+    tue: 'Tue',
+    wed: 'Wed',
+    thu: 'Thu',
+    fri: 'Fri',
+    sat: 'Sat'
   };
   
   export default en;
