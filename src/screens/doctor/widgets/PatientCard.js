@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { AppColors } from '../../settings/AppColors'
-import { Column, Row, Spacing } from '../../components/Container'
-import { TextBig, TextSmall, TitleMedium } from '../../settings/AppFonts'
-import { Flex, HomeCardActionType, TextDecoration } from '../../settings/AppEnums'
-import { LinkButton } from '../../components/AppButton'
-import translate from '../../locale'
-import AppLocalizations from '../../settings/AppLocalizations'
-import SvgIcon, { Icon } from '../../assets/icons/Icons'
+import { AppColors } from '../../../settings/AppColors'
+import { Column, Row, Spacing } from '../../../components/Container'
+import { TextBig, TextSmall, TitleMedium } from '../../../settings/AppFonts'
+import { Flex, HomeCardActionType, TextDecoration } from '../../../settings/AppEnums'
+import { LinkButton } from '../../../components/AppButton'
+import translate from '../../../locale'
+import AppLocalizations from '../../../settings/AppLocalizations'
+import SvgIcon, { Icon } from '../../../assets/icons/Icons'
 
 export const CardBox = styled.View`
     width: 100%;

@@ -6,7 +6,7 @@ import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-
 
 export const Input = styled.TextInput`
     width: 100%;
-    height: ${({ isTextArea = false }) => isTextArea == true ? '120px' : '60px'};
+    height: ${({ isTextArea = false }) => isTextArea ? '120px' : '60px'};
     border-radius: 5px;
     border-width: 2px;
     border-color: ${({ borderColor = AppColors.lightBlue, isValid = true }) => isValid ? borderColor : AppColors.red};
@@ -41,16 +41,16 @@ export default function AppInput({
 
     return (
         <InputBox>
-            {hasLabel ? (<TextBig>{lable}</TextBig>) : null}
+            {hasLabel ? (<TextBig size={16}>{lable}</TextBig>) : null}
             <Input
                 placeholder={hint}
                 placeholderTextColor={isValid ? textColor : AppColors.red}
                 color={isValid ? textColor : AppColors.red}
                 secureTextEntry={isObscure}
                 multiline={isTextArea}
-                numberOfLines={isTextArea == true ? 5 : 1}
+                numberOfLines={isTextArea ? 5 : 1}
                 isTextArea={isTextArea}
-                textAlignVertical={isTextArea == true ? 'top' : 'center'}
+                textAlignVertical={isTextArea ? 'top' : 'center'}
                 value={textValue}
                 onChangeText={handleInputChange}
                 onChange={onChange}

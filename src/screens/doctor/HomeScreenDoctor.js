@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import HomeContainer from '../widgets/HomeContainer'
 import { AppAssets } from '../../assets/AppAssets'
-import HomeTopButtons from '../widgets/HomeTopButtons'
+import AppointmentFilter from '../widgets/AppointmentFilter'
 import HomeCalendar from '../widgets/HomeCalendar'
-import CancelExamDialog from '../widgets/dialogs/CancelExamDialog'
+import CancelExamDialog from './dialogs/CancelExamDialog'
 import { Spacing } from '../../components/Container'
-import AppointmentList from '../widgets/AppointmentList'
+import AppointmentList from './widgets/AppointmentList'
 import { DATA } from '../../settings/AppUtils'
 import { HomeCardActionType } from '../../settings/AppEnums'
-import SeeMedicalRecordDialog from '../widgets/dialogs/SeeMedicalRecordDialog'
+import SeeMedicalRecordDialog from './dialogs/SeeMedicalRecordDialog'
 
 export default function HomeScreenDoctor({ navigation }) {
   const [selectedTab, setSelectedTab] = useState(HomeCardActionType.scheduled);
@@ -44,14 +44,30 @@ export default function HomeScreenDoctor({ navigation }) {
 
   return (
     <HomeContainer name={'Dr. Claudio'} imagePath={AppAssets.placeholder}>
-      <HomeCalendar />
-      <Spacing height={20} />
-      <HomeTopButtons selected={selectedTab} handleTabSelected={handleTabSelected} />
-      <Spacing height={20} />
-      <AppointmentList DATA={filteredList} tapAction={selectedTab == HomeCardActionType.scheduled ? handleCancelAppointment : handleSeeMedicalRecord} />
 
-      <CancelExamDialog visible={cancelModalIsVisible} onClose={() => setCancelModalIsVisible(false)} appointment={selectedAppointment} />
-      <SeeMedicalRecordDialog visible={seeMedicalRecordModalIsVisible} onClose={() => setSeeMedicalRecordIsVisible(false)} appointment={selectedAppointment}/>
+      <HomeCalendar />
+
+      <Spacing height={20} />
+
+      <AppointmentFilter selected={selectedTab} handleTabSelected={handleTabSelected} />
+      
+      <Spacing height={20} />
+
+      <AppointmentList 
+      DATA={filteredList} 
+      tapAction={selectedTab == HomeCardActionType.scheduled ? handleCancelAppointment : handleSeeMedicalRecord} />
+
+      <CancelExamDialog 
+      visible={cancelModalIsVisible} 
+      onClose={() => setCancelModalIsVisible(false)} 
+      appointment={selectedAppointment} />
+
+      <SeeMedicalRecordDialog
+       visible={seeMedicalRecordModalIsVisible} 
+       onClose={() => setSeeMedicalRecordIsVisible(false)} 
+       appointment={selectedAppointment}
+        navigation={navigation}
+       />
     </HomeContainer>
   )
 }

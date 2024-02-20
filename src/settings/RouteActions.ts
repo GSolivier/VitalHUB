@@ -8,7 +8,8 @@ export const RouteKeys = {
     redefinePassword: 'RedefinePassword',
     createAccount: 'CreateAccount',
     homeScreenDoctor: 'HomeScreenDoctor',
-    homeScreenPatient: 'HomeScreenPatient'
+    homeScreenPatient: 'HomeScreenPatient',
+    insertMedicalRecordScreen: 'InsertMedicalRecordScreen'
 }
 
 export async function push<RouteName extends keyof ParamListBase>(

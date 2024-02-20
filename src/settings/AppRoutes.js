@@ -9,6 +9,7 @@ import CreateAccount from '../screens/auth/CreateAccount';
 import HomeScreenDoctor from '../screens/doctor/HomeScreenDoctor';
 import HomeScreenPatient from '../screens/patient/HomeScreenPatient';
 import { RouteKeys } from './RouteActions';
+import InsertMedicalRecord from '../screens/doctor/InsertMedicalRecord';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,10 @@ export default function AppRoutes() {
                 <Stack.Screen
                     name={RouteKeys.homeScreenPatient}
                     component={HomeScreenPatient}
+                />
+                <Stack.Screen
+                    name={RouteKeys.insertMedicalRecordScreen}
+                    component={InsertMedicalRecord}
                 />
             </Stack.Navigator>
         </NavigationContainer>

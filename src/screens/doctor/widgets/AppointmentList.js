@@ -1,26 +1,26 @@
 import { FlatList } from 'react-native'
 import React from 'react'
-import HomeCard from './HomeCard';
-import { AppAssets } from '../../assets/AppAssets';
+import HomeCard from './PatientCard';
+import { AppAssets } from '../../../assets/AppAssets';
 import styled from 'styled-components/native';
-import { Spacing } from '../../components/Container';
-import { AppColors } from '../../settings/AppColors';
+import { Spacing } from '../../../components/Container';
+import { AppColors } from '../../../settings/AppColors';
 
 export const List = styled.View`
     flex: 0.9;
-    width: 100%
+    width: 100%;
 `
 
 export default function AppointmentList({DATA, tapAction}) {
-    
+
   return (
     <List>
       <FlatList
         endFillColor={AppColors.white}
         data={DATA}
-        renderItem={({item}) => 
+        renderItem={({item}) =>
         (
-          <HomeCard 
+          <HomeCard
           imagePath={item.imagePath} name={item.name} age={item.age} examType={item.examType} actionType={item.appointmentStatus} schedule={item.time} actionTap={() => tapAction(item)} />)}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={<Spacing height={10}/>}

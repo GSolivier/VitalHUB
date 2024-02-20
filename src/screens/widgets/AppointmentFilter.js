@@ -5,7 +5,7 @@ import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations';
 import { Flex, HomeCardActionType } from '../../settings/AppEnums';
 
-export default function HomeTopButtons({ selected, handleTabSelected }) {
+export default function AppointmentFilter({ selected, handleTabSelected }) {
    return (
       <Row justifyContent={Flex.justifyContent.spaceBetween} width={'100%'}>
 
