@@ -11,7 +11,7 @@ export const Container = styled.SafeAreaView`
     align-items: ${({ alignItems = Flex.alignItems.center }) => alignItems};
     justify-content: ${({ justifyContent = Flex.justifyContent.center }) => justifyContent};
     background-color: ${AppColors.white};
-    flex: 1;
+    flex: ${({flex = 1}) => flex};
 `
 
 export const Spacing = styled.View`

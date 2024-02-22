@@ -7,7 +7,7 @@ import { Flex, TextAlign, TextDecoration } from '../../../settings/AppEnums'
 import translate from '../../../locale'
 import styled from 'styled-components/native'
 import AppDialog from '../../../components/AppDialog'
-import { RouteKeys, push } from '../../../settings/RouteActions'
+import { RouteKeys, push } from '../../../settings/routes/RouteActions'
 import AppLocalizations from '../../../settings/AppLocalizations'
 
 export const ImageModal = styled.Image`
@@ -23,7 +23,7 @@ export default function SeeMedicalRecordDialog({ visible, onClose, appointment, 
     }
     const handleInsertMedicalRecord = () => {
         push(navigation, RouteKeys.insertMedicalRecordScreen, { appointment: appointment });
-        onClose(); // Fechar o modal imediatamente após o push
+        onClose();
     };
     return (
         <AppDialog

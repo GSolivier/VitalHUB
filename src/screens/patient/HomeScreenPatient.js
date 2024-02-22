@@ -10,6 +10,7 @@ import AppointmentList from "../doctor/widgets/AppointmentList";
 import styled from "styled-components/native";
 import { AppColors } from "../../settings/AppColors";
 import SvgIcon, { Icon } from "../../assets/icons/Icons";
+import ScheduleAppointmentDialog from "./widgets/dialogs/ScheduleAppointmentDialog";
 
 export const FixedButton = styled.TouchableOpacity`
   padding: 15px;
@@ -24,32 +25,28 @@ export const FixedButton = styled.TouchableOpacity`
 export default function HomeScreenPatient({ navigation }) {
   const [selectedTab, setSelectedTab] = useState(HomeCardActionType.scheduled);
   const [filteredList, setFilteredList] = useState([]);
-  const [cancelModalIsVisible, setCancelModalIsVisible] = useState(false)
-  const [seeMedicalRecordModalIsVisible, setSeeMedicalRecordIsVisible] = useState(false)
-  const [selectedAppointment, setSelectedAppointment] = useState(null);
+  const [scheduleAppointmentModalIsVisible, setScheduleAppointmentModalIsVisible] = useState(false)
+  const [seeAppointmentLocal, setSeeAppointmentLocal] = useState(false)
 
   useEffect(() => {
     filterList()
   }, [selectedTab])
 
-
   const handleTabSelected = (value) => {
     setSelectedTab(value);
   };
 
-  const handleCancelAppointment = (appointment) => {
-    setSelectedAppointment(appointment);
-    setCancelModalIsVisible(true);
+  const handleScheduleAppointment = () => {
+    setScheduleAppointmentModalIsVisible(true);
+
   };
 
-  const handleSeeMedicalRecord = (appointment) => {
-    setSelectedAppointment(appointment);
-    setSeeMedicalRecordIsVisible(true);
+  const handleSeeAppointmentLocal = () => {
+    setSeeAppointmentLocal(true);
   }
 
   function filterList() {
     var newList = DATA.filter((data) => data.appointmentStatus == selectedTab)
-
     setFilteredList(newList);
   }
 
@@ -66,9 +63,11 @@ export default function HomeScreenPatient({ navigation }) {
 
       <AppointmentList DATA={filteredList}/>
 
-      <FixedButton>
+      <FixedButton onPress={() => setScheduleAppointmentModalIsVisible(true)}>
       <SvgIcon name={Icon.stethoscope} color={AppColors.white}/>
       </FixedButton>
+
+      <ScheduleAppointmentDialog visible={scheduleAppointmentModalIsVisible} onClose={setScheduleAppointmentModalIsVisible}/>
 
     </HomeContainer>
   )

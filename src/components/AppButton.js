@@ -28,8 +28,8 @@ export const Button = styled.TouchableOpacity`
     width: ${({ isCompact = false }) => isCompact ? 'max-content' : '100%'};
     height: ${({ isCompact = false }) => isCompact ? 'max-content' : '50px'};
     padding: ${({ isCompact = false }) => isCompact ? '12px' : '0px'};
-    background-color: ${({ isOutlined = false }) => isOutlined ? AppColors.white : AppColors.darkBlue};
-    border-color: ${AppColors.darkBlue};
+    background-color: ${({ isOutlined = false, isDisabled = false }) => isDisabled ? AppColors.grayV5 : isOutlined ? AppColors.white : AppColors.darkBlue};
+    border-color: ${({ isDisabled = false }) => isDisabled ? AppColors.grayV5 : AppColors.darkBlue};
     border-width: ${({ isCompact = false }) => isCompact ? '2px' : '1px'} ;
     border-radius: 5px;
     align-items: center;
@@ -43,6 +43,7 @@ export default function AppButton({
     textButton,
     isOutlined = false,
     isCompact = false,
+    isDisabled = false,
     SvgIcon,
     onTap,
     flex,
@@ -54,6 +55,8 @@ export default function AppButton({
             isCompact={isCompact}
             flex={flex}
             activeOpacity={0.8}
+            disabled={isDisabled}
+            isDisabled={isDisabled}
         >
             {SvgIcon ? SvgIcon : null}
             <TitleMedium

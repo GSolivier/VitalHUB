@@ -9,7 +9,7 @@ import AppLocalizations from '../../settings/AppLocalizations';
 import AppInput from '../../components/AppInput';
 import AppButton from '../../components/AppButton';
 import { TextAlign } from '../../settings/AppEnums';
-import { RouteKeys, pop, push } from '../../settings/RouteActions';
+import { RouteKeys, pop, push } from '../../settings/routes/RouteActions';
 
 export default function ForgotPassword({ navigation }) {
 

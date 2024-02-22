@@ -28,6 +28,7 @@ export const AppColors = {
     grayV1: '#4E4B59',
     grayV2: '#4E4B59',
     grayV4: '#8C8A97',
+    grayV5: '#ACABB7',
 
     whiteGray: '#F1F0F5',
     whiteBlue: '#ECF2FF',

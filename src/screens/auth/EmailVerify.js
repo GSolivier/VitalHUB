@@ -11,7 +11,7 @@ import AppButton, { LinkButton } from "../../components/AppButton";
 import { AppCodeInput } from "../../components/AppInput";
 import { useState } from "react";
 import { TextAlign } from "../../settings/AppEnums";
-import { RouteKeys, pop, push } from "../../settings/RouteActions";
+import { RouteKeys, pop, push } from "../../settings/routes/RouteActions";
 
 export default function EmailVerify({ navigation }) {
     const [codeValue, setCodeValue] = useState('');

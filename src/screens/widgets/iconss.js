@@ -1,39 +1,4 @@
-
-import React from 'react'
-import styled from 'styled-components/native'
-import { AppColors } from '../../settings/AppColors'
-import { TextSmall } from '../../settings/AppFonts'
-import { Spacing } from '../../components/Container'
-import SvgIcon, { Icon } from '../../assets/icons/Icons'
-import { BottomNavigationRoute } from '../../settings/AppEnums'
-import translate from '../../locale'
-import AppLocalizations from '../../settings/AppLocalizations'
-
-export const NavigationBox = styled.View`
-    elevation: 30;
-    flex: 0.1;
-    background-color: ${AppColors.white};
-    justify-content: space-between;
-    flex-direction: row;
-    align-items:center;
-    padding-left: 40px;
-    padding-right: 40px;
-`
-
-export const IconButton = styled.TouchableOpacity`
-    background-color: ${({ isSelected }) => isSelected ? AppColors.whiteBlue : AppColors.white};
-    padding: 12px;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 5px;
-`
-
-export default function HomeBottomNavigation({ selectedTab, handleTabSelected }) {
-
-    return (
-        <NavigationBox>
+<NavigationBox>
             <IconButton isSelected={selectedTab == BottomNavigationRoute.schedule} onPress={() => handleTabSelected(BottomNavigationRoute.schedule)}>
                 <SvgIcon name={Icon.calendarCheck} color={selectedTab == BottomNavigationRoute.schedule ? AppColors.darkBlueV2 : AppColors.grayV2} />
                 {selectedTab == BottomNavigationRoute.schedule ? (<TextSmall color={AppColors.darkBlueV2}>{translate(AppLocalizations.schedule)}</TextSmall>) : (<Spacing />)}
@@ -55,5 +20,3 @@ export default function HomeBottomNavigation({ selectedTab, handleTabSelected })
 
             </IconButton>
         </NavigationBox>
-    )
-}

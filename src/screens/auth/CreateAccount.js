@@ -9,7 +9,7 @@ import AppLocalizations from '../../settings/AppLocalizations'
 import AppInput from '../../components/AppInput'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import { TextAlign } from '../../settings/AppEnums'
-import { pop } from '../../settings/RouteActions'
+import { pop } from '../../settings/routes/RouteActions'
 
 export default function CreateAccount({ navigation }) {
   return (

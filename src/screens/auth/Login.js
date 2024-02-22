@@ -11,12 +11,13 @@ import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { Flex } from '../../settings/AppEnums'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
-import { RouteKeys, push } from '../../settings/RouteActions'
+import { RouteKeys, push } from '../../settings/routes/RouteActions'
 
 
 export default function Login({navigation}) {
     const [email, setEmail] = useState('')
     const [isValidated, setIsValidated] = useState(true)
+    const [userType, setUserType] = useState('patient')
 
     const handleEmailChange = (value) => {
       setEmail(value);
@@ -58,9 +59,9 @@ export default function Login({navigation}) {
 
       <AppButton 
       textButton={translate(AppLocalizations.enterButton).toUpperCase()} 
-      onTap={() => {
+      onTap={ () => {
         if(email.length != 0){
-          push(navigation, RouteKeys.homeScreenDoctor)
+          push(navigation, userType === 'patient' ? RouteKeys.tabNavigationPatient : RouteKeys.tabNavigationDoctor, true)
         } else {
           return
         }

@@ -1,7 +1,6 @@
 import { FlatList } from 'react-native'
 import React from 'react'
 import PatientCard from './PatientCard';
-import { AppAssets } from '../../../assets/AppAssets';
 import styled from 'styled-components/native';
 import { Spacing } from '../../../components/Container';
 import { AppColors } from '../../../settings/AppColors';

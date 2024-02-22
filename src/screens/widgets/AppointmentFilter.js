@@ -19,7 +19,7 @@ export default function AppointmentFilter({ selected, handleTabSelected }) {
             }}
          />
 
-         <Spacing width={5} />
+         <Spacing width={10} />
 
          <AppButton
             isOutlined={selected !== HomeCardActionType.carriedOut}
@@ -31,7 +31,7 @@ export default function AppointmentFilter({ selected, handleTabSelected }) {
             }}
          />
 
-         <Spacing width={5} />
+         <Spacing width={10} />
 
          <AppButton
             isOutlined={selected !== HomeCardActionType.canceled}

@@ -8,7 +8,7 @@ import AppLocalizations from '../../settings/AppLocalizations';
 import translate from '../../locale';
 import AppInput from '../../components/AppInput';
 import AppButton from '../../components/AppButton';
-import { pop } from '../../settings/RouteActions';
+import { pop } from '../../settings/routes/RouteActions';
 
 export default function RedefinePassword({ navigation }) {
     return (

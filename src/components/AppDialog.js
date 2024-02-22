@@ -10,7 +10,7 @@ export const DialogContainer = styled.View`
     justify-content: ${({justifyContent = Flex.justifyContent.center}) => justifyContent};
     flex: 1;
     background-color: rgba(0,0,0,0.5);
-    padding: 30px;
+    padding: ${({padding = 30}) => `${padding}px`};
 `
 
 export const DialogBox = styled.View`
@@ -22,15 +22,19 @@ export const DialogBox = styled.View`
 `
 
 export default function AppDialog({
-    visible, onClose, children, animationType = "fade", justifyContent, flex
+    visible, onClose, children, animationType = "fade", justifyContent, flex, padding
 }) {
     return (
         <Dialog
         visible={visible}
         animationType={animationType}
         transparent={true}
+        onRequestClose={() => onClose}
         >
-            <DialogContainer>
+            <DialogContainer
+            padding={padding}
+            justifyContent={justifyContent}
+            >
                 <DialogBox justifyContent={justifyContent} flex={flex}>
                     {children}
                 </DialogBox>
