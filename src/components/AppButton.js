@@ -28,8 +28,8 @@ export const Button = styled.TouchableOpacity`
     width: ${({ isCompact = false }) => isCompact ? 'max-content' : '100%'};
     height: ${({ isCompact = false }) => isCompact ? 'max-content' : '50px'};
     padding: ${({ isCompact = false }) => isCompact ? '12px' : '0px'};
-    background-color: ${({ isOutlined = false, isDisabled = false }) => isDisabled ? AppColors.grayV5 : isOutlined ? AppColors.white : AppColors.darkBlue};
-    border-color: ${({ isDisabled = false }) => isDisabled ? AppColors.grayV5 : AppColors.darkBlue};
+    background-color: ${({ isOutlined = false, isDisabled = false, mainColor }) => isDisabled ? AppColors.grayV5 : isOutlined ? AppColors.white : mainColor};
+    border-color: ${({ isDisabled = false, mainColor }) => isDisabled ? AppColors.grayV5 : mainColor};
     border-width: ${({ isCompact = false }) => isCompact ? '2px' : '1px'} ;
     border-radius: 5px;
     align-items: center;
@@ -47,6 +47,7 @@ export default function AppButton({
     SvgIcon,
     onTap,
     flex,
+    mainColor = AppColors.darkBlue
 }) {
     return (
         <Button
@@ -57,10 +58,11 @@ export default function AppButton({
             activeOpacity={0.8}
             disabled={isDisabled}
             isDisabled={isDisabled}
+            mainColor={mainColor}
         >
             {SvgIcon ? SvgIcon : null}
             <TitleMedium
-                color={isOutlined ? AppColors.darkBlue : AppColors.white}
+                color={isOutlined ? mainColor : AppColors.white}
                 size={isCompact ? 12 : 14}
             >{textButton}</TitleMedium>
         </Button>

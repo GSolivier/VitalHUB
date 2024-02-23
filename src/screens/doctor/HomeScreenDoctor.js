@@ -21,6 +21,11 @@ export default function HomeScreenDoctor({ navigation }) {
     filterList()
   }, [selectedTab])
 
+  function filterList() {
+    var newList = DATA.filter((data) => data.appointmentStatus == selectedTab)
+
+    setFilteredList(newList);
+  }
 
   const handleTabSelected = (value) => {
     setSelectedTab(value);
@@ -36,11 +41,6 @@ export default function HomeScreenDoctor({ navigation }) {
     setSeeMedicalRecordIsVisible(true);
   }
 
-  function filterList() {
-    var newList = DATA.filter((data) => data.appointmentStatus == selectedTab)
-
-    setFilteredList(newList);
-  }
 
   return (
     <HomeContainer name={'Dr. Claudio'} imagePath={AppAssets.placeholder}>

@@ -78,8 +78,12 @@ export const Icon = {
         family: IconFamily.materialCommunityIcons
     },
     arrowDropDown: {
-        name: 'sort-down',
-        family: IconFamily.fontAwesome5
+        name: 'caret-down',
+        family: IconFamily.fontAwesome6
+    },
+    arrowDropUp: {
+        name: 'caret-up',
+        family: IconFamily.fontAwesome6
     },
     cameraPlus: {
         name: 'camera-plus-outline',

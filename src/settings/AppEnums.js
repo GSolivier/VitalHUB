@@ -10,6 +10,14 @@ export const BottomNavigationRoute ={
     profile: 'profile'
 }
 
+export const FontFamily ={
+    montSerratBold: 'MontserratAlternates_700Bold',
+    montSerratMedium: 'MontserratAlternates_500Medium',
+    quicSandSemiBold: 'Quicksand_600SemiBold',
+    quicSandMedium: 'Quicksand_500Medium'
+
+}
+
 export const Flex = {
     flexDirection: {
         row: 'row',
