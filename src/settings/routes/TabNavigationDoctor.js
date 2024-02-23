@@ -18,7 +18,7 @@ const Tab = createBottomTabNavigator();
 
 export const IconButton = styled.View`
     background-color: ${({ isSelected }) => isSelected ? AppColors.whiteBlue : AppColors.white};
-    padding: 12px;
+    padding: 9px 12px 9px 12px;
     border-radius: 20px;
     align-items: center;
     justify-content: center;
@@ -32,11 +32,10 @@ export default function HomeBottomNavigation() {
             <Tab.Navigator
                 initialRouteName={RouteKeys.homeScreenDoctor}
                 
+                
                 screenOptions={({ route }) => ({
                     headerShown: false,
-
-                    tabBarStyle: { backgroundColor: "#FFFFFF", height: 70},
-                    
+                    tabBarStyle: { flex: 0.08},
                     tabBarActiveBackgroundColor: "transparent",
                     tabBarShowLabel: false,
                     tabBarIcon: ({ focused, color, size }) => {

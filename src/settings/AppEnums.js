@@ -1,3 +1,6 @@
+import translate from "../locale";
+import AppLocalizations from "./AppLocalizations";
+
 export const HomeCardActionType = {
     canceled: 'canceled',
     scheduled: 'scheduled',
@@ -71,3 +74,39 @@ export const TextAlign = {
     initial: 'initial',
     inherit: 'inherit',
 };
+
+export const AppointmentLevelsList = {
+    routine: 'routine',
+    exam: 'exam',
+    urgency: 'urgency'
+}
+
+export const AppointmentLevelsButtons = [
+    {
+        text: 'Rotina',
+        type: AppointmentLevelsList.routine
+    },
+    {
+        text: 'Exame',
+        type: AppointmentLevelsList.exam
+    },
+    {
+        text: 'Urgência',
+        type: AppointmentLevelsList.urgency
+    }
+]
+
+export const AppointmentFilterList = [
+    {
+        text: translate(AppLocalizations.scheduled),
+        type: HomeCardActionType.scheduled
+    },
+    {
+        text: translate(AppLocalizations.carriedOut),
+        type: HomeCardActionType.carriedOut
+    },
+    {
+        text: translate(AppLocalizations.canceled),
+        type: HomeCardActionType.canceled
+    }
+]

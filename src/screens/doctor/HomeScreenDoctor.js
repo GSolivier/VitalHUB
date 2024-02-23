@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import HomeContainer from '../widgets/HomeContainer'
 import { AppAssets } from '../../assets/AppAssets'
-import AppointmentFilter from '../widgets/AppointmentFilter'
 import HomeCalendar from '../widgets/HomeCalendar'
 import CancelExamDialog from './dialogs/CancelExamDialog'
 import { Spacing } from '../../components/Container'
 import AppointmentList from './widgets/AppointmentList'
 import { DATA } from '../../settings/AppUtils'
-import { HomeCardActionType } from '../../settings/AppEnums'
+import { AppointmentFilterList, HomeCardActionType } from '../../settings/AppEnums'
 import SeeMedicalRecordDialog from './dialogs/SeeMedicalRecordDialog'
+import ButtonSelecter from '../widgets/ButtonSelecter'
 
 export default function HomeScreenDoctor({ navigation }) {
   const [selectedTab, setSelectedTab] = useState(HomeCardActionType.scheduled);
@@ -49,7 +49,7 @@ export default function HomeScreenDoctor({ navigation }) {
 
       <Spacing height={20} />
 
-      <AppointmentFilter selected={selectedTab} handleTabSelected={handleTabSelected} />
+      <ButtonSelecter selected={selectedTab} handleTabSelected={handleTabSelected} buttonList={AppointmentFilterList} />
       
       <Spacing height={20} />
 

@@ -20,7 +20,7 @@ export const DATA = [
         time: '09:30',
         date: '17/02/2024',
         appointmentStatus: HomeCardActionType.scheduled,
-        imagePath: "https://github.com/g648.png",
+        imagePath: "https://github.com/G648.png",
         email: "guilherme.amorim@example.com"
     },
     {
@@ -110,5 +110,78 @@ export const DATA = [
         appointmentStatus: HomeCardActionType.scheduled,
         imagePath: "https://github.com/MagiLogus.png",
         email: "lucas.castro@example.com"
+    }
+];
+
+export const ClinicListData = [
+    {
+        id: 1,
+        name: 'Clinica dos marajós',
+        rating: '4,5',
+        local: 'São Paulo, SP',
+        schedule: 'Seg-Sex'
+    },
+    {
+        id: 2,
+        name: 'Outra Clínica',
+        rating: '4,8',
+        local: 'Rio de Janeiro, RJ',
+        schedule: 'Seg-Sex'
+    },
+    {
+        id: 3,
+        name: 'Clínica Central',
+        rating: '4,2',
+        local: 'Belo Horizonte, MG',
+        schedule: 'Seg-Sex'
+    },
+    {
+        id: 4,
+        name: 'Clínica Saúde Plena',
+        rating: '4,6',
+        local: 'Curitiba, PR',
+        schedule: 'Seg-Sex'
+    },
+    {
+        id: 5,
+        name: 'Clínica da Família',
+        rating: '4,3',
+        local: 'Brasília, DF',
+        schedule: 'Seg-Sex'
+    },
+    {
+        id: 6,
+        name: 'Clínica Esperança',
+        rating: '4,7',
+        local: 'Salvador, BA',
+        schedule: 'Seg-Sex'
+    },
+    {
+        id: 7,
+        name: 'Clínica Vida Nova',
+        rating: '4,4',
+        local: 'Fortaleza, CE',
+        schedule: 'Seg-Sex'
+    },
+    {
+        id: 8,
+        name: 'Clínica Bem Estar',
+        rating: '4,9',
+        local: 'Recife, PE',
+        schedule: 'Seg-Sex'
+    },
+    {
+        id: 9,
+        name: 'Clínica Feliz Idade',
+        rating: '4,1',
+        local: 'Manaus, AM',
+        schedule: 'Seg-Sex'
+    },
+    {
+        id: 10,
+        name: 'Clínica Ser Saudável',
+        rating: '4,8',
+        local: 'Porto Alegre, RS',
+        schedule: 'Seg-Sex'
     }
 ];

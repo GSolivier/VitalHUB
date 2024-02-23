@@ -10,6 +10,7 @@ import { RouteKeys } from './RouteActions';
 import InsertMedicalRecord from '../../screens/doctor/InsertMedicalRecord';
 import TabNavigationDoctor from './TabNavigationDoctor';
 import TabNavigationPatient from './TabNavigationPatient';
+import SelectClinic from '../../screens/patient/SelectClinic';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,12 +19,16 @@ export default function AppRoutes() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name={RouteKeys.tabNavigationPatient} component={TabNavigationPatient}/>
+                <Stack.Screen
+                    name={RouteKeys.selectClinicScreen}
+                    component={SelectClinic}
+                />
+                <Stack.Screen name={RouteKeys.tabNavigationPatient} component={TabNavigationPatient} />
+                <Stack.Screen name={RouteKeys.tabNavigationDoctor} component={TabNavigationDoctor} />
                 <Stack.Screen
                     name={RouteKeys.loginScreen}
                     component={Login}
                 />
-                <Stack.Screen name={RouteKeys.tabNavigationDoctor} component={TabNavigationDoctor}/>
                 <Stack.Screen
                     name={RouteKeys.forgotPassword}
                     component={ForgotPassword}

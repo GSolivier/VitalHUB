@@ -7,34 +7,35 @@ export const Dialog = styled.Modal`
 `
 
 export const DialogContainer = styled.View`
-    justify-content: ${({justifyContentContainer, isFaded = false}) => isFaded ? Flex.justifyContent.flexEnd : justifyContentContainer};
+    justify-content: ${({ justifyContentContainer, isFaded = false }) => isFaded ? Flex.justifyContent.flexEnd : justifyContentContainer};
     flex: 1;
     background-color: rgba(0,0,0,0.5);
-    padding: ${({padding = 30}) => `${padding}px`};
+    padding: ${({ padding = 30 }) => `${padding}px`};
 `
 
 export const DialogBox = styled.View`
     padding: 27px;
     background-color: ${AppColors.white};
     border-radius: 10px;
-    flex: ${({flex = '0 1 auto'}) => flex};
-    justify-content: ${({justifyContentBox = Flex.justifyContent.center}) => justifyContentBox};
+    flex: ${({ flex = '0 1 auto' }) => flex};
+    justify-content: ${({ justifyContentBox = Flex.justifyContent.center }) => justifyContentBox};
 `
 
 export default function AppDialog({
-    visible, onClose, children, animationType = "fade", justifyContentContainer, justifyContentBox, flex, padding,isFaded
+    visible, onClose, children, animationType = "fade", justifyContentContainer, justifyContentBox, flex, padding, isFaded
 }) {
     return (
         <Dialog
-        visible={visible}
-        animationType={animationType}
-        transparent={true}
-        onRequestClose={() => onClose}
+            visible={visible}
+            animationType={animationType}
+            transparent={true}
+            onRequestClose={() => onClose}
+            
         >
             <DialogContainer
-            padding={padding}
-            justifyContent={justifyContentContainer}
-            isFaded={isFaded}
+                padding={padding}
+                justifyContent={justifyContentContainer}
+                isFaded={isFaded}
             >
                 <DialogBox justifyContentBox={justifyContentBox} flex={flex}>
                     {children}

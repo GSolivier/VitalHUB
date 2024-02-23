@@ -4,13 +4,13 @@ import HomeContainer from "../widgets/HomeContainer";
 import { AppAssets } from "../../assets/AppAssets";
 import HomeCalendar from "../widgets/HomeCalendar";
 import { Spacing } from "../../components/Container";
-import AppointmentFilter from "../widgets/AppointmentFilter";
-import { HomeCardActionType } from "../../settings/AppEnums";
+import { AppointmentFilterList, HomeCardActionType } from "../../settings/AppEnums";
 import AppointmentList from "../doctor/widgets/AppointmentList";
 import styled from "styled-components/native";
 import { AppColors } from "../../settings/AppColors";
 import SvgIcon, { Icon } from "../../assets/icons/Icons";
 import ScheduleAppointmentDialog from "./widgets/dialogs/ScheduleAppointmentDialog";
+import ButtonSelecter from "../widgets/ButtonSelecter";
 
 export const FixedButton = styled.TouchableOpacity`
   padding: 15px;
@@ -57,7 +57,11 @@ export default function HomeScreenPatient({ navigation }) {
 
       <Spacing height={20} />
 
-      <AppointmentFilter selected={selectedTab} handleTabSelected={handleTabSelected} />
+      <ButtonSelecter 
+      selected={selectedTab} 
+      handleTabSelected={handleTabSelected}
+      buttonList={AppointmentFilterList}
+      />
       
       <Spacing height={20} />
 
@@ -67,7 +71,11 @@ export default function HomeScreenPatient({ navigation }) {
       <SvgIcon name={Icon.stethoscope} color={AppColors.white}/>
       </FixedButton>
 
-      <ScheduleAppointmentDialog visible={scheduleAppointmentModalIsVisible} onClose={setScheduleAppointmentModalIsVisible}/>
+      <ScheduleAppointmentDialog 
+      visible={scheduleAppointmentModalIsVisible} 
+      onClose={() => setScheduleAppointmentModalIsVisible(false)}
+      navigation={navigation}
+      />
 
     </HomeContainer>
   )
