@@ -6,16 +6,17 @@ import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { ClinicListData } from '../../settings/AppUtils'
 import ClinicList from './widgets/ClinicList'
+import { pop } from '../../settings/routes/RouteActions'
 
-export default function SelectClinic() {
-  const [selected, setSelected] = useState();
+export default function SelectClinic({navigation}) {
+  const [selected, setSelected] = useState({ id: 0});
 
     const selectClinic = (clinic) => {
       setSelected(clinic)
     }
   return (
     <Container>
-      <TitleMedium>Selecionar Clinica</TitleMedium>
+      <TitleMedium>{translate(AppLocalizations.selectClinic)}</TitleMedium>
       <Spacing height={35}/>
       <ClinicList
         DATA={ClinicListData}
@@ -24,7 +25,8 @@ export default function SelectClinic() {
       />
       <Spacing height={30}/>
       <AppButton textButton={translate(AppLocalizations.continueButton).toUpperCase()}/>
-      <LinkButton text={translate(AppLocalizations.cancel)}/>
+      <Spacing height={30}/>
+      <LinkButton text={translate(AppLocalizations.cancel)} onTap={() => pop(navigation)}/>
     </Container>
   )
 }

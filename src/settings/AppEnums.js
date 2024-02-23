@@ -83,15 +83,15 @@ export const AppointmentLevelsList = {
 
 export const AppointmentLevelsButtons = [
     {
-        text: 'Rotina',
+        text: translate(AppLocalizations.routine),
         type: AppointmentLevelsList.routine
     },
     {
-        text: 'Exame',
+        text: translate(AppLocalizations.exam),
         type: AppointmentLevelsList.exam
     },
     {
-        text: 'Urgência',
+        text: translate(AppLocalizations.urgency),
         type: AppointmentLevelsList.urgency
     }
 ]

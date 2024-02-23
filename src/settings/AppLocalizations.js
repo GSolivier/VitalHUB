@@ -92,5 +92,43 @@ export default AppLocalizations = {
     wed: 'wed',
     thu: 'thu',
     fri: 'fri',
-    sat: 'sat'
+    sat: 'sat',
+
+    typeofAppointmentLabel: 'typeofAppointmentLabel',
+    typeofAppointmentHint: 'typeofAppointmentHint',
+    appointmenteLevelLabel: 'appointmenteLevelLabel',
+    routine: 'routine',
+    exam: 'exam',
+    urgency: 'urgency',
+    desiredLocationLabel: 'desiredLocationLabel',
+    desiredLocationHint: 'desiredLocationHint',
+
+    selectClinic: 'selectClinic',
+
+    selectDoctor: 'selectDoctor',
+
+    selectDate: 'selectDate',
+    selectAvailableTimeLabel: 'selectAvailableTimeLabel',
+    selectAvailableTimeHint: 'selectAvailableTimeHint',
+
+    scheduleAppointment: 'scheduleAppointment',
+    scheduleAppointmentHint: 'scheduleAppointmentHint',
+    appoitmentDate: 'appoitmentDate',
+    appoitmentDoctor: 'appoitmentDoctor',
+    appointmentLocal: 'appointmentLocal',
+
+    seeAppointmentLocal: 'seeAppointmentLocal',
+
+    adress: 'adress',
+    number: 'number',
+    neighborhood: 'neighborhood',
+    
+    medicalExams: 'medicalExams',
+    noPhotoReported: 'noPhotoReported',
+    send: 'send',
+    
+    dateOfBirth: 'dateOfBirth',
+    cpf: 'cpf',
+    cep: 'cep',
+    city: 'city'
 }

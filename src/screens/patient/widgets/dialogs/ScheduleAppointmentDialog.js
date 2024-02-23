@@ -47,9 +47,9 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
       <Spacing height={30} />
       <AppDropdown
         data={datas}
-        placeholder={'Tipo de consulta'}
+        label={translate(AppLocalizations.typeofAppointmentLabel)}
+        placeholder={translate(AppLocalizations.typeofAppointmentHint)}
         hasLabel={true}
-        label={'Informe o tipo de consulta'}
       />
       <Spacing height={20} />
       <ButtonSelecter
@@ -57,16 +57,21 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
         handleTabSelected={handleTabSelected}
         mainColor={AppColors.lightBlue}
         haslabel={true}
-        label={'Qual o nível da consulta'}
+        label={translate(AppLocalizations.appointmenteLevelLabel)}
         buttonList={AppointmentLevelsButtons}
         spacing={21}
       />
       <Spacing height={20} />
-      <AppInput hasLabel={true} lable={'Informe a localização desejada'} hint={'Informe a localização'} onEdit={() => { }} />
+
+      <AppInput 
+      hasLabel={true} 
+      lable={translate(AppLocalizations.desiredLocationLabel)} 
+      hint={translate(AppLocalizations.desiredLocationHint)} 
+      onEdit={() => { }} />
       <Spacing height={30} />
       <AppButton textButton={translate(AppLocalizations.continueButton)} onTap={handleInsertMedicalRecord} />
       <Spacing height={30} />
-      <LinkButton text={'Cancelar'} onTap={onClose} />
+      <LinkButton text={translate(AppLocalizations.cancel)} onTap={onClose} />
     </AppDialog>
   )
 }

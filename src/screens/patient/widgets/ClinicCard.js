@@ -8,19 +8,19 @@ import { Flex } from '../../../settings/AppEnums'
 
 export const ClinicCardBox = styled.TouchableOpacity`
     width: 100%;
-    elevation: ${({isSelected = false}) => isSelected ? '0px' : '5px'};;
+    elevation: ${({selected = false}) => selected  ? '0px' : '5px'};;
     padding: 18px;
     background-color: ${AppColors.white};
     border-radius: 5px;
-    border-width: ${({isSelected = false}) => isSelected ? '2px' : '0px'};
-    border-color: ${({isSelected = false}) => isSelected ? AppColors.darkBlue : AppColors.white};
+    border-width: ${({selected  = false}) => selected  ? '2px' : '0px'};
+    border-color: ${({selected  = false}) => selected  ? AppColors.darkBlue : AppColors.white};
 `
 
 export const DayBox = styled.View`
     padding: 4px 13px 4px 13px;
     background-color: ${AppColors.lightGreen};
     border-radius: 5px;
-    flex-direction: row
+    flex-direction: row;
 `
 
 export default function ClinicCard({selected, item, onTap}) {

@@ -93,7 +93,45 @@ const pt = {
     wed: 'Qua',
     thu: 'Qui',
     fri: 'Sex',
-    sat: 'Sáb'
+    sat: 'Sáb',
+
+    typeofAppointmentLabel: 'Informe o tipo de consuta',
+    typeofAppointmentHint: 'Tipo de consulta',
+    appointmenteLevelLabel: 'Qual o nível da consulta?',
+    routine: 'Rotina',
+    exam: 'Exame',
+    urgency: 'Urgência',
+    desiredLocationLabel: 'Informe a localização desejada',
+    desiredLocationHint: 'Informe a localização',
+
+    selectClinic: 'Selecionar clínica',
+
+    selectDoctor: 'Selecionar médico',
+
+    selectDate: 'Selecionar data',
+    selectAvailableTimeLabel: 'Selecione um horário disponível',
+    selectAvailableTimeHint: 'Selecionar horário',
+
+    scheduleAppointment: 'Agendar consulta',
+    scheduleAppointmentHint: 'Consulte os dados selecionados para a sua consulta',
+    appoitmentDate: 'Data da consulta',
+    appoitmentDoctor: 'Médico(a) da consulta',
+    appointmentLocal: 'Local da consulta',
+    
+    seeAppointmentLocal: 'Ver local da consulta',
+
+    adress: 'Endereço',
+    number: 'Número',
+    neighborhood: 'bairro',
+
+    medicalExams: 'Exames médicos',
+    noPhotoReported: 'Nenhuma foto informada',
+    send: 'Enviar',
+
+    dateOfBirth: 'Data de nascimento',
+    cpf: 'CPF',
+    cep: 'Cep',
+    city: 'Cidade'
   };
   
   export default pt;

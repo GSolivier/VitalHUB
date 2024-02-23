@@ -5,7 +5,7 @@ import ClinicCard from './ClinicCard'
 import { Spacing } from '../../../components/Container'
 
 export const ListClinic = styled.View`
-    flex: 0.7;
+    flex: 0.8;
     width: 100%;
 `
 export default function ClinicList({DATA, tapAction, selected}) {
@@ -21,7 +21,7 @@ export default function ClinicList({DATA, tapAction, selected}) {
             />
         )}
         keyExtractor={item => item.id}
-        ItemSeparatorComponent={<Spacing height={10}/>}
+        ItemSeparatorComponent={<Spacing height={12}/>}
         contentContainerStyle={{ paddingVertical: 5, paddingHorizontal: 5 }}
         showsVerticalScrollIndicator={false}
       />

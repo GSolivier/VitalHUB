@@ -92,7 +92,45 @@ const en = {
     wed: 'Wed',
     thu: 'Thu',
     fri: 'Fri',
-    sat: 'Sat'
+    sat: 'Sat',
+
+    typeofAppointmentLabel: 'Inform the type of appointment',
+    typeofAppointmentHint: 'Type of appointment',
+    appointmenteLevelLabel: 'What is the level of the appointment?',
+    routine: 'Routine',
+    exam: 'Exam',
+    urgency: 'Urgency',
+    desiredLocationLabel: 'Inform the desired location',
+    desiredLocationHint: 'Inform the location',
+
+    selectClinic: 'Select clinic',
+
+    selectDoctor: 'Select doctor',
+
+    selectDate: 'Select date',
+    selectAvailableTimeLabel: 'Select an available time',
+    selectAvailableTimeHint: 'Select time',
+
+    scheduleAppointment: 'Schedule appointment',
+    scheduleAppointmentHint: 'Check the selected data for your appointment',
+    appoitmentDate: 'Appointment date',
+    appoitmentDoctor: 'Appointment doctor',
+    appointmentLocal: 'Appointment location',
+
+    seeAppointmentLocal: 'See appointment location',
+
+    adress: 'Address',
+    number: 'Number',
+    neighborhood: 'Neighborhood',
+
+    medicalExams: 'Medical exams',
+    noPhotoReported: 'No photo reported',
+    send: 'Send',
+    
+    dateOfBirth: 'Date of birth',
+    cpf: 'CPF',
+    cep: 'Postal code',
+    city: 'City'
   };
   
   export default en;
