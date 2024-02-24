@@ -75,7 +75,7 @@ export default function Login({navigation}) {
       SvgIcon={
       <SvgIcon 
       name={Icon.google} 
-      color={AppColors.darkBlueV6} 
+      color={AppColors.secondaryV6} 
       size={15}/>
       } />
 
@@ -85,7 +85,7 @@ export default function Login({navigation}) {
       <TitleMedium
       size={14}
       color={AppColors.grayV2}>{translate(AppLocalizations.dontHaveAccount)} </TitleMedium>
-      <LinkButton onTap={() => {push(navigation, RouteKeys.createAccount)}} color={AppColors.darkBlueV6} text={translate(AppLocalizations.createAccount)} />
+      <LinkButton onTap={() => {push(navigation, RouteKeys.createAccount)}} color={AppColors.secondaryV6} text={translate(AppLocalizations.createAccount)} />
 
       </Row>
 

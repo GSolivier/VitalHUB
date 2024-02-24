@@ -185,3 +185,107 @@ export const ClinicListData = [
         schedule: 'Seg-Sex'
     }
 ];
+
+export const DOCTORS_DATA = [
+    {
+        id: '1',
+        name: 'Dr. Guilherme Oliveira',
+        age: '40',
+        specialty: 'Cardiologista',
+        time: '08:30',
+        date: '16/02/2024',
+        imagePath: "https://github.com/gsolivier.png",
+        email: "guilherme.oliveira@example.com"
+    },
+    {
+        id: '2',
+        name: 'Dra. Ana Santos',
+        age: '35',
+        specialty: 'Dermatologista',
+        time: '09:00',
+        date: '17/02/2024',
+        imagePath: "https://github.com/ana_santos.png",
+        email: "ana.santos@example.com"
+    },
+    {
+        id: '3',
+        name: 'Dr. Luiz Henrique Pereira',
+        age: '50',
+        specialty: 'Ortopedista',
+        time: '10:30',
+        date: '18/02/2024',
+        imagePath: "https://github.com/LuizHen527.png",
+        email: "luiz.pereira@example.com"
+    },
+    {
+        id: '4',
+        name: 'Dra. Fernanda Costa',
+        age: '45',
+        specialty: 'Ginecologista',
+        time: '11:15',
+        date: '19/02/2024',
+        imagePath: "https://github.com/fernanda_costa.png",
+        email: "fernanda.costa@example.com"
+    },
+    {
+        id: '5',
+        name: 'Dr. Ricardo Almeida',
+        age: '55',
+        specialty: 'Oftalmologista',
+        time: '14:00',
+        date: '20/02/2024',
+        imagePath: "https://github.com/RichardRichk.png",
+        email: "ricardo.almeida@example.com"
+    },
+    {
+        id: '6',
+        name: 'Dra. Juliana Ribeiro',
+        age: '38',
+        specialty: 'Pediatra',
+        time: '15:45',
+        date: '21/02/2024',
+        imagePath: "https://github.com/juliana_ribeiro.png",
+        email: "juliana.ribeiro@example.com"
+    },
+    {
+        id: '7',
+        name: 'Dr. Marcos Silva',
+        age: '42',
+        specialty: 'Neurologista',
+        time: '16:30',
+        date: '22/02/2024',
+        imagePath: "https://github.com/marcos_silva.png",
+        email: "marcos.silva@example.com"
+    },
+    {
+        id: '8',
+        name: 'Dra. Camila Oliveira',
+        age: '37',
+        specialty: 'Endocrinologista',
+        time: '09:45',
+        date: '23/02/2024',
+        imagePath: "https://github.com/camila_oliveira.png",
+        email: "camila.oliveira@example.com"
+    },
+    {
+        id: '9',
+        name: 'Dr. Rodrigo Santos',
+        age: '48',
+        specialty: 'Urologista',
+        time: '11:30',
+        date: '24/02/2024',
+        imagePath: "https://github.com/rodrigo_santos.png",
+        email: "rodrigo.santos@example.com"
+    },
+    {
+        id: '10',
+        name: 'Dra. Patrícia Lima',
+        age: '41',
+        specialty: 'Pneumologista',
+        time: '13:15',
+        date: '25/02/2024',
+        imagePath: "https://github.com/patricia_lima.png",
+        email: "patricia.lima@example.com"
+    }
+];
+

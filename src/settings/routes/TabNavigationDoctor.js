@@ -43,23 +43,23 @@ export default function HomeBottomNavigation() {
 
                         if (route.name == RouteKeys.homeScreenDoctor) {
                             return <IconButton isSelected={focused}>
-                                <SvgIcon name={Icon.calendarCheck} color={focused ? AppColors.darkBlueV2 : AppColors.grayV2} />
-                                {focused ? (<TextSmall color={AppColors.darkBlueV2}>{translate(AppLocalizations.schedule)}</TextSmall>) : (<Spacing />)}
+                                <SvgIcon name={Icon.calendarCheck} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
+                                {focused ? (<TextSmall color={AppColors.secondaryV2}>{translate(AppLocalizations.schedule)}</TextSmall>) : (<Spacing />)}
                             </IconButton>
                         } else if (route.name == RouteKeys.clinicScreenDoctor) {
                             return <IconButton isSelected={focused}>
 
-                                <SvgIcon name={Icon.hospital} color={focused ? AppColors.darkBlueV2 : AppColors.grayV2} />
+                                <SvgIcon name={Icon.hospital} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
 
-                                {focused ? (<TextSmall color={AppColors.darkBlueV2}>{translate(AppLocalizations.clinic)}</TextSmall>) : (<Spacing />)}
+                                {focused ? (<TextSmall color={AppColors.secondaryV2}>{translate(AppLocalizations.clinic)}</TextSmall>) : (<Spacing />)}
 
                             </IconButton>
                         } else {
                             return <IconButton isSelected={focused}>
 
-                                <SvgIcon name={Icon.circleUser} color={focused ? AppColors.darkBlueV2 : AppColors.grayV2} />
+                                <SvgIcon name={Icon.circleUser} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
 
-                                {focused ? (<TextSmall color={AppColors.darkBlueV2}>{translate(AppLocalizations.profile)}</TextSmall>) : (<Spacing />)}
+                                {focused ? (<TextSmall color={AppColors.secondaryV2}>{translate(AppLocalizations.profile)}</TextSmall>) : (<Spacing />)}
 
                             </IconButton>
                         }

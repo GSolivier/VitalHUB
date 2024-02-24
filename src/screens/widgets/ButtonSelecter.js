@@ -8,6 +8,7 @@ export default function ButtonSelecter({
     selected,
     handleTabSelected,
     mainColor,
+    mainTextColor,
     haslabel = false,
     label = '',
     buttonList = [],
@@ -35,6 +36,7 @@ export default function ButtonSelecter({
                                 handleTabSelected(buttonPreferences.type)
                             }}
                             mainColor={mainColor}
+                            mainTextColor={mainTextColor}
                         />
                         {!isLastItem && <Spacing width={spacing} />}
                     </>

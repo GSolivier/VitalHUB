@@ -19,7 +19,9 @@ export const RouteKeys = {
   clinicScreenPatient: "ClinicScreenPatient",
   profileScreenPatient: "ProfileScreenPatient",
   insertMedicalRecordScreen: "InsertMedicalRecordScreen",
-  selectClinicScreen: "SelectClinicScreen"
+  selectClinicScreen: "SelectClinicScreen",
+  selectDoctorScreen: "SelectDoctorScreen",
+  selectDateScreen: 'SelectDateScreen'
 };
 
 export async function push<RouteName extends keyof ParamListBase>(
@@ -46,10 +48,11 @@ export async function push<RouteName extends keyof ParamListBase>(
 }
 
 export async function pop(
-  navigation: NavigationProp<ParamListBase>
+  navigation: NavigationProp<ParamListBase>,
+  screensToPop: number = 1
 ): Promise<void> {
   try {
-    const popAction = StackActions.pop(1);
+    const popAction = StackActions.pop(screensToPop);
     navigation.dispatch(popAction);
   } catch (error) {
     console.error("Erro ao fazer pop na rota:", error);

@@ -47,7 +47,8 @@ export default function AppButton({
     SvgIcon,
     onTap,
     flex,
-    mainColor = AppColors.darkBlue
+    mainColor = AppColors.secondary,
+    mainTextColor = AppColors.secondary
 }) {
     return (
         <Button
@@ -62,7 +63,7 @@ export default function AppButton({
         >
             {SvgIcon ? SvgIcon : null}
             <TitleMedium
-                color={isOutlined ? mainColor : AppColors.white}
+                color={isOutlined ? mainTextColor : AppColors.white}
                 size={isCompact ? 12 : 14}
             >{textButton}</TitleMedium>
         </Button>

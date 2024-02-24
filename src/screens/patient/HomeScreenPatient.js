@@ -14,7 +14,7 @@ import ButtonSelecter from "../widgets/ButtonSelecter";
 
 export const FixedButton = styled.TouchableOpacity`
   padding: 15px;
-  background-color: ${AppColors.lightBlue};
+  background-color: ${AppColors.primary};
   border-radius: 7px;
   elevation: 5px;
   position: absolute;

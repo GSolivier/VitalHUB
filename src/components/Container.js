@@ -21,6 +21,7 @@ export const Spacing = styled.View`
 
 export const Column = styled.View`
     width: ${({ width }) => width};
+    height: ${({ height }) => height};
     flex-direction: column;
     align-items: ${({ alignItems }) => alignItems};
     justify-content: ${({ justifyContent }) => justifyContent};
@@ -28,6 +29,7 @@ export const Column = styled.View`
 `
 export const Row = styled.View`
     width: ${({ width }) => width};
+    height: ${({ height }) => height};
     flex-direction: row;
     align-items: ${({ alignItems }) => alignItems};
     justify-content: ${({ justifyContent }) => justifyContent};

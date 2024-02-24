@@ -43,7 +43,7 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
       onClose={onClose}
 
     >
-      <TitleMedium alignSelf={Flex.alignSelf.center}>Agendar Consulta</TitleMedium>
+      <TitleMedium alignSelf={Flex.alignSelf.center}>{translate(AppLocalizations.scheduleAppointment)}</TitleMedium>
       <Spacing height={30} />
       <AppDropdown
         data={datas}
@@ -55,7 +55,8 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
       <ButtonSelecter
         selected={selectedAppointmentType}
         handleTabSelected={handleTabSelected}
-        mainColor={AppColors.lightBlue}
+        mainColor={AppColors.primary}
+        mainTextColor={AppColors.primaryV1}
         haslabel={true}
         label={translate(AppLocalizations.appointmenteLevelLabel)}
         buttonList={AppointmentLevelsButtons}

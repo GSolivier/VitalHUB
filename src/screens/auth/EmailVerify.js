@@ -24,13 +24,13 @@ export default function EmailVerify({ navigation }) {
             <Spacing height={25}/>
             <TitleMedium size={20}>{translate(AppLocalizations.emailVerify)}</TitleMedium>
             <Spacing height={15}/>
-            <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.emailVerifyHint)} <TextMedium color={AppColors.darkBlue}>{params.email}</TextMedium></TextMedium>
+            <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.emailVerifyHint)} <TextMedium color={AppColors.secondary}>{params.email}</TextMedium></TextMedium>
             <Spacing height={20}/>
             <AppCodeInput onValueChange={setCodeValue}/>
             <Spacing height={30}/>
             <AppButton textButton={translate(AppLocalizations.enterButton).toUpperCase()} onTap={() => {push(navigation, RouteKeys.redefinePassword)}}/>
             <Spacing height={30}/>
-            <LinkButton text={translate(AppLocalizations.resentCode)} color={AppColors.darkBlueV1} />
+            <LinkButton text={translate(AppLocalizations.resentCode)} color={AppColors.secondaryV1} />
         </AuthContainer>
     );
 }

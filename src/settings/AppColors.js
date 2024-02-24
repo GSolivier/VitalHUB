@@ -1,18 +1,18 @@
 export const AppColors = {
-    lightBlue: '#49B3BA',
-    lightBlueV1: '#34898F',
-    lightBlueV2: '#60BFC5',
-    lightBlueV3: '#77CACF',
-    lightBlueV4: '#8ED4D9',
-    lightBlueV4: '#BFE8EB',
+    primary: '#49B3BA',
+    primaryV1: '#34898F',
+    primaryV2: '#60BFC5',
+    primaryV3: '#77CACF',
+    primaryV4: '#8ED4D9',
+    primaryV4: '#BFE8EB',
     
-    darkBlue: '#496BBA',
-    darkBlueV1: '#344F8F',
-    darkBlueV2: '#607EC5',
-    darkBlueV3: '#7791CF',
-    darkBlueV4: '#8EA5D9',
-    darkBlueV5: '#BFCCEB',
-    darkBlueV6: '#4D659D',
+    secondary: '#496BBA',
+    secondaryV1: '#344F8F',
+    secondaryV2: '#607EC5',
+    secondaryV3: '#7791CF',
+    secondaryV4: '#8EA5D9',
+    secondaryV5: '#BFCCEB',
+    secondaryV6: '#4D659D',
 
     red: '#F64F77',
 
@@ -25,10 +25,10 @@ export const AppColors = {
 
     blue: '#1058F1',
     
-
     gray: '#34323E',
     grayV1: '#4E4B59',
     grayV2: '#4E4B59',
+    grayV3: '#5F5C6B',
     grayV4: '#8C8A97',
     grayV5: '#ACABB7',
 

@@ -34,7 +34,7 @@ export const TextBig = styled.Text`
  
 export const TextMedium = styled.Text`
     font-family: 'Quicksand_500Medium';
-    font-size: ${({size = '16px'}) => size};
+    font-size: ${({size = 16}) => `${size}px`};
     color: ${({color = AppColors.grayV1 }) => color};
     text-align: ${({textAlign = 'auto'}) => textAlign};
 `
@@ -48,7 +48,7 @@ export const TextSmall = styled.Text`
 export const Link = styled.Text`
     font-family: 'MontserratAlternates_500Medium';
     text-decoration: ${({textDecoration = TextDecoration.underline}) => textDecoration};
-    color: ${({color = AppColors.darkBlue }) => color};
+    color: ${({color = AppColors.secondary }) => color};
     font-size: ${({size = 14}) => `${size}px`};
 `
  

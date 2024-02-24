@@ -9,10 +9,10 @@ export const Input = styled.TextInput`
     height: ${({ isTextArea = false }) => isTextArea ? '120px' : '60px'};
     border-radius: 5px;
     border-width: 2px;
-    border-color: ${({ borderColor = AppColors.lightBlue, isValid = true, isEditable = true }) => isValid ? borderColor : AppColors.red};
+    border-color: ${({ borderColor = AppColors.primary, isValid = true, isEditable = true }) => isValid ? borderColor : AppColors.red};
     padding: 16px;
     font-family: 'MontserratAlternates_700Bold';
-    color: ${({ color = AppColors.lightBlueV1, isValid = true }) => isValid ? color : AppColors.red};
+    color: ${({ color = AppColors.primaryV1, isValid = true }) => isValid ? color : AppColors.red};
     background-color: ${({isEditable = true}) => isEditable ? AppColors.transparent : AppColors.whiteDarker };
     `
 
@@ -24,7 +24,7 @@ export const InputBox = styled.View`
 export default function AppInput({
     lable = '',
     hint,
-    textColor = AppColors.lightBlueV1,
+    textColor = AppColors.primaryV1,
     borderColor,
     isObscure = false,
     isTextArea = false,
@@ -74,10 +74,10 @@ const Cell = styled.Text`
   height: 62px;
   font-size: 40px;
   border-width: 2px;
-  border-color: ${({ isFocused }) => isFocused ? AppColors.lightBlueV1 : AppColors.lightBlueV3};
+  border-color: ${({ isFocused }) => isFocused ? AppColors.primaryV1 : AppColors.primaryV3};
   text-align: center;
   border-radius: 5px;
-  color: ${AppColors.lightBlueV1};
+  color: ${AppColors.primaryV1};
   margin: 0 11px;
 `;
 

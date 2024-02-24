@@ -13,7 +13,7 @@ export const ClinicCardBox = styled.TouchableOpacity`
     background-color: ${AppColors.white};
     border-radius: 5px;
     border-width: ${({selected  = false}) => selected  ? '2px' : '0px'};
-    border-color: ${({selected  = false}) => selected  ? AppColors.darkBlue : AppColors.white};
+    border-color: ${({selected  = false}) => selected  ? AppColors.secondary : AppColors.white};
 `
 
 export const DayBox = styled.View`
@@ -47,9 +47,9 @@ export default function ClinicCard({selected, item, onTap}) {
             <Row width={'100%'} justifyContent={Flex.justifyContent.spaceBetween}>
                 <TextBig size={14}>{item.local}</TextBig>
                 <DayBox>
-                    <SvgIcon name={Icon.calendar} color={AppColors.lightBlue}/>
+                    <SvgIcon name={Icon.calendar} color={AppColors.primary}/>
                     <Spacing width={5} />
-                    <TextBig size={14} color={AppColors.lightBlue}>{item.schedule}</TextBig>
+                    <TextBig size={14} color={AppColors.primary}>{item.schedule}</TextBig>
                 </DayBox>
             </Row>
         </ClinicCardBox>

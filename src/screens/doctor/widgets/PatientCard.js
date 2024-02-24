@@ -55,9 +55,9 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
 
                         <Row width={'81%'} justifyContent={Flex.justifyContent.spaceBetween} alignItems={Flex.alignItems.center}>
                             <SchedulesBox actionCard={actionType}>
-                                <SvgIcon name={Icon.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} />
+                                <SvgIcon name={Icon.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.primary : AppColors.grayV1} />
                                 <Spacing width={6} />
-                                <TextBig alignSelf={Flex.alignSelf.center} color={actionType == HomeCardActionType.scheduled ? AppColors.lightBlue : AppColors.grayV1} size={14}>{schedule}</TextBig>
+                                <TextBig alignSelf={Flex.alignSelf.center} color={actionType == HomeCardActionType.scheduled ? AppColors.primary : AppColors.grayV1} size={14}>{schedule}</TextBig>
                             </SchedulesBox>
                             {
                                 actionType == HomeCardActionType.scheduled ?
@@ -75,7 +75,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                                     actionType == HomeCardActionType.carriedOut ?
                                         (
                                             <LinkButton
-                                                color={AppColors.darkBlueV1}
+                                                color={AppColors.secondaryV1}
                                                 text={translate(AppLocalizations.seeMedicalRecord)}
                                                 textDecoration={TextDecoration.none}
                                                 alignSelf={Flex.alignSelf.flexEnd}
