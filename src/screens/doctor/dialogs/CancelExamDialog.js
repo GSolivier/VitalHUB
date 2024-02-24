@@ -13,6 +13,7 @@ export default function CancelExamDialog({ visible, onClose, appointment }) {
     return (
         <AppDialog
         visible={visible}
+        justifyContentContainer={Flex.justifyContent.center}
         >
             <TitleMedium textAlign={TextAlign.center} size={20}>{translate(AppLocalizations.cancelExam)}</TitleMedium>
             <Spacing height={15} />

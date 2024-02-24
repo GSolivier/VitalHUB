@@ -1,11 +1,11 @@
-import { View, Text, FlatList } from 'react-native'
+import { FlatList } from 'react-native'
 import React from 'react'
 import styled from 'styled-components'
 import ClinicCard from './ClinicCard'
 import { Spacing } from '../../../components/Container'
 
 export const ListClinic = styled.View`
-    flex: 0.8;
+    flex: 0.9;
     width: 100%;
 `
 export default function ClinicList({DATA, tapAction, selected}) {

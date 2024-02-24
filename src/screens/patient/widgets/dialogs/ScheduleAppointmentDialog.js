@@ -36,7 +36,7 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
   return (
     <AppDialog
       visible={visible}
-      animationType='fade'
+      animationType='slide'
       padding={0}
       isFaded={true}
       justifyContentBox={Flex.justifyContent.flexStart}
