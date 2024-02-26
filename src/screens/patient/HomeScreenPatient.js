@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DATA } from "../../settings/AppUtils";
+import { DATA, DOCTORS_DATA } from "../../settings/AppUtils";
 import HomeContainer from "../widgets/HomeContainer";
 import { AppAssets } from "../../assets/AppAssets";
 import HomeCalendar from "../widgets/HomeCalendar";
@@ -11,6 +11,10 @@ import { AppColors } from "../../settings/AppColors";
 import SvgIcon, { Icon } from "../../assets/icons/Icons";
 import ScheduleAppointmentDialog from "./widgets/dialogs/ScheduleAppointmentDialog";
 import ButtonSelecter from "../widgets/ButtonSelecter";
+import AppointmentPatientList from "./widgets/AppointmentPatientList";
+import CancelExamDialog from "../doctor/dialogs/CancelExamDialog";
+import { push } from "../../settings/routes/RouteActions";
+import SeeAppointmentLocalDialog from "./widgets/dialogs/SeeAppointmentLocalDialog";
 
 export const FixedButton = styled.TouchableOpacity`
   padding: 15px;
@@ -27,6 +31,8 @@ export default function HomeScreenPatient({ navigation }) {
   const [filteredList, setFilteredList] = useState([]);
   const [scheduleAppointmentModalIsVisible, setScheduleAppointmentModalIsVisible] = useState(false)
   const [seeAppointmentLocal, setSeeAppointmentLocal] = useState(false)
+  const [cancelModalIsVisible, setCancelModalIsVisible] = useState(false)
+  const [appointment, setSelectedAppointment] = useState({})
 
   useEffect(() => {
     filterList()
@@ -36,17 +42,23 @@ export default function HomeScreenPatient({ navigation }) {
     setSelectedTab(value);
   };
 
-  const handleScheduleAppointment = () => {
-    setScheduleAppointmentModalIsVisible(true);
 
-  };
-
-  const handleSeeAppointmentLocal = () => {
+  const handleSeeAppointmentLocal = (appointment) => {
+    setSelectedAppointment(appointment);
     setSeeAppointmentLocal(true);
   }
 
+  const handleCancelAppointment = (appointment) => {
+    setSelectedAppointment(appointment);
+    setCancelModalIsVisible(true);
+  };
+
+  const handleSeeMedicalRecord = (appointment) => {
+    setSelectedAppointment(appointment);
+  }
+
   function filterList() {
-    var newList = DATA.filter((data) => data.appointmentStatus == selectedTab)
+    var newList = DOCTORS_DATA.filter((data) => data.appointmentStatus == selectedTab)
     setFilteredList(newList);
   }
 
@@ -65,7 +77,11 @@ export default function HomeScreenPatient({ navigation }) {
       
       <Spacing height={20} />
 
-      <AppointmentList DATA={filteredList}/>
+      <AppointmentPatientList 
+      DATA={filteredList}
+      tapAction={selectedTab == HomeCardActionType.scheduled ? handleCancelAppointment : handleSeeMedicalRecord}
+      cardTapAction={selectedTab == HomeCardActionType.scheduled ? handleSeeAppointmentLocal : null}
+      />
 
       <FixedButton onPress={() => setScheduleAppointmentModalIsVisible(true)}>
       <SvgIcon name={Icon.stethoscope} color={AppColors.white}/>
@@ -76,7 +92,15 @@ export default function HomeScreenPatient({ navigation }) {
       onClose={() => setScheduleAppointmentModalIsVisible(false)}
       navigation={navigation}
       />
-
+      <CancelExamDialog 
+      visible={cancelModalIsVisible} 
+      onClose={() => setCancelModalIsVisible(false)} 
+      appointment={appointment}/>
+      <SeeAppointmentLocalDialog
+        visible={seeAppointmentLocal}
+        onClose={() => setSeeAppointmentLocal(false)}
+        appointment={appointment}
+      />
     </HomeContainer>
   )
 }

@@ -122,7 +122,7 @@ const pt = {
 
     adress: 'Endereço',
     number: 'Número',
-    neighborhood: 'bairro',
+    neighborhood: 'Bairro',
 
     medicalExams: 'Exames médicos',
     noPhotoReported: 'Nenhuma foto informada',

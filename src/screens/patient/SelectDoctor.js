@@ -4,12 +4,12 @@ import AppLocalizations from '../../settings/AppLocalizations'
 import { TitleMedium } from '../../settings/AppFonts'
 import translate from '../../locale'
 import AppButton, { LinkButton } from '../../components/AppButton'
-import { pop } from '../../settings/routes/RouteActions'
+import { RouteKeys, pop, push } from '../../settings/routes/RouteActions'
 import DoctorCard from './widgets/DoctorCard'
 import { DOCTORS_DATA } from '../../settings/AppUtils'
 import DoctorList from './widgets/DoctorList'
 
-export default function SelectDoctor() {
+export default function SelectDoctor({navigation}) {
   const [selected, setSelected] = useState({ id: 0});
 
   const selectDoctor = (doctor) => {
@@ -25,7 +25,7 @@ export default function SelectDoctor() {
       selected={selected}
     />
     <Spacing height={30}/>
-    <AppButton textButton={translate(AppLocalizations.continueButton).toUpperCase()}/>
+    <AppButton textButton={translate(AppLocalizations.continueButton).toUpperCase()} onTap={() => push(navigation, RouteKeys.selectDateScreen)}/>
     <Spacing height={30}/>
     <LinkButton text={translate(AppLocalizations.cancel)} onTap={() => pop(navigation)}/>
   </Container>

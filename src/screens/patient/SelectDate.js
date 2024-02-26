@@ -8,6 +8,7 @@ import { pop } from '../../settings/routes/RouteActions'
 import AppDropdown from '../../components/AppDropdown'
 import { Calendar } from 'react-native-calendars'
 import SelectDateCalendar from './widgets/SelectDateCalendar'
+import ConfirmAppointmentDialog from './widgets/dialogs/ConfirmAppointmentDialog'
 
 
 export default function SelectDate({ navigation }) {
@@ -23,6 +24,7 @@ export default function SelectDate({ navigation }) {
   ]
 
   const [time, setTime] = useState()
+  const [confirmDialog,setConfirmDialog] = useState(false)
 
   return (
     <Container>
@@ -40,9 +42,10 @@ export default function SelectDate({ navigation }) {
       />
 
       <Spacing height={42} />
-      <AppButton textButton={translate(AppLocalizations.confirm).toUpperCase()} />
+      <AppButton textButton={translate(AppLocalizations.confirm).toUpperCase()} onTap={() => setConfirmDialog(true)} />
       <Spacing height={30} />
       <LinkButton text={translate(AppLocalizations.cancel)} onTap={() => pop(navigation)} />
+      <ConfirmAppointmentDialog visible={confirmDialog}   onClose={() => setConfirmDialog(false)} navigation={navigation}/>
     </Container>
   )
 }

@@ -10,7 +10,7 @@ import AppDialog from '../../../components/AppDialog'
 import { RouteKeys, push } from '../../../settings/routes/RouteActions'
 import AppLocalizations from '../../../settings/AppLocalizations'
 
-export const ImageModal = styled.Image`
+const ImageModal = styled.Image`
     width: 100%;
     height: 40%;
     border-radius: 10px;

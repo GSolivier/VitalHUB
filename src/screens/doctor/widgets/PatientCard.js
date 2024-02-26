@@ -9,7 +9,7 @@ import translate from '../../../locale'
 import AppLocalizations from '../../../settings/AppLocalizations'
 import SvgIcon, { Icon } from '../../../assets/icons/Icons'
 
-export const CardBox = styled.View`
+const CardBox = styled.View`
     width: 100%;
     elevation: 5px;
     padding: 11px 20px 11px 10px;
@@ -17,13 +17,13 @@ export const CardBox = styled.View`
     background-color: ${AppColors.white};
 `
 
-export const CardImage = styled.Image`
+const CardImage = styled.Image`
     width: 80px;
     height: 80px;
     border-radius: 5px;
 `
 
-export const SchedulesBox = styled.View`
+const SchedulesBox = styled.View`
     align-items: center;
     justify-content: center;
     flex-direction: row;

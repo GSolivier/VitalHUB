@@ -12,7 +12,7 @@ export const TitleLarge = styled.Text`
 
 export const TitleBig = styled.Text`
     font-family: 'MontserratAlternates_700Bold';
-    font-size: ${({size = '28px'}) => size};
+    font-size: ${({size = 28}) => `${size}px`};
     color: ${({color = AppColors.grayV1 }) => color};
     text-align: ${({textAlign = 'auto'}) => textAlign};
 `

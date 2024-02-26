@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Login from '../../screens/auth/Login';
@@ -13,6 +13,7 @@ import TabNavigationPatient from './TabNavigationPatient';
 import SelectClinic from '../../screens/patient/SelectClinic';
 import SelectDoctor from '../../screens/patient/SelectDoctor';
 import SelectDate from '../../screens/patient/SelectDate';
+import SeeAppointmentLocalScreen from '../../screens/patient/SeeAppointmentLocalScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,10 +22,11 @@ export default function AppRoutes() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name={RouteKeys.selectDateScreen} component={SelectDate}/>
-                <Stack.Screen name={RouteKeys.selectDoctorScreen} component={SelectDoctor}/>
+                <Stack.Screen name={RouteKeys.seeAppointmentLocalScreen} component={SeeAppointmentLocalScreen} />
                 <Stack.Screen name={RouteKeys.tabNavigationPatient} component={TabNavigationPatient} />
                 <Stack.Screen name={RouteKeys.tabNavigationDoctor} component={TabNavigationDoctor} />
+                <Stack.Screen name={RouteKeys.selectDateScreen} component={SelectDate} />
+                <Stack.Screen name={RouteKeys.selectDoctorScreen} component={SelectDoctor} />
                 <Stack.Screen
                     name={RouteKeys.selectClinicScreen}
                     component={SelectClinic}
