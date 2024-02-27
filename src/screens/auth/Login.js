@@ -3,7 +3,7 @@ import { Row, Spacing } from '../../components/Container'
 import AppInput from '../../components/AppInput'
 import { Image } from 'react-native'
 import { AppAssets } from '../../assets/AppAssets'
-import { TitleMedium } from '../../settings/AppFonts'
+import { TitleSemiBold } from '../../settings/AppFonts'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import { AppColors } from '../../settings/AppColors'
 import AuthContainer from './widgets/AuthContainer'
@@ -29,7 +29,7 @@ export default function Login({navigation}) {
 
           <Spacing height={25} />
 
-      <TitleMedium size={20}>{translate(AppLocalizations.loginOrSignUp)}</TitleMedium>
+      <TitleSemiBold size={20}>{translate(AppLocalizations.loginOrSignUp)}</TitleSemiBold>
 
           <Spacing height={20} />
 
@@ -82,9 +82,9 @@ export default function Login({navigation}) {
           <Spacing height={30} />
 
       <Row alignItems={Flex.alignItems.center} >
-      <TitleMedium
+      <TitleSemiBold
       size={14}
-      color={AppColors.grayV2}>{translate(AppLocalizations.dontHaveAccount)} </TitleMedium>
+      color={AppColors.grayV2}>{translate(AppLocalizations.dontHaveAccount)} </TitleSemiBold>
       <LinkButton onTap={() => {push(navigation, RouteKeys.createAccount)}} color={AppColors.secondaryV6} text={translate(AppLocalizations.createAccount)} />
 
       </Row>

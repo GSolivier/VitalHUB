@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { Container, Spacing } from '../../components/Container'
 import AppLocalizations from '../../settings/AppLocalizations'
-import { TitleMedium } from '../../settings/AppFonts'
+import { TitleSemiBold } from '../../settings/AppFonts'
 import translate from '../../locale'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import { RouteKeys, pop, push } from '../../settings/routes/RouteActions'
-import DoctorCard from './widgets/DoctorCard'
 import { DOCTORS_DATA } from '../../settings/AppUtils'
 import DoctorList from './widgets/DoctorList'
 
@@ -17,7 +16,7 @@ export default function SelectDoctor({navigation}) {
   }
   return (
     <Container>
-    <TitleMedium>{translate(AppLocalizations.selectDoctor)}</TitleMedium>
+    <TitleSemiBold>{translate(AppLocalizations.selectDoctor)}</TitleSemiBold>
     <Spacing height={35}/>
     <DoctorList
       DATA={DOCTORS_DATA}

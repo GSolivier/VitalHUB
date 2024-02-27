@@ -131,7 +131,8 @@ const en = {
     cpf: 'CPF',
     cep: 'Postal code',
     city: 'City',
-    back: 'Back'
+    back: 'Back',
+    logOut: 'Logout'
   };
   
   export default en;

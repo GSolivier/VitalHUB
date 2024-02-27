@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextBig } from '../../settings/AppFonts'
+import { TextSemiBold } from '../../settings/AppFonts'
 import { Row, Spacing } from '../../components/Container'
 import { Flex } from '../../settings/AppEnums'
 import AppButton from '../../components/AppButton'
@@ -18,7 +18,7 @@ export default function ButtonSelecter({
         <>
             {haslabel ? (
                 <>
-                    <TextBig size={16}>{label}</TextBig>
+                    <TextSemiBold alignSelf={Flex.alignSelf.flexStart} size={16}>{label}</TextSemiBold>
                     <Spacing height={10} />
                 </>
             ) : (<Spacing />)}

@@ -3,7 +3,7 @@ import AuthContainer from "./widgets/AuthContainer";
 import { Image } from "react-native";
 import { Spacing } from "../../components/Container";
 import { AppAssets } from "../../assets/AppAssets";
-import { TextMedium, TitleMedium } from "../../settings/AppFonts";
+import { TextMedium, TitleSemiBold } from "../../settings/AppFonts";
 import translate from "../../locale";
 import AppLocalizations from "../../settings/AppLocalizations";
 import { AppColors } from "../../settings/AppColors";
@@ -22,7 +22,7 @@ export default function EmailVerify({ navigation }) {
         <AuthContainer hasLeading={true} isClosable={true} onTap={() => { pop(navigation) }}>
             <Image source={AppAssets.appLogoDark} />
             <Spacing height={25}/>
-            <TitleMedium size={20}>{translate(AppLocalizations.emailVerify)}</TitleMedium>
+            <TitleSemiBold size={20}>{translate(AppLocalizations.emailVerify)}</TitleSemiBold>
             <Spacing height={15}/>
             <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.emailVerifyHint)} <TextMedium color={AppColors.secondary}>{params.email}</TextMedium></TextMedium>
             <Spacing height={20}/>

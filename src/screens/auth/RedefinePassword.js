@@ -3,7 +3,7 @@ import React from 'react'
 import AuthContainer from './widgets/AuthContainer'
 import { AppAssets } from '../../assets/AppAssets';
 import { Spacing } from '../../components/Container';
-import { TextMedium, TitleMedium } from '../../settings/AppFonts';
+import { TextMedium, TitleSemiBold } from '../../settings/AppFonts';
 import AppLocalizations from '../../settings/AppLocalizations';
 import translate from '../../locale';
 import AppInput from '../../components/AppInput';
@@ -15,7 +15,7 @@ export default function RedefinePassword({ navigation }) {
         <AuthContainer hasLeading={true} isClosable={true} onTap={() => { pop(navigation) }}>
             <Image source={AppAssets.appLogoDark} />
             <Spacing height={25} />
-            <TitleMedium size={20}>{translate(AppLocalizations.redefinePassword)}</TitleMedium>
+            <TitleSemiBold size={20}>{translate(AppLocalizations.redefinePassword)}</TitleSemiBold>
             <Spacing height={15} />
             <TextMedium>{translate(AppLocalizations.redefinePasswordHint)}</TextMedium>
             <Spacing height={20} />

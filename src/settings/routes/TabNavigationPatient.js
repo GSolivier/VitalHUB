@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../AppColors'
-import { TextSmall } from '../AppFonts'
+import { TextMedium } from '../AppFonts'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
 import translate from '../../locale'
 import AppLocalizations from '../AppLocalizations'
@@ -10,8 +10,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { RouteKeys } from './RouteActions'
 import HomeScreenPatient from '../../screens/patient/HomeScreenPatient'
 import ClinicScreenPatient from '../../screens/patient/ClinicScreenPatient'
-import ProfileScreenPatient from '../../screens/patient/ProfileScreenPatient'
 import { Spacing } from '../../components/Container'
+import ProfileScreen from '../../screens/ProfileScreen'
 
 const Tab = createBottomTabNavigator();
 
@@ -45,14 +45,14 @@ export default function TabNavigationPatient() {
                         if (route.name == RouteKeys.homeScreenPatient) {
                             return <IconButton isSelected={focused}>
                                 <SvgIcon name={Icon.calendarCheck} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
-                                {focused ? (<TextSmall color={AppColors.secondaryV2}>{translate(AppLocalizations.schedule)}</TextSmall>) : (<Spacing />)}
+                                {focused ? (<TextMedium size={14} color={AppColors.secondaryV2}>{translate(AppLocalizations.schedule)}</TextMedium>) : (<Spacing />)}
                             </IconButton>
                         } else if (route.name == RouteKeys.clinicScreenPatient) {
                             return <IconButton isSelected={focused}>
 
                                 <SvgIcon name={Icon.hospital} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
 
-                                {focused ? (<TextSmall color={AppColors.secondaryV2}>{translate(AppLocalizations.clinic)}</TextSmall>) : (<Spacing />)}
+                                {focused ? (<TextMedium size={14} color={AppColors.secondaryV2}>{translate(AppLocalizations.clinic)}</TextMedium>) : (<Spacing />)}
 
                             </IconButton>
                         } else {
@@ -60,7 +60,7 @@ export default function TabNavigationPatient() {
 
                                 <SvgIcon name={Icon.circleUser} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
 
-                                {focused ? (<TextSmall color={AppColors.secondaryV2}>{translate(AppLocalizations.profile)}</TextSmall>) : (<Spacing />)}
+                                {focused ? (<TextMedium size={14} color={AppColors.secondaryV2}>{translate(AppLocalizations.profile)}</TextMedium>) : (<Spacing />)}
 
                             </IconButton>
                         }
@@ -76,14 +76,12 @@ export default function TabNavigationPatient() {
 
                 <Tab.Screen 
                 name={RouteKeys.clinicScreenPatient} 
-                component={ClinicScreenPatient} 
-                
+                component={ClinicScreenPatient}
                 />
 
                 <Tab.Screen 
-                name={RouteKeys.profileScreenPatient} 
-                component={ProfileScreenPatient} 
-
+                name={RouteKeys.profileScreen} 
+                component={ProfileScreen} 
                 />
             </Tab.Navigator>
     )

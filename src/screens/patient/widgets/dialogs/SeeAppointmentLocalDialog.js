@@ -2,7 +2,7 @@ import React from 'react'
 import AppDialog from '../../../../components/AppDialog'
 import { RouteKeys, push } from '../../../../settings/routes/RouteActions';
 import { Row, Spacing } from '../../../../components/Container';
-import { TextSmall, TitleMedium } from '../../../../settings/AppFonts';
+import { TextMedium, TitleSemiBold } from '../../../../settings/AppFonts';
 import { Flex, TextAlign, TextDecoration } from '../../../../settings/AppEnums';
 import AppLocalizations from '../../../../settings/AppLocalizations';
 import translate from '../../../../locale';
@@ -31,13 +31,13 @@ export default function SeeAppointmentLocalDialog({ visible, onClose, appointmen
     >
             <ImageModal source={{ uri: appointment.imagePath }} />
             <Spacing height={20} />
-            <TitleMedium textAlign={TextAlign.center} size={20}>{appointment.name}</TitleMedium>
+            <TitleSemiBold textAlign={TextAlign.center} size={20}>{appointment.name}</TitleSemiBold>
             <Spacing height={15} />
             <Row >
 
-                <TextSmall textAlign={TextAlign.center}>{appointment.specialty}</TextSmall>
+                <TextMedium size={14} textAlign={TextAlign.center}>{appointment.specialty}</TextMedium>
                 <Spacing width={20}/>
-                <TextSmall textAlign={TextAlign.center}>CRM-{appointment.crm}</TextSmall>
+                <TextMedium size={14} textAlign={TextAlign.center}>CRM-{appointment.crm}</TextMedium>
             </Row>
             <Spacing height={30} />
             <AppButton textButton={translate(AppLocalizations.seeAppointmentLocal).toUpperCase()}

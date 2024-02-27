@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container, Spacing } from '../../components/Container'
-import { TitleMedium } from '../../settings/AppFonts'
+import { TitleSemiBold } from '../../settings/AppFonts'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
@@ -15,8 +15,8 @@ export default function SelectClinic({navigation}) {
       setSelected(clinic)
     }
   return (
-    <Container>
-      <TitleMedium>{translate(AppLocalizations.selectClinic)}</TitleMedium>
+    <Container paddingTop={30}>
+      <TitleSemiBold>{translate(AppLocalizations.selectClinic)}</TitleSemiBold>
       <Spacing height={35}/>
       <ClinicList
         DATA={ClinicListData}

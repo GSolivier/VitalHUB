@@ -2,16 +2,16 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../AppColors'
-import { TextSmall } from '../AppFonts'
+import { TextMedium } from '../AppFonts'
 import { Spacing } from '../../components/Container'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
 import translate from '../../locale'
 import AppLocalizations from '../AppLocalizations'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { RouteKeys } from './RouteActions'
 import HomeScreenDoctor from '../../screens/doctor/HomeScreenDoctor'
-import ProfileScreenDoctor from '../../screens/doctor/ProfileScreenDoctor'
 import ClinicScreenDoctor from '../../screens/doctor/ClinicScreenDoctor'
+import ProfileScreen from '../../screens/ProfileScreen'
 
 const Tab = createBottomTabNavigator();
 
@@ -29,61 +29,60 @@ export const IconButton = styled.View`
 export default function HomeBottomNavigation() {
 
     return (
-            <Tab.Navigator
-                initialRouteName={RouteKeys.homeScreenDoctor}
-                
-                
-                screenOptions={({ route }) => ({
-                    headerShown: false,
-                    tabBarStyle: { flex: 0.08},
-                    tabBarActiveBackgroundColor: "transparent",
-                    tabBarShowLabel: false,
-                    tabBarIcon: ({ focused, color, size }) => {
+        <Tab.Navigator
+            initialRouteName={RouteKeys.homeScreenDoctor}
 
 
-                        if (route.name == RouteKeys.homeScreenDoctor) {
-                            return <IconButton isSelected={focused}>
-                                <SvgIcon name={Icon.calendarCheck} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
-                                {focused ? (<TextSmall color={AppColors.secondaryV2}>{translate(AppLocalizations.schedule)}</TextSmall>) : (<Spacing />)}
-                            </IconButton>
-                        } else if (route.name == RouteKeys.clinicScreenDoctor) {
-                            return <IconButton isSelected={focused}>
+            screenOptions={({ route }) => ({
+                headerShown: false,
+                tabBarStyle: { flex: 0.08 },
+                tabBarActiveBackgroundColor: "transparent",
+                tabBarShowLabel: false,
+                tabBarIcon: ({ focused, color, size }) => {
 
-                                <SvgIcon name={Icon.hospital} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
 
-                                {focused ? (<TextSmall color={AppColors.secondaryV2}>{translate(AppLocalizations.clinic)}</TextSmall>) : (<Spacing />)}
+                    if (route.name == RouteKeys.homeScreenDoctor) {
+                        return <IconButton isSelected={focused}>
+                            <SvgIcon name={Icon.calendarCheck} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
+                            {focused ? (<TextMedium size={12} color={AppColors.secondaryV2}>{translate(AppLocalizations.schedule)}</TextMedium>) : (<Spacing />)}
+                        </IconButton>
+                    } else if (route.name == RouteKeys.clinicScreenDoctor) {
+                        return <IconButton isSelected={focused}>
 
-                            </IconButton>
-                        } else {
-                            return <IconButton isSelected={focused}>
+                            <SvgIcon name={Icon.hospital} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
 
-                                <SvgIcon name={Icon.circleUser} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
+                            {focused ? (<TextMedium size={12} color={AppColors.secondaryV2}>{translate(AppLocalizations.clinic)}</TextMedium>) : (<Spacing />)}
 
-                                {focused ? (<TextSmall color={AppColors.secondaryV2}>{translate(AppLocalizations.profile)}</TextSmall>) : (<Spacing />)}
+                        </IconButton>
+                    } else {
+                        return <IconButton isSelected={focused}>
 
-                            </IconButton>
-                        }
+                            <SvgIcon name={Icon.circleUser} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
 
+                            {focused ? (<TextMedium size={12} color={AppColors.secondaryV2}>{translate(AppLocalizations.profile)}</TextMedium>) : (<Spacing />)}
+
+                        </IconButton>
                     }
-                })}
-            >
-                <Tab.Screen 
-                name={RouteKeys.homeScreenDoctor} 
-                component={HomeScreenDoctor} 
 
-                />
+                }
+            })}
+        >
+            <Tab.Screen
+                name={RouteKeys.homeScreenDoctor}
+                component={HomeScreenDoctor}
 
-                <Tab.Screen 
-                name={RouteKeys.clinicScreenDoctor} 
-                component={ClinicScreenDoctor} 
-                
-                />
+            />
 
-                <Tab.Screen 
-                name={RouteKeys.profileScreenDoctor} 
-                component={ProfileScreenDoctor} 
+            <Tab.Screen
+                name={RouteKeys.clinicScreenDoctor}
+                component={ClinicScreenDoctor}
 
-                />
-            </Tab.Navigator>
+            />
+
+            <Tab.Screen
+                name={RouteKeys.profileScreen}
+                component={ProfileScreen}
+            />
+        </Tab.Navigator>
     )
 }

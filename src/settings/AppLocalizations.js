@@ -131,5 +131,6 @@ export default AppLocalizations = {
     cpf: 'cpf',
     cep: 'cep',
     city: 'city',
-    back: 'back'
+    back: 'back',
+    logOut: 'logOut'
 }

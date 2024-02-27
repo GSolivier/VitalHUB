@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import AppDialog from '../../../../components/AppDialog'
-import { TitleMedium } from '../../../../settings/AppFonts'
+import {TitleSemiBold } from '../../../../settings/AppFonts'
 import { AppointmentLevelsButtons, Flex } from '../../../../settings/AppEnums'
 import AppButton, { LinkButton } from '../../../../components/AppButton'
 import { Spacing } from '../../../../components/Container'
@@ -43,13 +43,14 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
       onClose={onClose}
 
     >
-      <TitleMedium alignSelf={Flex.alignSelf.center}>{translate(AppLocalizations.scheduleAppointment)}</TitleMedium>
+      <TitleSemiBold alignSelf={Flex.alignSelf.center}>{translate(AppLocalizations.scheduleAppointment)}</TitleSemiBold>
       <Spacing height={30} />
       <AppDropdown
         data={datas}
         label={translate(AppLocalizations.typeofAppointmentLabel)}
         placeholder={translate(AppLocalizations.typeofAppointmentHint)}
         hasLabel={true}
+        handleValueSelected={handleTabSelected}
       />
       <Spacing height={20} />
       <ButtonSelecter
@@ -70,7 +71,7 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
       hint={translate(AppLocalizations.desiredLocationHint)} 
       onEdit={() => { }} />
       <Spacing height={30} />
-      <AppButton textButton={translate(AppLocalizations.continueButton)} onTap={handleInsertMedicalRecord} />
+      <AppButton textButton={translate(AppLocalizations.continueButton).toUpperCase()} onTap={handleInsertMedicalRecord} />
       <Spacing height={30} />
       <LinkButton text={translate(AppLocalizations.cancel)} onTap={onClose} />
     </AppDialog>

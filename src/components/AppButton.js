@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../settings/AppColors'
-import { Link, TitleMedium } from '../settings/AppFonts'
+import { Link, TitleBold } from '../settings/AppFonts'
 
 
 
@@ -62,10 +62,10 @@ export default function AppButton({
             mainColor={mainColor}
         >
             {SvgIcon ? SvgIcon : null}
-            <TitleMedium
+            <TitleBold
                 color={isOutlined ? mainTextColor : AppColors.white}
                 size={isCompact ? 12 : 14}
-            >{textButton}</TitleMedium>
+            >{textButton}</TitleBold>
         </Button>
     )
 }

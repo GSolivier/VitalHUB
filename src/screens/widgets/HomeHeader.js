@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Column, Row, Spacing } from '../../components/Container'
-import { TextSmall, TitleMedium } from '../../settings/AppFonts'
+import { TextMedium, TitleSemiBold } from '../../settings/AppFonts'
 import { AppColors } from '../../settings/AppColors'
 import { TouchableOpacity } from 'react-native'
 import { Flex } from '../../settings/AppEnums'
@@ -42,8 +42,8 @@ export default function HomeHeader({ imagePath, name, onTapNotification }) {
                     <ProfileImage source={imagePath} />
                     <Spacing width={10} />
                     <Column>
-                        <TextSmall>{translate(AppLocalizations.welcome)}</TextSmall>
-                        <TitleMedium size={16} color={AppColors.white}>{name}</TitleMedium>
+                        <TextMedium size={14}>{translate(AppLocalizations.welcome)}</TextMedium>
+                        <TitleSemiBold size={16} color={AppColors.white}>{name}</TitleSemiBold>
                     </Column>
                 </Row>
                 <TouchableOpacity onPress={onTapNotification}><SvgIcon name={Icon.notifications} color={AppColors.white}/></TouchableOpacity>

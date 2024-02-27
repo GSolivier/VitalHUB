@@ -19,7 +19,7 @@ export const DialogBox = styled.View`
     border-radius: 10px;
     flex: ${({ flex = '0 1 auto' }) => flex};
     justify-content: ${({ justifyContentBox = Flex.justifyContent.center }) => justifyContentBox};
-    align-items: ${({alignItemsBox = Flex.alignItems.center}) => alignItemsBox};
+    align-items: ${({ alignItemsBox = Flex.alignItems.center }) => alignItemsBox};
 `
 
 export default function AppDialog({
@@ -31,7 +31,7 @@ export default function AppDialog({
             animationType={animationType}
             transparent={true}
             onRequestClose={() => onClose}
-            
+
         >
             <DialogContainer
                 padding={padding}

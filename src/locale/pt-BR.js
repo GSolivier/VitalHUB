@@ -95,7 +95,7 @@ const pt = {
     fri: 'Sex',
     sat: 'Sáb',
 
-    typeofAppointmentLabel: 'Informe o tipo de consuta',
+    typeofAppointmentLabel: 'Informe o tipo de consulta',
     typeofAppointmentHint: 'Tipo de consulta',
     appointmenteLevelLabel: 'Qual o nível da consulta?',
     routine: 'Rotina',
@@ -132,7 +132,8 @@ const pt = {
     cpf: 'CPF',
     cep: 'Cep',
     city: 'Cidade',
-    back: 'Voltar'
+    back: 'Voltar',
+    logOut: 'Sair'
   };
   
   export default pt;

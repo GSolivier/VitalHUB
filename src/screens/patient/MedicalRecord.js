@@ -3,7 +3,7 @@ import React from 'react'
 import { Container, Row, Spacing } from '../../components/Container'
 import styled from 'styled-components/native'
 import { useRoute } from '@react-navigation/native'
-import { TextMedium, TextSmall, TitleMedium } from '../../settings/AppFonts'
+import { TextMedium, TitleSemiBold } from '../../settings/AppFonts'
 import { Flex, TextDecoration } from '../../settings/AppEnums'
 import AppInput from '../../components/AppInput'
 import translate from '../../locale'
@@ -36,12 +36,12 @@ export default function MedicalRecord({ navigation }) {
             <HeaderImage source={{ uri: params.appointment.imagePath }} />
             <ScrollView>
                 <Container justifyContent={Flex.justifyContent.flexStart}>
-                    <TitleMedium>{params.appointment.name}</TitleMedium>
+                    <TitleSemiBold>{params.appointment.name}</TitleSemiBold>
                     <Spacing width={6} />
                     <Row>
-                        <TextSmall>{params.appointment.specialty}</TextSmall>
+                        <TextMedium size={14}>{params.appointment.specialty}</TextMedium>
                         <Spacing width={20} />
-                        <TextSmall>CRM-{params.appointment.crm}</TextSmall>
+                        <TextMedium size={14}>CRM-{params.appointment.crm}</TextMedium>
                     </Row>
                     <Spacing height={28} />
                     <AppInput

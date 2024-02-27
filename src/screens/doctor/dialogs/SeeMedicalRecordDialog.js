@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { TextSmall, TitleMedium } from '../../../settings/AppFonts'
+import { TextMedium, TextSemiBold} from '../../../settings/AppFonts'
 import { Row, Spacing } from '../../../components/Container'
 import AppButton, { LinkButton } from '../../../components/AppButton'
 import { Flex, TextAlign, TextDecoration } from '../../../settings/AppEnums'
@@ -32,12 +32,11 @@ export default function SeeMedicalRecordDialog({ visible, onClose, appointment, 
         >
             <ImageModal source={{ uri: appointment.imagePath }} />
             <Spacing height={20} />
-            <TitleMedium textAlign={TextAlign.center} size={20}>{appointment.name}</TitleMedium>
+            <TextSemiBold textAlign={TextAlign.center} size={20}>{appointment.name}</TextSemiBold>
             <Spacing height={15} />
-            <Row justifyContent={Flex.justifyContent.spaceAround}>
-
-                <TextSmall textAlign={TextAlign.center}>{appointment.age} {translate(AppLocalizations.yearsOld)}</TextSmall>
-                <TextSmall textAlign={TextAlign.center}>{appointment.email}</TextSmall>
+            <Row justifyContent={Flex.justifyContent.spaceAround} width={'100%'}>
+                <TextMedium size={14} textAlign={TextAlign.center}>{appointment.age} {translate(AppLocalizations.yearsOld)}</TextMedium>
+                <TextMedium size={14} textAlign={TextAlign.center}>{appointment.email}</TextMedium>
             </Row>
             <Spacing height={30} />
             <AppButton textButton={translate(AppLocalizations.insertMedicalRecordButton).toUpperCase()}

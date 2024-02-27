@@ -2,12 +2,12 @@ import React from 'react'
 import { Container, Row, Spacing } from '../../components/Container'
 import MapView from 'react-native-maps'
 import styled from 'styled-components'
-import { TextBig, TextSmall, TitleBig } from '../../settings/AppFonts'
+import { TextSemiBold, TitleSemiBold } from '../../settings/AppFonts'
 import { Flex } from '../../settings/AppEnums'
 import AppInput from '../../components/AppInput'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
-import AppButton, { LinkButton } from '../../components/AppButton'
+import AppButton from '../../components/AppButton'
 import { pop } from '../../settings/routes/RouteActions'
 
 const Map = styled(MapView)`
@@ -32,9 +32,9 @@ export default function SeeAppointmentLocalScreen({navigation}) {
       />
       <Container justifyContent={Flex.justifyContent.flexStart}>
         <Spacing height={10} />
-        <TitleBig size={20}>Clinica Natureh</TitleBig>
+        <TitleSemiBold size={20}>Clinica Natureh</TitleSemiBold>
         <Spacing height={8} />
-        <TextBig size={14}>São Paulo - SP</TextBig>
+        <TextSemiBold size={14}>São Paulo - SP</TextSemiBold>
         <Spacing height={20} />
         <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.adress)} hint={'Rua Vicenso Silva, 987'} />
         <Spacing height={24} />

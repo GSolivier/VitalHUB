@@ -2,7 +2,7 @@ import React from 'react'
 import AppButton, { LinkButton } from '../../../components/AppButton';
 import { Flex, TextAlign, TextDecoration } from '../../../settings/AppEnums';
 import { Spacing } from '../../../components/Container';
-import { TextMedium, TitleMedium } from '../../../settings/AppFonts';
+import { TextMedium, TitleSemiBold } from '../../../settings/AppFonts';
 import translate from '../../../locale';
 import AppLocalizations from '../../../settings/AppLocalizations';
 import AppDialog from '../../../components/AppDialog';
@@ -15,7 +15,7 @@ export default function CancelExamDialog({ visible, onClose, appointment }) {
         visible={visible}
         justifyContentContainer={Flex.justifyContent.center}
         >
-            <TitleMedium textAlign={TextAlign.center} size={20}>{translate(AppLocalizations.cancelExam)}</TitleMedium>
+            <TitleSemiBold textAlign={TextAlign.center} size={20}>{translate(AppLocalizations.cancelExam)}</TitleSemiBold>
             <Spacing height={15} />
             <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.cancelExamHint)}</TextMedium>
             <Spacing height={30} />

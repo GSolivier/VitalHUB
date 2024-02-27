@@ -46,7 +46,7 @@ export const DATA = [
         email: "danilo@example.com"
     },
     {
-        id:'5',
+        id: '5',
         name: 'Richard Almeida',
         age: '50',
         examType: 'Urgente',
@@ -319,5 +319,16 @@ export const DOCTORS_DATA = [
     }
 ];
 
+export const USER_LOGGED = {
+    id: '1',
+    name: 'Guilherme Sousa',
+    age: '22',
+    examType: 'Urgente',
+    time: '11:00',
+    date: '16/02/2024',
+    appointmentStatus: HomeCardActionType.carriedOut,
+    imagePath: "https://github.com/gsolivier.png",
+    email: "guilherme.sousa@example.com"
+}
 
 

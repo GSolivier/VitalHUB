@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { Column, Row, Spacing } from '../../../components/Container'
-import { TextBig, TextMedium, TitleMedium } from '../../../settings/AppFonts'
+import { TextSemiBold, TextMedium, TitleSemiBold } from '../../../settings/AppFonts'
 import SvgIcon, { Icon } from '../../../assets/icons/Icons'
 import { AppColors } from '../../../settings/AppColors'
 import { Flex } from '../../../settings/AppEnums'
@@ -40,7 +40,7 @@ export default function DoctorCard({ selected, item, onTap }) {
             <Spacing width={10} />
 
             <Column justifyContent={Flex.justifyContent.center}>
-                <TitleMedium size={16}>{item.name}</TitleMedium>
+                <TitleSemiBold size={16}>{item.name}</TitleSemiBold>
                 <Spacing height={10} />
                 <TextMedium size={14} color={AppColors.grayV4}>{item.specialty}</TextMedium>
             </Column>

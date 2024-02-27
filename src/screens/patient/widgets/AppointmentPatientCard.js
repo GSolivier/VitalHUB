@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../../../settings/AppColors'
 import { Column, Row, Spacing } from '../../../components/Container'
-import { TextBig, TextSmall, TitleMedium } from '../../../settings/AppFonts'
+import { TextRegular, TextSemiBold, TitleSemiBold } from '../../../settings/AppFonts'
 import { Flex, HomeCardActionType, TextDecoration } from '../../../settings/AppEnums'
 import { LinkButton } from '../../../components/AppButton'
 import translate from '../../../locale'
@@ -54,14 +54,14 @@ export default function AppointmentPatientCard({
                         <Spacing width={10} />
                         <Column justifyContent={Flex.justifyContent.spaceBetween}>
                             <Column>
-                                <TitleMedium size={16}>{name}</TitleMedium>
+                                <TitleSemiBold size={16}>{name}</TitleSemiBold>
                                 <Spacing width={5} />
                                 <Row justifyContent={Flex.alignItems.flexStart} alignItems={Flex.alignItems.center}>
-                                    <TextSmall>{age} {translate(AppLocalizations.yearsOld)}</TextSmall>
+                                    <TextRegular size={14}>{age} {translate(AppLocalizations.yearsOld)}</TextRegular>
                                     <Spacing width={7} />
-                                    <TextSmall color={AppColors.grayV4}>•</TextSmall>
+                                    <TextSemiBold size={14} color={AppColors.grayV6}>•</TextSemiBold>
                                     <Spacing width={7} />
-                                    <TextBig size={14}>{examType}</TextBig>
+                                    <TextSemiBold size={14} color={AppColors.grayV4}>{examType}</TextSemiBold>
                                 </Row>
                             </Column>
 
@@ -69,7 +69,7 @@ export default function AppointmentPatientCard({
                                 <SchedulesBox actionCard={actionType}>
                                     <SvgIcon name={Icon.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.primary : AppColors.grayV1} />
                                     <Spacing width={6} />
-                                    <TextBig alignSelf={Flex.alignSelf.center} color={actionType == HomeCardActionType.scheduled ? AppColors.primary : AppColors.grayV1} size={14}>{schedule}</TextBig>
+                                    <TextSemiBold alignSelf={Flex.alignSelf.center} color={actionType == HomeCardActionType.scheduled ? AppColors.primary : AppColors.grayV1} size={14}>{schedule}</TextSemiBold>
                                 </SchedulesBox>
                                 {
                                     actionType == HomeCardActionType.scheduled ?

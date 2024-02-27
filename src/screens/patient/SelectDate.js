@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Container, Spacing } from '../../components/Container'
 import AppLocalizations from '../../settings/AppLocalizations'
-import { TitleMedium } from '../../settings/AppFonts'
+import { TitleSemiBold } from '../../settings/AppFonts'
 import translate from '../../locale'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import { pop } from '../../settings/routes/RouteActions'
 import AppDropdown from '../../components/AppDropdown'
-import { Calendar } from 'react-native-calendars'
 import SelectDateCalendar from './widgets/SelectDateCalendar'
 import ConfirmAppointmentDialog from './widgets/dialogs/ConfirmAppointmentDialog'
 
@@ -28,7 +27,7 @@ export default function SelectDate({ navigation }) {
 
   return (
     <Container>
-      <TitleMedium>{translate(AppLocalizations.selectDate)}</TitleMedium>
+      <TitleSemiBold>{translate(AppLocalizations.selectDate)}</TitleSemiBold>
       <Spacing height={35} />
       <SelectDateCalendar />
       <Spacing height={30} />

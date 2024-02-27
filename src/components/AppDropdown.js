@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { SelectList } from 'react-native-dropdown-select-list';
 import { AppColors } from '../settings/AppColors';
-import { Flex, FontFamily } from '../settings/AppEnums';
+import { Flex } from '../settings/AppEnums';
 import SvgIcon, { Icon } from '../assets/icons/Icons';
-import { TextBig } from '../settings/AppFonts';
+import { FontFamily, TextSemiBold } from '../settings/AppFonts';
 import styled from 'styled-components/native';
 
 export const DropdownBox = styled.View`
@@ -22,7 +22,7 @@ export default function AppDropdown({
 
     return (
         <DropdownBox>
-            {hasLabel ? (<TextBig size={16}>{label}</TextBig>) : null}
+            {hasLabel ? (<TextSemiBold size={16}>{label}</TextSemiBold>) : null}
             <SelectList
                 setSelected={(val) => handleValueSelected(val)}
                 data={data}
@@ -54,7 +54,7 @@ export default function AppDropdown({
                 inputStyles={{
                     color: AppColors.primaryV1
                 }}
-                fontFamily={FontFamily.montSerratBold}
+                fontFamily={FontFamily.montSerratSemiBold}
                 placeholder={placeholder}
                 arrowicon={<SvgIcon name={Icon.arrowDropDown} color={AppColors.primary} />}
             />

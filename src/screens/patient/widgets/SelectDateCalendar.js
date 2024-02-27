@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Calendar } from 'react-native-calendars';
 import { AppColors } from '../../../settings/AppColors';
-import { FontFamily } from '../../../settings/AppEnums';
 import styled from 'styled-components/native';
+import { FontFamily } from '../../../settings/AppFonts';
 
 const CalendarBox = styled.View`
     width: 100%;

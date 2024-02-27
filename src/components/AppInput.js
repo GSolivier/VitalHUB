@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/native'
 import { AppColors } from '../settings/AppColors'
-import { TextBig } from '../settings/AppFonts'
+import { FontFamily, TextSemiBold } from '../settings/AppFonts'
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field'
 
 export const Input = styled.TextInput`
@@ -11,7 +11,7 @@ export const Input = styled.TextInput`
     border-width: 2px;
     border-color: ${({ borderColor = AppColors.primary, isValid = true, isEditable = true }) => isValid ? borderColor : AppColors.red};
     padding: 16px;
-    font-family: 'MontserratAlternates_700Bold';
+    font-family: ${FontFamily.montSerratSemiBold};
     color: ${({ color = AppColors.primaryV1, isValid = true, isEditable = true }) => !isEditable ? AppColors.grayV2 : isValid ? color : AppColors.red};
     background-color: ${({isEditable = true}) => isEditable ? AppColors.transparent : AppColors.whiteDarker };
     `
@@ -43,7 +43,7 @@ export default function AppInput({
 
     return (
         <InputBox>
-            {hasLabel ? (<TextBig size={16}>{lable}</TextBig>) : null}
+            {hasLabel ? (<TextSemiBold size={16}>{lable}</TextSemiBold>) : null}
             <Input
                 placeholder={hint}
                 placeholderTextColor={isEditable ? textColor : AppColors.grayV2}
