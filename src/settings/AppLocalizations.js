@@ -130,5 +130,6 @@ export default AppLocalizations = {
     dateOfBirth: 'dateOfBirth',
     cpf: 'cpf',
     cep: 'cep',
-    city: 'city'
+    city: 'city',
+    back: 'back'
 }

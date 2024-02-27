@@ -130,7 +130,8 @@ const en = {
     dateOfBirth: 'Date of birth',
     cpf: 'CPF',
     cep: 'Postal code',
-    city: 'City'
+    city: 'City',
+    back: 'Back'
   };
   
   export default en;

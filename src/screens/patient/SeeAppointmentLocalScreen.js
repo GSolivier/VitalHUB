@@ -7,6 +7,8 @@ import { Flex } from '../../settings/AppEnums'
 import AppInput from '../../components/AppInput'
 import translate from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
+import AppButton, { LinkButton } from '../../components/AppButton'
+import { pop } from '../../settings/routes/RouteActions'
 
 const Map = styled(MapView)`
   width: 100%;
@@ -14,10 +16,10 @@ const Map = styled(MapView)`
 `
 
 const InputContainer = styled.View`
-    flex: 0.4;
+    flex: 0.5;
 `
 
-export default function SeeAppointmentLocalScreen() {
+export default function SeeAppointmentLocalScreen({navigation}) {
   return (
     <>
       <Map
@@ -37,17 +39,17 @@ export default function SeeAppointmentLocalScreen() {
         <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.adress)} hint={'Rua Vicenso Silva, 987'} />
         <Spacing height={24} />
         <Row justifyContent={Flex.justifyContent.spaceBetween} width={'100%'}>
-        <InputContainer>
-          <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.number)} />
-
-        </InputContainer>
-        <InputContainer>
-
-          <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.neighborhood)} />
-
-        </InputContainer>
+          <InputContainer>
+            <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.number)} hint={'578'} />
+          </InputContainer>
+          <Spacing width={32} />
+          <InputContainer>
+            <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.neighborhood)} hint={'Moema-SP'} />
+          </InputContainer>
         </Row>
-      </Container>
+        <Spacing height={50} />
+        <AppButton textButton={translate(AppLocalizations.back).toUpperCase()} onTap={() => pop(navigation)}/>      
+        </Container>
     </>
   )
 }

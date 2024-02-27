@@ -21,7 +21,7 @@ export default function SeeAppointmentLocalDialog({ visible, onClose, appointmen
     return null;
   }
   const handleInsertMedicalRecord = () => {
-    push(navigation, RouteKeys.insertMedicalRecordScreen, { appointment: appointment });
+    push(navigation, RouteKeys.seeAppointmentLocalScreen, { appointment: appointment });
     onClose();
   };
   return (

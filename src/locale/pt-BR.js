@@ -131,7 +131,8 @@ const pt = {
     dateOfBirth: 'Data de nascimento',
     cpf: 'CPF',
     cep: 'Cep',
-    city: 'Cidade'
+    city: 'Cidade',
+    back: 'Voltar'
   };
   
   export default pt;

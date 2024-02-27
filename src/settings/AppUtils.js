@@ -193,7 +193,7 @@ export const DOCTORS_DATA = [
         age: '40',
         specialty: 'Cardiologista',
         examType: 'Eletrocardiograma',
-        appointmentStatus: HomeCardActionType.scheduled,
+        appointmentStatus: HomeCardActionType.carriedOut,
         time: '08:30',
         date: '16/02/2024',
         imagePath: "https://github.com/gsolivier.png",

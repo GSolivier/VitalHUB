@@ -11,7 +11,7 @@ import { pop } from '../../settings/routes/RouteActions';
 import translate from '../../locale';
 import AppLocalizations from '../../settings/AppLocalizations';
 
-export const HeaderImage = styled.Image`
+const HeaderImage = styled.Image`
     width: 100%;
     height: 30%;
 `

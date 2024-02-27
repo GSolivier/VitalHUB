@@ -12,7 +12,7 @@ export const Input = styled.TextInput`
     border-color: ${({ borderColor = AppColors.primary, isValid = true, isEditable = true }) => isValid ? borderColor : AppColors.red};
     padding: 16px;
     font-family: 'MontserratAlternates_700Bold';
-    color: ${({ color = AppColors.primaryV1, isValid = true }) => isValid ? color : AppColors.red};
+    color: ${({ color = AppColors.primaryV1, isValid = true, isEditable = true }) => !isEditable ? AppColors.grayV2 : isValid ? color : AppColors.red};
     background-color: ${({isEditable = true}) => isEditable ? AppColors.transparent : AppColors.whiteDarker };
     `
 

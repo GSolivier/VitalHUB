@@ -13,7 +13,7 @@ import ScheduleAppointmentDialog from "./widgets/dialogs/ScheduleAppointmentDial
 import ButtonSelecter from "../widgets/ButtonSelecter";
 import AppointmentPatientList from "./widgets/AppointmentPatientList";
 import CancelExamDialog from "../doctor/dialogs/CancelExamDialog";
-import { push } from "../../settings/routes/RouteActions";
+import { RouteKeys, push } from "../../settings/routes/RouteActions";
 import SeeAppointmentLocalDialog from "./widgets/dialogs/SeeAppointmentLocalDialog";
 
 export const FixedButton = styled.TouchableOpacity`
@@ -55,6 +55,7 @@ export default function HomeScreenPatient({ navigation }) {
 
   const handleSeeMedicalRecord = (appointment) => {
     setSelectedAppointment(appointment);
+    push(navigation, RouteKeys.medicalRecordScreen, {appointment: appointment})
   }
 
   function filterList() {
@@ -100,6 +101,7 @@ export default function HomeScreenPatient({ navigation }) {
         visible={seeAppointmentLocal}
         onClose={() => setSeeAppointmentLocal(false)}
         appointment={appointment}
+        navigation={navigation}
       />
     </HomeContainer>
   )
