@@ -57,7 +57,7 @@ const pt = {
     february: 'Fevereiro',
     march: 'Março',
     april: 'Abril',
-    may: 'Maio',
+    mayFull: 'Maio',
     june: 'Junho',
     july: 'Julho',
     august: 'Agosto',

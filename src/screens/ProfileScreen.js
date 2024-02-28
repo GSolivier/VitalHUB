@@ -5,7 +5,7 @@ import { USER_LOGGED } from '../settings/AppUtils'
 import { TextMedium, TitleSemiBold } from '../settings/AppFonts'
 import { AppColors } from '../settings/AppColors'
 import AppInput from '../components/AppInput'
-import { Flex } from '../settings/AppEnums'
+import { Flex, JustifyContent } from '../settings/AppEnums'
 import translate from '../locale'
 import AppLocalizations from '../settings/AppLocalizations'
 import { ScrollView } from 'react-native'
@@ -43,7 +43,7 @@ export default function ProfileScreen({ user, navigation }) {
                 <TextMedium size={14}>{USER_LOGGED.email}</TextMedium>
             </InfoBox>
             <ScrollView>
-                <Container justifyContent={Flex.justifyContent.flexStart}>
+                <Container justifyContent={Flex.flexStart}>
                     <Spacing height={80} />
                     <AppInput
                         isEditable={false}
@@ -63,7 +63,7 @@ export default function ProfileScreen({ user, navigation }) {
                         lable={translate(AppLocalizations.adress)}
                         textValue={'Rua Vicenzo da Silva, 181'} />
                     <Spacing height={24} />
-                    <Row justifyContent={Flex.justifyContent.spaceBetween} width={'100%'}>
+                    <Row justifyContent={Flex.spaceBetween} width={'100%'}>
                         <InputContainer>
                             <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.cep)} hint={'09586-754'} />
                         </InputContainer>

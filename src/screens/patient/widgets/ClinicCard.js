@@ -35,16 +35,16 @@ export default function ClinicCard({selected, item, onTap}) {
         onPress={onTap}
         activeOpacity={0.9}
         >
-            <Row width={'100%'} justifyContent={Flex.justifyContent.spaceBetween}>
+            <Row width={'100%'} justifyContent={Flex.spaceBetween}>
                 <TitleSemiBold size={16}>{item.name}</TitleSemiBold>
-                <Row alignItems={Flex.alignItems.center}>
+                <Row alignItems={Flex.center}>
                     <SvgIcon name={Icon.star} color={AppColors.yellow} />
                     <Spacing width={2} />
                     <TextSemiBold size={14} color={AppColors.yellow}>{item.rating}</TextSemiBold>
                 </Row>
             </Row>
             <Spacing height={10}/>
-            <Row width={'100%'} justifyContent={Flex.justifyContent.spaceBetween}>
+            <Row width={'100%'} justifyContent={Flex.spaceBetween}>
                 <TextSemiBold size={14}>{item.local}</TextSemiBold>
                 <DayBox>
                     <SvgIcon name={Icon.calendar} color={AppColors.primary}/>

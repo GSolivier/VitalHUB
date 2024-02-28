@@ -69,7 +69,7 @@ const en = {
     feb: 'Feb',
     mar: 'Mar',
     apr: 'Apr',
-    may: 'May',
+    mayFull: 'May',
     jun: 'Jun',
     jul: 'Jul',
     aug: 'Aug',

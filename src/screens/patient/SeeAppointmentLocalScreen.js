@@ -30,7 +30,7 @@ export default function SeeAppointmentLocalScreen({navigation}) {
           longitudeDelta: 0.0421,
         }}
       />
-      <Container justifyContent={Flex.justifyContent.flexStart}>
+      <Container justifyContent={Flex.flexStart}>
         <Spacing height={10} />
         <TitleSemiBold size={20}>Clinica Natureh</TitleSemiBold>
         <Spacing height={8} />
@@ -38,7 +38,7 @@ export default function SeeAppointmentLocalScreen({navigation}) {
         <Spacing height={20} />
         <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.adress)} hint={'Rua Vicenso Silva, 987'} />
         <Spacing height={24} />
-        <Row justifyContent={Flex.justifyContent.spaceBetween} width={'100%'}>
+        <Row justifyContent={Flex.spaceBetween} width={'100%'}>
           <InputContainer>
             <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.number)} hint={'578'} />
           </InputContainer>

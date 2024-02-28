@@ -22,10 +22,10 @@ export default function InsertMedicalRecord({ navigation }) {
         <>
             <HeaderImage source={{ uri: params.appointment.imagePath }} />
             <ScrollView>
-                <Container justifyContent={Flex.justifyContent.flexStart}>
+                <Container justifyContent={Flex.flexStart}>
                     <TitleSemiBold>{params.appointment.name}</TitleSemiBold>
                     <Spacing height={10} />
-                    <Row justifyContent={Flex.justifyContent.spaceAround} width={'85%'}>
+                    <Row justifyContent={Flex.spaceAround} width={'85%'}>
 
                         <TextMedium size={14} textAlign={TextAlign.center}>{params.appointment.age} {translate(AppLocalizations.yearsOld)}</TextMedium>
                         <TextMedium size={14}  textAlign={TextAlign.center}>{params.appointment.email}</TextMedium>

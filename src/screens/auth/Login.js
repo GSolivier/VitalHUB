@@ -48,7 +48,7 @@ export default function Login({navigation}) {
       <LinkButton 
         size={14} 
         color={AppColors.grayV4}
-        alignSelf={Flex.alignSelf.flexStart} 
+        alignSelf={Flex.flexStart} 
         text={translate(AppLocalizations.forgotPassword)} 
         onTap={()=> {
          push(navigation, RouteKeys.forgotPassword)
@@ -81,7 +81,7 @@ export default function Login({navigation}) {
 
           <Spacing height={30} />
 
-      <Row alignItems={Flex.alignItems.center} >
+      <Row alignItems={Flex.center} >
       <TitleSemiBold
       size={14}
       color={AppColors.grayV2}>{translate(AppLocalizations.dontHaveAccount)} </TitleSemiBold>

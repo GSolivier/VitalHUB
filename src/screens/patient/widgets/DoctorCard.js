@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { Column, Row, Spacing } from '../../../components/Container'
-import { TextSemiBold, TextMedium, TitleSemiBold } from '../../../settings/AppFonts'
-import SvgIcon, { Icon } from '../../../assets/icons/Icons'
+import { Column, Spacing } from '../../../components/Container'
+import { TextMedium, TitleSemiBold } from '../../../settings/AppFonts'
 import { AppColors } from '../../../settings/AppColors'
 import { Flex } from '../../../settings/AppEnums'
-import { Image } from 'react-native'
 
 export const DoctorCardBox = styled.TouchableOpacity`
     width: 100%;
@@ -39,7 +37,7 @@ export default function DoctorCard({ selected, item, onTap }) {
             <DoctorImage source={{ uri: item.imagePath }} />
             <Spacing width={10} />
 
-            <Column justifyContent={Flex.justifyContent.center}>
+            <Column justifyContent={Flex.center}>
                 <TitleSemiBold size={16}>{item.name}</TitleSemiBold>
                 <Spacing height={10} />
                 <TextMedium size={14} color={AppColors.grayV4}>{item.specialty}</TextMedium>

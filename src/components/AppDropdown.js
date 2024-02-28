@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { SelectList } from 'react-native-dropdown-select-list';
 import { AppColors } from '../settings/AppColors';
 import { Flex } from '../settings/AppEnums';
@@ -49,7 +49,7 @@ export default function AppDropdown({
                     borderRadius: 5,
                     height: 60,
                     borderWidth: 2,
-                    alignItems: Flex.alignItems.center,
+                    alignItems: Flex.center,
                 }}
                 inputStyles={{
                     color: AppColors.primaryV1

@@ -7,47 +7,22 @@ export const HomeCardActionType = {
     carriedOut: 'carriedOut'
 }
 
-export const BottomNavigationRoute ={
+export const BottomNavigationRoute = {
     schedule: 'schedule',
     clinic: 'clinic',
     profile: 'profile'
 }
 
 export const Flex = {
-    flexDirection: {
-        row: 'row',
-        rowReverse: 'row-reverse',
-        column: 'column',
-        columnReverse: 'column-reverse',
-    },
-    flexWrap: {
-        wrap: 'wrap',
-        nowrap: 'nowrap',
-        wrapReverse: 'wrap-reverse',
-    },
-    justifyContent: {
-        flexStart: 'flex-start',
-        flexEnd: 'flex-end',
-        center: 'center',
-        spaceBetween: 'space-between',
-        spaceAround: 'space-around',
-        spaceEvenly: 'space-evenly',
-    },
-    alignItems: {
-        flexStart: 'flex-start',
-        flexEnd: 'flex-end',
-        center: 'center',
-        baseline: 'baseline',
-        stretch: 'stretch',
-    },
-    alignSelf: {
-        auto: 'auto',
-        flexStart: 'flex-start',
-        flexEnd: 'flex-end',
-        center: 'center',
-        baseline: 'baseline',
-        stretch: 'stretch',
-    },
+    auto: 'auto',
+    flexStart: 'flex-start',
+    flexEnd: 'flex-end',
+    center: 'center',
+    baseline: 'baseline',
+    stretch: 'stretch',
+    spaceBetween: 'space-between',
+    spaceAround: 'space-around',
+    spaceEvenly: 'space-evenly',
 }
 
 export const TextDecoration = {

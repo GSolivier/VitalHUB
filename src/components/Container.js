@@ -8,8 +8,8 @@ export const Container = styled.SafeAreaView`
     padding-right: ${({paddingRight = 20}) => `${paddingRight}px`};
     padding-bottom: ${({paddingBottom = 20}) => `${paddingBottom}px`};
     padding-left: ${({paddingLeft = 20}) => `${paddingLeft}px`};
-    align-items: ${({ alignItems = Flex.alignItems.center }) => alignItems};
-    justify-content: ${({ justifyContent = Flex.justifyContent.center }) => justifyContent};
+    align-items: ${({ alignItems = Flex.center }) => alignItems};
+    justify-content: ${({ justifyContent = Flex.center }) => justifyContent};
     background-color: ${AppColors.white};
     flex: ${({flex = 1}) => flex};
 `

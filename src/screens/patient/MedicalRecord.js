@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native'
+import { ScrollView } from 'react-native'
 import React from 'react'
 import { Container, Row, Spacing } from '../../components/Container'
 import styled from 'styled-components/native'
@@ -35,7 +35,7 @@ export default function MedicalRecord({ navigation }) {
         <>
             <HeaderImage source={{ uri: params.appointment.imagePath }} />
             <ScrollView>
-                <Container justifyContent={Flex.justifyContent.flexStart}>
+                <Container justifyContent={Flex.flexStart}>
                     <TitleSemiBold>{params.appointment.name}</TitleSemiBold>
                     <Spacing width={6} />
                     <Row>

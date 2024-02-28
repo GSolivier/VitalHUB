@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { DATA, DOCTORS_DATA } from "../../settings/AppUtils";
+import { DOCTORS_DATA } from "../../settings/AppUtils";
 import HomeContainer from "../widgets/HomeContainer";
 import { AppAssets } from "../../assets/AppAssets";
 import HomeCalendar from "../widgets/HomeCalendar";
 import { Spacing } from "../../components/Container";
 import { AppointmentFilterList, HomeCardActionType } from "../../settings/AppEnums";
-import AppointmentList from "../doctor/widgets/AppointmentList";
 import styled from "styled-components/native";
 import { AppColors } from "../../settings/AppColors";
 import SvgIcon, { Icon } from "../../assets/icons/Icons";

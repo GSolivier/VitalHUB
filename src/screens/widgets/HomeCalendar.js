@@ -13,7 +13,7 @@ export const StyledCalendarStrip = styled(CalendarStrip)`
 `
 moment.updateLocale("pt-br", {
     // Meses
-    months: `${translate(AppLocalizations.january)}_${translate(AppLocalizations.february)}_${translate(AppLocalizations.march)}_${translate(AppLocalizations.april)}_${translate(AppLocalizations.may)}_${translate(AppLocalizations.june)}_${translate(AppLocalizations.july)}_${translate(AppLocalizations.august)}_${translate(AppLocalizations.september)}_${translate(AppLocalizations.october)}_${translate(AppLocalizations.november)}_${translate(AppLocalizations.december)}`.split("_"),
+    months: `${translate(AppLocalizations.january)}_${translate(AppLocalizations.february)}_${translate(AppLocalizations.march)}_${translate(AppLocalizations.april)}_${translate(AppLocalizations.mayFull)}_${translate(AppLocalizations.june)}_${translate(AppLocalizations.july)}_${translate(AppLocalizations.august)}_${translate(AppLocalizations.september)}_${translate(AppLocalizations.october)}_${translate(AppLocalizations.november)}_${translate(AppLocalizations.december)}`.split("_"),
     // Abreviação de meses
     monthsShort: `${translate(AppLocalizations.jan)}_${translate(AppLocalizations.feb)}_${translate(AppLocalizations.mar)}_${translate(AppLocalizations.apr)}_${translate(AppLocalizations.may)}_${translate(AppLocalizations.jun)}_${translate(AppLocalizations.jul)}_${translate(AppLocalizations.aug)}_${translate(AppLocalizations.sep)}_${translate(AppLocalizations.oct)}_${translate(AppLocalizations.nov)}_${translate(AppLocalizations.dec)}`.split("_"),
     // Dias da semana
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         alignSelf: 'flex-start',
         color: '#4E4B59',
-        fontFamily: "MontserratAlternates_500Medium",
+        fontFamily: "MontserratAlternates_600SemiBold",
         paddingHorizontal: 16
     },
     nameDateStyle: {

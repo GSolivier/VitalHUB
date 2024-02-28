@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AppDialog from '../../../../components/AppDialog'
 import {TitleSemiBold } from '../../../../settings/AppFonts'
-import { AppointmentLevelsButtons, Flex } from '../../../../settings/AppEnums'
+import { AppointmentLevelsButtons, Flex} from '../../../../settings/AppEnums'
 import AppButton, { LinkButton } from '../../../../components/AppButton'
 import { Spacing } from '../../../../components/Container'
 import AppInput from '../../../../components/AppInput'
@@ -39,11 +39,11 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
       animationType='slide'
       padding={0}
       isFaded={true}
-      justifyContentBox={Flex.justifyContent.flexStart}
+      justifyContentBox={Flex.flexStart}
       onClose={onClose}
 
     >
-      <TitleSemiBold alignSelf={Flex.alignSelf.center}>{translate(AppLocalizations.scheduleAppointment)}</TitleSemiBold>
+      <TitleSemiBold alignSelf={Flex.center}>{translate(AppLocalizations.scheduleAppointment)}</TitleSemiBold>
       <Spacing height={30} />
       <AppDropdown
         data={datas}

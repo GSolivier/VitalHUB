@@ -46,7 +46,7 @@ export default function SeeAppointmentLocalDialog({ visible, onClose, appointmen
             <LinkButton
                 text={translate(AppLocalizations.cancel)}
                 textDecoration={TextDecoration.underline}
-                alignSelf={Flex.alignSelf.center}
+                alignSelf={Flex.center}
                 onTap={onClose}
             />
     </AppDialog>

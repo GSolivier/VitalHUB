@@ -34,11 +34,11 @@ export default function HomeHeader({ imagePath, name, onTapNotification }) {
         <HeaderBox colors={['#60BFC5', '#496BBA']} start={{ x: 0.2, y: 0.1 }} locations={[0.1, 1]}>
 
             <Row 
-            alignItems={Flex.alignItems.center} 
-            alignSelf={Flex.alignSelf.flexEnd} 
-            justifyContent={Flex.justifyContent.spaceBetween} 
+            alignItems={Flex.center} 
+            alignSelf={Flex.flexEnd} 
+            justifyContent={Flex.spaceBetween} 
             width={'100%'}>
-                <Row alignItems={Flex.alignItems.center}>
+                <Row alignItems={Flex.center}>
                     <ProfileImage source={imagePath} />
                     <Spacing width={10} />
                     <Column>

@@ -18,15 +18,15 @@ export default function ConfirmAppointmentDialog({ visible, onClose, navigation 
     <AppDialog
       visible={visible}
       onClose={onClose}
-      justifyContentBox={Flex.justifyContent.center}
-      justifyContentContainer={Flex.justifyContent.center}
+      justifyContentBox={Flex.center}
+      justifyContentContainer={Flex.center}
       padding={13}
     >
       <TitleSemiBold>{translate(AppLocalizations.scheduleAppointment)}</TitleSemiBold>
       <Spacing height={16} />
       <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.scheduleAppointmentHint)}</TextMedium>
       <Spacing height={30} />
-      <Column alignItems={Flex.alignItems.flexStart} width={'100%'}>
+      <Column alignItems={Flex.flexStart} width={'100%'}>
         <TextSemiBold size={16}>{translate(AppLocalizations.appoitmentDate)}</TextSemiBold>
         <TextMedium size={14}>1 de Novembro de 2024</TextMedium>
         <Spacing height={20} />

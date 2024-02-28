@@ -34,7 +34,7 @@ export default function SeeMedicalRecordDialog({ visible, onClose, appointment, 
             <Spacing height={20} />
             <TextSemiBold textAlign={TextAlign.center} size={20}>{appointment.name}</TextSemiBold>
             <Spacing height={15} />
-            <Row justifyContent={Flex.justifyContent.spaceAround} width={'100%'}>
+            <Row justifyContent={Flex.spaceAround} width={'100%'}>
                 <TextMedium size={14} textAlign={TextAlign.center}>{appointment.age} {translate(AppLocalizations.yearsOld)}</TextMedium>
                 <TextMedium size={14} textAlign={TextAlign.center}>{appointment.email}</TextMedium>
             </Row>
@@ -45,7 +45,7 @@ export default function SeeMedicalRecordDialog({ visible, onClose, appointment, 
             <LinkButton
                 text={translate(AppLocalizations.cancel)}
                 textDecoration={TextDecoration.underline}
-                alignSelf={Flex.alignSelf.center}
+                alignSelf={Flex.center}
                 onTap={onClose}
             />
         </AppDialog>

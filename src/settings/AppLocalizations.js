@@ -56,7 +56,7 @@ export default AppLocalizations = {
     february: 'february',
     march: 'march',
     april: 'april',
-    may: 'may',
+    mayFull: 'mayFull',
     june: 'june',
     july: 'july',
     august: 'august',

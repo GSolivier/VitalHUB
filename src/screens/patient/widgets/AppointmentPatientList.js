@@ -4,7 +4,6 @@ import styled from 'styled-components/native';
 import { Spacing } from '../../../components/Container';
 import { AppColors } from '../../../settings/AppColors';
 import AppointmentPatientCard from './AppointmentPatientCard';
-import { DOCTORS_DATA } from '../../../settings/AppUtils';
 import { HomeCardActionType } from '../../../settings/AppEnums';
 
 export const List = styled.View`

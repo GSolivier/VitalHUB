@@ -18,11 +18,11 @@ export default function ButtonSelecter({
         <>
             {haslabel ? (
                 <>
-                    <TextSemiBold alignSelf={Flex.alignSelf.flexStart} size={16}>{label}</TextSemiBold>
+                    <TextSemiBold alignSelf={Flex.flexStart} size={16}>{label}</TextSemiBold>
                     <Spacing height={10} />
                 </>
             ) : (<Spacing />)}
-            <Row justifyContent={Flex.justifyContent.spaceBetween} width={'100%'}>
+            <Row justifyContent={Flex.spaceBetween} width={'100%'}>
                 {buttonList.map((buttonPreferences, index) => {
                     const isLastItem = index === buttonList.length - 1;
                     return <>
