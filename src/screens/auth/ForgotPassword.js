@@ -4,7 +4,7 @@ import { AppAssets } from '../../assets/AppAssets'
 import { Image } from 'react-native'
 import { Spacing } from '../../components/Container';
 import { TextMedium, TitleSemiBold } from '../../settings/AppFonts';
-import translate from '../../locale';
+import t from '../../locale';
 import AppLocalizations from '../../settings/AppLocalizations';
 import AppInput from '../../components/AppInput';
 import AppButton from '../../components/AppButton';
@@ -20,17 +20,17 @@ export default function ForgotPassword({ navigation }) {
         <AuthContainer hasLeading={true} onTap={() => { pop(navigation) }}>
             <Image source={AppAssets.appLogoDark} />
             <Spacing height={25} />
-            <TitleSemiBold size={20} >{translate(AppLocalizations.recoveryPassword)}</TitleSemiBold>
+            <TitleSemiBold size={20} >{t(AppLocalizations.recoveryPassword)}</TitleSemiBold>
             <Spacing height={15} />
-            <TextMedium color={AppColors.grayV3} textAlign={TextAlign.center}>{translate(AppLocalizations.recoveryPasswordHint)}</TextMedium>
+            <TextMedium color={AppColors.grayV3} textAlign={TextAlign.center}>{t(AppLocalizations.recoveryPasswordHint)}</TextMedium>
             <Spacing height={20} />
             <AppInput
-                hint={translate(AppLocalizations.emailPlacehoder)}
+                hint={t(AppLocalizations.emailPlacehoder)}
                 textValue={email}
                 onEdit={setEmail} />
             <Spacing height={30} />
             <AppButton
-                textButton={translate(AppLocalizations.continueButton).toUpperCase()}
+                textButton={t(AppLocalizations.continueButton).toUpperCase()}
                 onTap={() => { push(navigation, RouteKeys.emailVerify, { email: email }) }}
             />
 

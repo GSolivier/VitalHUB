@@ -6,7 +6,7 @@ import { useRoute } from '@react-navigation/native'
 import { TextMedium, TitleSemiBold } from '../../settings/AppFonts'
 import { Flex, TextDecoration } from '../../settings/AppEnums'
 import AppInput from '../../components/AppInput'
-import translate from '../../locale'
+import t from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import { AppColors } from '../../settings/AppColors'
@@ -46,35 +46,31 @@ export default function MedicalRecord({ navigation }) {
                     <Spacing height={28} />
                     <AppInput
                         isEditable={false}
-                        hasLabel={true}
-                        lable={translate(AppLocalizations.appointDescriptionLabel)}
+                        label={t(AppLocalizations.appointDescriptionLabel)}
                         isTextArea={true}
                         textValue={'O paciente possuí uma infecção noouvido. Necessário repouse de 2 diase acompanhamento médico constante'} />
                     <Spacing height={20} />
                     <AppInput
                         isEditable={false}
-                        hasLabel={true}
-                        lable={translate(AppLocalizations.patientDiagnosisLabel)}
+                        label={t(AppLocalizations.patientDiagnosisLabel)}
                         textValue={'Infecção no ouvido'} />
                     <Spacing height={20} />
                     <AppInput
                         isEditable={false}
-                        hasLabel={true}
-                        lable={translate(AppLocalizations.appointDescriptionLabel)}
+                        label={t(AppLocalizations.appointDescriptionLabel)}
                         isTextArea={true}
                         textValue={'O paciente possuí uma infecção noouvido. Necessário repouse de 2 diase acompanhamento médico constante'} />
                     <Spacing height={20} />
                     <AppInput
                         isEditable={false}
-                        hasLabel={true}
-                        lable={translate(AppLocalizations.appointDescriptionLabel)}
+                        label={t(AppLocalizations.appointDescriptionLabel)}
                         isTextArea={true}
                         textValue={'Nenhuma foto informada'} />
                     <Spacing height={10} />
                     <Row>
                         <ButtonContainer>
                             <AppButton
-                                textButton={translate(AppLocalizations.send)}
+                                textButton={t(AppLocalizations.send)}
                                 mainColor={AppColors.primary}
                                 SvgIcon={<SvgIcon name={Icon.cameraPlus} color={AppColors.white} />}
 
@@ -83,7 +79,7 @@ export default function MedicalRecord({ navigation }) {
                         <ButtonContainer>
                             <LinkButton
                                 textDecoration={TextDecoration.none}
-                                text={translate(AppLocalizations.cancel)}
+                                text={t(AppLocalizations.cancel)}
                                 color={AppColors.red} />
                         </ButtonContainer>
                     </Row>
@@ -92,11 +88,11 @@ export default function MedicalRecord({ navigation }) {
                     <Spacing height={20} />
                     <AppInput
                         isEditable={false}
-                        lable={translate(AppLocalizations.appointDescriptionLabel)}
+                        label={t(AppLocalizations.appointDescriptionLabel)}
                         isTextArea={true}
                         textValue={'Resultado do exame de sangue: tudo normal'} />
                     <Spacing height={30} />
-                    <LinkButton text={translate(AppLocalizations.back)} onTap={() => pop(navigation)}/>
+                    <LinkButton text={t(AppLocalizations.back)} onTap={() => pop(navigation)}/>
                 </Container>
             </ScrollView>
         </>

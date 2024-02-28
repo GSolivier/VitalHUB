@@ -5,7 +5,7 @@ import { Row, Spacing } from '../../../../components/Container';
 import { TextMedium, TitleSemiBold } from '../../../../settings/AppFonts';
 import { Flex, TextAlign, TextDecoration } from '../../../../settings/AppEnums';
 import AppLocalizations from '../../../../settings/AppLocalizations';
-import translate from '../../../../locale';
+import t from '../../../../locale';
 import AppButton, { LinkButton } from '../../../../components/AppButton';
 import styled from 'styled-components';
 
@@ -40,11 +40,11 @@ export default function SeeAppointmentLocalDialog({ visible, onClose, appointmen
                 <TextMedium size={14} textAlign={TextAlign.center}>CRM-{appointment.crm}</TextMedium>
             </Row>
             <Spacing height={30} />
-            <AppButton textButton={translate(AppLocalizations.seeAppointmentLocal).toUpperCase()}
+            <AppButton textButton={t(AppLocalizations.seeAppointmentLocal).toUpperCase()}
                 onTap={handleInsertMedicalRecord}/>
             <Spacing height={30} />
             <LinkButton
-                text={translate(AppLocalizations.cancel)}
+                text={t(AppLocalizations.cancel)}
                 textDecoration={TextDecoration.underline}
                 alignSelf={Flex.center}
                 onTap={onClose}

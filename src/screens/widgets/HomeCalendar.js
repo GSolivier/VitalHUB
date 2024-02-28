@@ -3,7 +3,7 @@ import moment from "moment";
 import { StyleSheet } from "react-native";
 import CalendarStrip from "react-native-calendar-strip";
 import styled from "styled-components/native";
-import translate from "../../locale";
+import t from "../../locale";
 import AppLocalizations from "../../settings/AppLocalizations";
 
 export const StyledCalendarStrip = styled(CalendarStrip)`
@@ -13,15 +13,15 @@ export const StyledCalendarStrip = styled(CalendarStrip)`
 `
 moment.updateLocale("pt-br", {
     // Meses
-    months: `${translate(AppLocalizations.january)}_${translate(AppLocalizations.february)}_${translate(AppLocalizations.march)}_${translate(AppLocalizations.april)}_${translate(AppLocalizations.mayFull)}_${translate(AppLocalizations.june)}_${translate(AppLocalizations.july)}_${translate(AppLocalizations.august)}_${translate(AppLocalizations.september)}_${translate(AppLocalizations.october)}_${translate(AppLocalizations.november)}_${translate(AppLocalizations.december)}`.split("_"),
+    months: `${t(AppLocalizations.january)}_${t(AppLocalizations.february)}_${t(AppLocalizations.march)}_${t(AppLocalizations.april)}_${t(AppLocalizations.mayFull)}_${t(AppLocalizations.june)}_${t(AppLocalizations.july)}_${t(AppLocalizations.august)}_${t(AppLocalizations.september)}_${t(AppLocalizations.october)}_${t(AppLocalizations.november)}_${t(AppLocalizations.december)}`.split("_"),
     // Abreviação de meses
-    monthsShort: `${translate(AppLocalizations.jan)}_${translate(AppLocalizations.feb)}_${translate(AppLocalizations.mar)}_${translate(AppLocalizations.apr)}_${translate(AppLocalizations.may)}_${translate(AppLocalizations.jun)}_${translate(AppLocalizations.jul)}_${translate(AppLocalizations.aug)}_${translate(AppLocalizations.sep)}_${translate(AppLocalizations.oct)}_${translate(AppLocalizations.nov)}_${translate(AppLocalizations.dec)}`.split("_"),
+    monthsShort: `${t(AppLocalizations.jan)}_${t(AppLocalizations.feb)}_${t(AppLocalizations.mar)}_${t(AppLocalizations.apr)}_${t(AppLocalizations.may)}_${t(AppLocalizations.jun)}_${t(AppLocalizations.jul)}_${t(AppLocalizations.aug)}_${t(AppLocalizations.sep)}_${t(AppLocalizations.oct)}_${t(AppLocalizations.nov)}_${t(AppLocalizations.dec)}`.split("_"),
     // Dias da semana
-    weekdays: `${translate(AppLocalizations.sunday)}_${translate(AppLocalizations.monday)}_${translate(AppLocalizations.tuesday)}_${translate(AppLocalizations.wednesday)}_${translate(AppLocalizations.thursday)}_${translate(AppLocalizations.friday)}_${translate(AppLocalizations.saturday)}`.split("_"),
+    weekdays: `${t(AppLocalizations.sunday)}_${t(AppLocalizations.monday)}_${t(AppLocalizations.tuesday)}_${t(AppLocalizations.wednesday)}_${t(AppLocalizations.thursday)}_${t(AppLocalizations.friday)}_${t(AppLocalizations.saturday)}`.split("_"),
     // Abreviação dias da semana
-    weekdaysShort: `${translate(AppLocalizations.sun)}_${translate(AppLocalizations.mon)}_${translate(AppLocalizations.tue)}_${translate(AppLocalizations.wed)}_${translate(AppLocalizations.thu)}_${translate(AppLocalizations.fri)}_${translate(AppLocalizations.sat)}`.split("_"),
+    weekdaysShort: `${t(AppLocalizations.sun)}_${t(AppLocalizations.mon)}_${t(AppLocalizations.tue)}_${t(AppLocalizations.wed)}_${t(AppLocalizations.thu)}_${t(AppLocalizations.fri)}_${t(AppLocalizations.sat)}`.split("_"),
     // Abreviação dias da semana 
-    weekdaysMin: `${translate(AppLocalizations.sun)}_2ª_3ª_4ª_5ª_6ª_${translate(AppLocalizations.sat)}`.split("_")
+    weekdaysMin: `${t(AppLocalizations.sun)}_2ª_3ª_4ª_5ª_6ª_${t(AppLocalizations.sat)}`.split("_")
 });
 
 

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { TextSemiBold, TitleSemiBold } from '../../settings/AppFonts'
 import { Flex } from '../../settings/AppEnums'
 import AppInput from '../../components/AppInput'
-import translate from '../../locale'
+import t from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import AppButton from '../../components/AppButton'
 import { pop } from '../../settings/routes/RouteActions'
@@ -36,19 +36,19 @@ export default function SeeAppointmentLocalScreen({navigation}) {
         <Spacing height={8} />
         <TextSemiBold size={14}>São Paulo - SP</TextSemiBold>
         <Spacing height={20} />
-        <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.adress)} hint={'Rua Vicenso Silva, 987'} />
+        <AppInput isEditable={false} label={t(AppLocalizations.adress)} hint={'Rua Vicenso Silva, 987'} />
         <Spacing height={24} />
         <Row justifyContent={Flex.spaceBetween} width={'100%'}>
           <InputContainer>
-            <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.number)} hint={'578'} />
+            <AppInput isEditable={false} label={t(AppLocalizations.number)} hint={'578'} />
           </InputContainer>
           <Spacing width={32} />
           <InputContainer>
-            <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.neighborhood)} hint={'Moema-SP'} />
+            <AppInput isEditable={false} label={t(AppLocalizations.neighborhood)} hint={'Moema-SP'} />
           </InputContainer>
         </Row>
         <Spacing height={50} />
-        <AppButton textButton={translate(AppLocalizations.back).toUpperCase()} onTap={() => pop(navigation)}/>      
+        <AppButton textButton={t(AppLocalizations.back).toUpperCase()} onTap={() => pop(navigation)}/>      
         </Container>
     </>
   )

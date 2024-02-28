@@ -5,7 +5,7 @@ import { AppAssets } from '../../assets/AppAssets';
 import { Spacing } from '../../components/Container';
 import { TextMedium, TitleSemiBold } from '../../settings/AppFonts';
 import AppLocalizations from '../../settings/AppLocalizations';
-import translate from '../../locale';
+import t from '../../locale';
 import AppInput from '../../components/AppInput';
 import AppButton from '../../components/AppButton';
 import { pop } from '../../settings/routes/RouteActions';
@@ -15,15 +15,15 @@ export default function RedefinePassword({ navigation }) {
         <AuthContainer hasLeading={true} isClosable={true} onTap={() => { pop(navigation) }}>
             <Image source={AppAssets.appLogoDark} />
             <Spacing height={25} />
-            <TitleSemiBold size={20}>{translate(AppLocalizations.redefinePassword)}</TitleSemiBold>
+            <TitleSemiBold size={20}>{t(AppLocalizations.redefinePassword)}</TitleSemiBold>
             <Spacing height={15} />
-            <TextMedium>{translate(AppLocalizations.redefinePasswordHint)}</TextMedium>
+            <TextMedium>{t(AppLocalizations.redefinePasswordHint)}</TextMedium>
             <Spacing height={20} />
-            <AppInput hint={translate(AppLocalizations.newPasswordPlaceHolder)}/>
+            <AppInput hint={t(AppLocalizations.newPasswordPlaceHolder)}/>
             <Spacing height={15} />
-            <AppInput hint={translate(AppLocalizations.confirmNewPasswordPlaceHolder)}/>
+            <AppInput hint={t(AppLocalizations.confirmNewPasswordPlaceHolder)}/>
             <Spacing height={30} />
-            <AppButton textButton={translate(AppLocalizations.confirmNewPasswordPlaceHolder).toUpperCase()}/>
+            <AppButton textButton={t(AppLocalizations.confirmNewPasswordPlaceHolder).toUpperCase()}/>
         </AuthContainer>
     )
 }

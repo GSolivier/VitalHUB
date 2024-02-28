@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Spacing } from '../components/Container'
 import styled from 'styled-components/native'
 import { USER_LOGGED } from '../settings/AppUtils'
@@ -6,7 +6,7 @@ import { TextMedium, TitleSemiBold } from '../settings/AppFonts'
 import { AppColors } from '../settings/AppColors'
 import AppInput from '../components/AppInput'
 import { Flex, JustifyContent } from '../settings/AppEnums'
-import translate from '../locale'
+import t, { changeLanguage } from '../locale'
 import AppLocalizations from '../settings/AppLocalizations'
 import { ScrollView } from 'react-native'
 import AppButton from '../components/AppButton'
@@ -34,6 +34,7 @@ const InputContainer = styled.View`
 `
 
 export default function ProfileScreen({ user, navigation }) {
+
     return (
         <>
             <HeaderImage source={{ uri: USER_LOGGED.imagePath }}/>            
@@ -47,37 +48,36 @@ export default function ProfileScreen({ user, navigation }) {
                     <Spacing height={80} />
                     <AppInput
                         isEditable={false}
-                        hasLabel={true}
-                        lable={translate(AppLocalizations.dateOfBirth)}
+                        label={t(AppLocalizations.dateOfBirth)}
                         textValue={USER_LOGGED.date} />
                     <Spacing height={24} />
                     <AppInput
                         isEditable={false}
-                        hasLabel={true}
-                        lable={translate(AppLocalizations.cpf)}
+                        label={t(AppLocalizations.cpf)}
                         textValue={'426********'} />
                     <Spacing height={20} />
                     <AppInput
                         isEditable={false}
-                        hasLabel={true}
-                        lable={translate(AppLocalizations.adress)}
+                        label={t(AppLocalizations.adress)}
                         textValue={'Rua Vicenzo da Silva, 181'} />
                     <Spacing height={24} />
                     <Row justifyContent={Flex.spaceBetween} width={'100%'}>
                         <InputContainer>
-                            <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.cep)} hint={'09586-754'} />
+                            <AppInput isEditable={false} label={t(AppLocalizations.cep)} hint={'09586-754'} />
                         </InputContainer>
                         <Spacing width={32} />
                         <InputContainer>
-                            <AppInput isEditable={false} hasLabel={true} lable={translate(AppLocalizations.city)} hint={'Moema-SP'} />
+                            <AppInput isEditable={false} label={t(AppLocalizations.city)} hint={'Moema-SP'} />
                         </InputContainer>
                     </Row>
                     <Spacing height={32} />
-                    <AppButton textButton={translate(AppLocalizations.saveButton).toUpperCase()}/>
+                    <AppButton textButton={t(AppLocalizations.saveButton).toUpperCase()}/>
                     <Spacing height={30} />
-                    <AppButton textButton={translate(AppLocalizations.editButton).toUpperCase()}/>
+                    <AppButton textButton={t(AppLocalizations.editButton).toUpperCase()}/>
                     <Spacing height={30} />
-                    <AppButton textButton={translate(AppLocalizations.logOut).toUpperCase()} mainColor={AppColors.red}/>
+                    <AppButton textButton={t(AppLocalizations.logOut).toUpperCase()} mainColor={AppColors.red}/>
+                    <Spacing height={30} />
+                    <AppButton textButton={'pt'} mainColor={AppColors.green}/>
                 </Container>
             </ScrollView>
         </>

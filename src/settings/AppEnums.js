@@ -1,4 +1,4 @@
-import translate from "../locale";
+import t from "../locale";
 import AppLocalizations from "./AppLocalizations";
 
 export const HomeCardActionType = {
@@ -50,30 +50,30 @@ export const AppointmentLevelsList = {
 
 export const AppointmentLevelsButtons = [
     {
-        text: translate(AppLocalizations.routine),
+        text: t(AppLocalizations.routine),
         type: AppointmentLevelsList.routine
     },
     {
-        text: translate(AppLocalizations.exam),
+        text: t(AppLocalizations.exam),
         type: AppointmentLevelsList.exam
     },
     {
-        text: translate(AppLocalizations.urgency),
+        text: t(AppLocalizations.urgency),
         type: AppointmentLevelsList.urgency
     }
 ]
 
 export const AppointmentFilterList = [
     {
-        text: translate(AppLocalizations.scheduled),
+        text: t(AppLocalizations.scheduled),
         type: HomeCardActionType.scheduled
     },
     {
-        text: translate(AppLocalizations.carriedOut),
+        text: t(AppLocalizations.carriedOut),
         type: HomeCardActionType.carriedOut
     },
     {
-        text: translate(AppLocalizations.canceled),
+        text: t(AppLocalizations.canceled),
         type: HomeCardActionType.canceled
     }
 ]

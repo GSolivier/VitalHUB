@@ -5,36 +5,40 @@ import pt from './pt-BR';
 
 const i18n = new I18n();
 
+i18n.store(en);
+i18n.store(pt);
+
 const normalizeTranslate = {
-    'en_US': 'en_US',
-    'pt_BR': 'pt_BR',
-    'en': 'en_US',
-    'pt_US': 'pt_BR',
-  }
+  'en_US': 'en_US',
+  'pt_BR': 'pt_BR',
+  'en': 'en_US',
+  'pt_US': 'pt_BR',
+}
 
 const getLanguageByDevice = () => {
-    return Platform.OS === 'ios'
-      ? NativeModules.SettingsManager.settings.AppleLocale // Adquire o idioma no device iOS
-      : NativeModules.I18nManager.localeIdentifier // Adquire o idioma no device Android
-  }
+  return Platform.OS === 'ios'
+    ? NativeModules.SettingsManager.settings.AppleLocale
+    : NativeModules.I18nManager.localeIdentifier 
+}
 
-  i18n.translations = {
-    'en_US': en,
-    'pt_BR': pt,
-  }
+i18n.translations = {
+  'en_US': en,
+  'pt_BR': pt,
+}
 
-  const setLanguageToI18n = () => {
-    const language = getLanguageByDevice()
-    const translateNormalize = normalizeTranslate[language]
-    const iHaveThisLanguage = i18n.translations.hasOwnProperty(translateNormalize)
-    iHaveThisLanguage
-      ? i18n.locale = translateNormalize
-      : i18n.defaultLocale = 'en_US'
-  }
+
+export const setLanguageToI18n = () => {
+  const language = getLanguageByDevice()
+  const translateNormalize = normalizeTranslate[language]
+  const iHaveThisLanguage = i18n.translations.hasOwnProperty(translateNormalize)
+  iHaveThisLanguage
+    ? i18n.locale = translateNormalize
+    : i18n.defaultLocale = 'en_US'
+}
 
 setLanguageToI18n()
 
 
-export default function translate(key){
-    return i18n.t(key)
+export default function t(key) {
+  return i18n.t(key)
 }

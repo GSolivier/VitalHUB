@@ -3,7 +3,7 @@ import { Calendar, LocaleConfig } from 'react-native-calendars';
 import { AppColors } from '../../../settings/AppColors';
 import styled from 'styled-components/native';
 import { FontFamily } from '../../../settings/AppFonts';
-import translate from '../../../locale';
+import t from '../../../locale';
 import AppLocalizations from '../../../settings/AppLocalizations';
 
 const CalendarBox = styled.View`
@@ -12,51 +12,51 @@ const CalendarBox = styled.View`
 
 LocaleConfig.locales['locale'] = {
     monthNames: [
-        translate(AppLocalizations.january),
-        translate(AppLocalizations.february),
-        translate(AppLocalizations.march),
-        translate(AppLocalizations.april),
-        translate(AppLocalizations.mayFull),
-        translate(AppLocalizations.june),
-        translate(AppLocalizations.july),
-        translate(AppLocalizations.august),
-        translate(AppLocalizations.september),
-        translate(AppLocalizations.october),
-        translate(AppLocalizations.november),
-        translate(AppLocalizations.december),
+        t(AppLocalizations.january),
+        t(AppLocalizations.february),
+        t(AppLocalizations.march),
+        t(AppLocalizations.april),
+        t(AppLocalizations.mayFull),
+        t(AppLocalizations.june),
+        t(AppLocalizations.july),
+        t(AppLocalizations.august),
+        t(AppLocalizations.september),
+        t(AppLocalizations.october),
+        t(AppLocalizations.november),
+        t(AppLocalizations.december),
     ],
 
     monthNamesShort: [
-        translate(AppLocalizations.jan),
-        translate(AppLocalizations.feb),
-        translate(AppLocalizations.mar),
-        translate(AppLocalizations.apr),
-        translate(AppLocalizations.may),
-        translate(AppLocalizations.jun),
-        translate(AppLocalizations.jul),
-        translate(AppLocalizations.aug),
-        translate(AppLocalizations.sep),
-        translate(AppLocalizations.oct),
-        translate(AppLocalizations.nov),
-        translate(AppLocalizations.dec),],
+        t(AppLocalizations.jan),
+        t(AppLocalizations.feb),
+        t(AppLocalizations.mar),
+        t(AppLocalizations.apr),
+        t(AppLocalizations.may),
+        t(AppLocalizations.jun),
+        t(AppLocalizations.jul),
+        t(AppLocalizations.aug),
+        t(AppLocalizations.sep),
+        t(AppLocalizations.oct),
+        t(AppLocalizations.nov),
+        t(AppLocalizations.dec),],
 
     dayNames: [
-        translate(AppLocalizations.sunday),
-        translate(AppLocalizations.monday),
-        translate(AppLocalizations.tuesday),
-        translate(AppLocalizations.wednesday),
-        translate(AppLocalizations.thursday),
-        translate(AppLocalizations.friday),
-        translate(AppLocalizations.saturday),],
+        t(AppLocalizations.sunday),
+        t(AppLocalizations.monday),
+        t(AppLocalizations.tuesday),
+        t(AppLocalizations.wednesday),
+        t(AppLocalizations.thursday),
+        t(AppLocalizations.friday),
+        t(AppLocalizations.saturday),],
 
     dayNamesShort: [
-        translate(AppLocalizations.sun),
-        translate(AppLocalizations.mon),
-        translate(AppLocalizations.tue),
-        translate(AppLocalizations.wed),
-        translate(AppLocalizations.thu),
-        translate(AppLocalizations.fri),
-        translate(AppLocalizations.sat),],
+        t(AppLocalizations.sun),
+        t(AppLocalizations.mon),
+        t(AppLocalizations.tue),
+        t(AppLocalizations.wed),
+        t(AppLocalizations.thu),
+        t(AppLocalizations.fri),
+        t(AppLocalizations.sat),],
 
     today: "Hoje"
 };

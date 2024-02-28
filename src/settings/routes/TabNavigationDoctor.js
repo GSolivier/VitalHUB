@@ -5,7 +5,7 @@ import { AppColors } from '../AppColors'
 import { TextMedium } from '../AppFonts'
 import { Spacing } from '../../components/Container'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
-import translate from '../../locale'
+import t from '../../locale'
 import AppLocalizations from '../AppLocalizations'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { RouteKeys } from './RouteActions'
@@ -44,14 +44,14 @@ export default function HomeBottomNavigation() {
                     if (route.name == RouteKeys.homeScreenDoctor) {
                         return <IconButton isSelected={focused}>
                             <SvgIcon name={Icon.calendarCheck} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
-                            {focused ? (<TextMedium size={12} color={AppColors.secondaryV2}>{translate(AppLocalizations.schedule)}</TextMedium>) : (<Spacing />)}
+                            {focused ? (<TextMedium size={12} color={AppColors.secondaryV2}>{t(AppLocalizations.schedule)}</TextMedium>) : (<Spacing />)}
                         </IconButton>
                     } else if (route.name == RouteKeys.clinicScreenDoctor) {
                         return <IconButton isSelected={focused}>
 
                             <SvgIcon name={Icon.hospital} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
 
-                            {focused ? (<TextMedium size={12} color={AppColors.secondaryV2}>{translate(AppLocalizations.clinic)}</TextMedium>) : (<Spacing />)}
+                            {focused ? (<TextMedium size={12} color={AppColors.secondaryV2}>{t(AppLocalizations.clinic)}</TextMedium>) : (<Spacing />)}
 
                         </IconButton>
                     } else {
@@ -59,7 +59,7 @@ export default function HomeBottomNavigation() {
 
                             <SvgIcon name={Icon.circleUser} color={focused ? AppColors.secondaryV2 : AppColors.grayV2} />
 
-                            {focused ? (<TextMedium size={12} color={AppColors.secondaryV2}>{translate(AppLocalizations.profile)}</TextMedium>) : (<Spacing />)}
+                            {focused ? (<TextMedium size={12} color={AppColors.secondaryV2}>{t(AppLocalizations.profile)}</TextMedium>) : (<Spacing />)}
 
                         </IconButton>
                     }

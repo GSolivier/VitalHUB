@@ -4,7 +4,7 @@ import { TextMedium, TextSemiBold} from '../../../settings/AppFonts'
 import { Row, Spacing } from '../../../components/Container'
 import AppButton, { LinkButton } from '../../../components/AppButton'
 import { Flex, TextAlign, TextDecoration } from '../../../settings/AppEnums'
-import translate from '../../../locale'
+import t from '../../../locale'
 import styled from 'styled-components/native'
 import AppDialog from '../../../components/AppDialog'
 import { RouteKeys, push } from '../../../settings/routes/RouteActions'
@@ -35,15 +35,15 @@ export default function SeeMedicalRecordDialog({ visible, onClose, appointment, 
             <TextSemiBold textAlign={TextAlign.center} size={20}>{appointment.name}</TextSemiBold>
             <Spacing height={15} />
             <Row justifyContent={Flex.spaceAround} width={'100%'}>
-                <TextMedium size={14} textAlign={TextAlign.center}>{appointment.age} {translate(AppLocalizations.yearsOld)}</TextMedium>
+                <TextMedium size={14} textAlign={TextAlign.center}>{appointment.age} {t(AppLocalizations.yearsOld)}</TextMedium>
                 <TextMedium size={14} textAlign={TextAlign.center}>{appointment.email}</TextMedium>
             </Row>
             <Spacing height={30} />
-            <AppButton textButton={translate(AppLocalizations.insertMedicalRecordButton).toUpperCase()}
+            <AppButton textButton={t(AppLocalizations.insertMedicalRecordButton).toUpperCase()}
                 onTap={handleInsertMedicalRecord}/>
             <Spacing height={30} />
             <LinkButton
-                text={translate(AppLocalizations.cancel)}
+                text={t(AppLocalizations.cancel)}
                 textDecoration={TextDecoration.underline}
                 alignSelf={Flex.center}
                 onTap={onClose}

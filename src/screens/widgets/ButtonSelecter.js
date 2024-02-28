@@ -9,14 +9,13 @@ export default function ButtonSelecter({
     handleTabSelected,
     mainColor,
     mainTextColor,
-    haslabel = false,
-    label = '',
+    label,
     buttonList = [],
     spacing = 10
  }) {
     return (
         <>
-            {haslabel ? (
+            {label ? (
                 <>
                     <TextSemiBold alignSelf={Flex.flexStart} size={16}>{label}</TextSemiBold>
                     <Spacing height={10} />

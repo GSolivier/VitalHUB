@@ -6,7 +6,7 @@ import { TextMedium, TitleSemiBold } from '../../settings/AppFonts'
 import { AppColors } from '../../settings/AppColors'
 import { TouchableOpacity } from 'react-native'
 import { Flex } from '../../settings/AppEnums'
-import translate from '../../locale'
+import t from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
 
@@ -42,7 +42,7 @@ export default function HomeHeader({ imagePath, name, onTapNotification }) {
                     <ProfileImage source={imagePath} />
                     <Spacing width={10} />
                     <Column>
-                        <TextMedium size={14}>{translate(AppLocalizations.welcome)}</TextMedium>
+                        <TextMedium size={14}>{t(AppLocalizations.welcome)}</TextMedium>
                         <TitleSemiBold size={16} color={AppColors.white}>{name}</TitleSemiBold>
                     </Column>
                 </Row>

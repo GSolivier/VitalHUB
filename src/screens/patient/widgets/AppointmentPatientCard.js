@@ -5,7 +5,7 @@ import { Column, Row, Spacing } from '../../../components/Container'
 import { TextRegular, TextSemiBold, TitleSemiBold } from '../../../settings/AppFonts'
 import { Flex, HomeCardActionType, JustifyContent, TextDecoration } from '../../../settings/AppEnums'
 import { LinkButton } from '../../../components/AppButton'
-import translate from '../../../locale'
+import t from '../../../locale'
 import AppLocalizations from '../../../settings/AppLocalizations'
 import SvgIcon, { Icon } from '../../../assets/icons/Icons'
 import { TouchableOpacity, View } from 'react-native'
@@ -57,7 +57,7 @@ export default function AppointmentPatientCard({
                                 <TitleSemiBold size={16}>{name}</TitleSemiBold>
                                 <Spacing width={5} />
                                 <Row justifyContent={Flex.flexStart} alignItems={Flex.center}>
-                                    <TextRegular size={14}>{age} {translate(AppLocalizations.yearsOld)}</TextRegular>
+                                    <TextRegular size={14}>{age} {t(AppLocalizations.yearsOld)}</TextRegular>
                                     <Spacing width={7} />
                                     <TextSemiBold size={14} color={AppColors.grayV6}>•</TextSemiBold>
                                     <Spacing width={7} />
@@ -76,7 +76,7 @@ export default function AppointmentPatientCard({
                                         (
                                             <LinkButton
                                                 color={AppColors.red}
-                                                text={translate(AppLocalizations.cancel)}
+                                                text={t(AppLocalizations.cancel)}
                                                 textDecoration={TextDecoration.none}
                                                 alignSelf={Flex.flexEnd}
 
@@ -88,7 +88,7 @@ export default function AppointmentPatientCard({
                                             (
                                                 <LinkButton
                                                     color={AppColors.secondaryV1}
-                                                    text={translate(AppLocalizations.seeMedicalRecord)}
+                                                    text={t(AppLocalizations.seeMedicalRecord)}
                                                     textDecoration={TextDecoration.none}
                                                     alignSelf={Flex.flexEnd}
                                                     justifySelf={Flex.flexEnd}

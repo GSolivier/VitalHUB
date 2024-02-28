@@ -7,7 +7,7 @@ import { TitleSemiBold } from '../../settings/AppFonts'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import { AppColors } from '../../settings/AppColors'
 import AuthContainer from './widgets/AuthContainer'
-import translate from '../../locale'
+import t from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { Flex } from '../../settings/AppEnums'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
@@ -29,11 +29,11 @@ export default function Login({navigation}) {
 
           <Spacing height={25} />
 
-      <TitleSemiBold size={20}>{translate(AppLocalizations.loginOrSignUp)}</TitleSemiBold>
+      <TitleSemiBold size={20}>{t(AppLocalizations.loginOrSignUp)}</TitleSemiBold>
 
           <Spacing height={20} />
 
-      <AppInput hint={translate(AppLocalizations.emailPlacehoder)} 
+      <AppInput hint={t(AppLocalizations.emailPlacehoder)} 
       onEdit={handleEmailChange}
       isValid={isValidated} 
       textValue={email}
@@ -41,7 +41,7 @@ export default function Login({navigation}) {
 
           <Spacing height={15} />
 
-      <AppInput hint={translate(AppLocalizations.passwordPlaceholder)} isObscure={true} />
+      <AppInput hint={t(AppLocalizations.passwordPlaceholder)} isObscure={true} />
 
           <Spacing height={10} />
 
@@ -49,7 +49,7 @@ export default function Login({navigation}) {
         size={14} 
         color={AppColors.grayV4}
         alignSelf={Flex.flexStart} 
-        text={translate(AppLocalizations.forgotPassword)} 
+        text={t(AppLocalizations.forgotPassword)} 
         onTap={()=> {
          push(navigation, RouteKeys.forgotPassword)
         }}
@@ -58,7 +58,7 @@ export default function Login({navigation}) {
           <Spacing height={30} />
 
       <AppButton 
-      textButton={translate(AppLocalizations.enterButton).toUpperCase()} 
+      textButton={t(AppLocalizations.enterButton).toUpperCase()} 
       onTap={ () => {
         if(email.length != 0){
           push(navigation, userType === 'patient' ? RouteKeys.tabNavigationPatient : RouteKeys.tabNavigationDoctor, true)
@@ -70,7 +70,7 @@ export default function Login({navigation}) {
           <Spacing height={15} />
 
       <AppButton 
-      textButton={translate(AppLocalizations.enterWithGoogle).toUpperCase()} 
+      textButton={t(AppLocalizations.enterWithGoogle).toUpperCase()} 
       isOutlined={true} 
       SvgIcon={
       <SvgIcon 
@@ -84,8 +84,8 @@ export default function Login({navigation}) {
       <Row alignItems={Flex.center} >
       <TitleSemiBold
       size={14}
-      color={AppColors.grayV2}>{translate(AppLocalizations.dontHaveAccount)} </TitleSemiBold>
-      <LinkButton onTap={() => {push(navigation, RouteKeys.createAccount)}} color={AppColors.secondaryV6} text={translate(AppLocalizations.createAccount)} />
+      color={AppColors.grayV2}>{t(AppLocalizations.dontHaveAccount)} </TitleSemiBold>
+      <LinkButton onTap={() => {push(navigation, RouteKeys.createAccount)}} color={AppColors.secondaryV6} text={t(AppLocalizations.createAccount)} />
 
       </Row>
 

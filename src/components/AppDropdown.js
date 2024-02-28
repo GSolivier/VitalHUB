@@ -15,14 +15,13 @@ export default function AppDropdown({
     data,
     handleValueSelected,
     placeholder,
-    hasLabel = true,
-    label = ''
+    label
 }
 ) {
 
     return (
         <DropdownBox>
-            {hasLabel ? (<TextSemiBold size={16}>{label}</TextSemiBold>) : null}
+            {label ? (<TextSemiBold size={16}>{label}</TextSemiBold>) : null}
             <SelectList
                 setSelected={(val) => handleValueSelected(val)}
                 data={data}

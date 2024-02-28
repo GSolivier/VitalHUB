@@ -4,7 +4,7 @@ import { Image } from "react-native";
 import { Spacing } from "../../components/Container";
 import { AppAssets } from "../../assets/AppAssets";
 import { TextMedium, TitleSemiBold } from "../../settings/AppFonts";
-import translate from "../../locale";
+import t from "../../locale";
 import AppLocalizations from "../../settings/AppLocalizations";
 import { AppColors } from "../../settings/AppColors";
 import AppButton, { LinkButton } from "../../components/AppButton";
@@ -22,15 +22,15 @@ export default function EmailVerify({ navigation }) {
         <AuthContainer hasLeading={true} isClosable={true} onTap={() => { pop(navigation) }}>
             <Image source={AppAssets.appLogoDark} />
             <Spacing height={25}/>
-            <TitleSemiBold size={20}>{translate(AppLocalizations.emailVerify)}</TitleSemiBold>
+            <TitleSemiBold size={20}>{t(AppLocalizations.emailVerify)}</TitleSemiBold>
             <Spacing height={15}/>
-            <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.emailVerifyHint)} <TextMedium color={AppColors.secondary}>{params.email}</TextMedium></TextMedium>
+            <TextMedium textAlign={TextAlign.center}>{t(AppLocalizations.emailVerifyHint)} <TextMedium color={AppColors.secondary}>{params.email}</TextMedium></TextMedium>
             <Spacing height={20}/>
             <AppCodeInput onValueChange={setCodeValue}/>
             <Spacing height={30}/>
-            <AppButton textButton={translate(AppLocalizations.enterButton).toUpperCase()} onTap={() => {push(navigation, RouteKeys.redefinePassword)}}/>
+            <AppButton textButton={t(AppLocalizations.enterButton).toUpperCase()} onTap={() => {push(navigation, RouteKeys.redefinePassword)}}/>
             <Spacing height={30}/>
-            <LinkButton text={translate(AppLocalizations.resentCode)} color={AppColors.secondaryV1} />
+            <LinkButton text={t(AppLocalizations.resentCode)} color={AppColors.secondaryV1} />
         </AuthContainer>
     );
 }

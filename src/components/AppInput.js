@@ -22,14 +22,13 @@ export const InputBox = styled.View`
 `
 
 export default function AppInput({
-    lable = '',
+    label,
     hint,
     textColor = AppColors.primaryV1,
     borderColor,
     isObscure = false,
     isTextArea = false,
     isEditable = true,
-    hasLabel = false,
     textValue,
     onEdit,
     focus = null,
@@ -43,7 +42,7 @@ export default function AppInput({
 
     return (
         <InputBox>
-            {hasLabel ? (<TextSemiBold size={16}>{lable}</TextSemiBold>) : null}
+            {label ? (<TextSemiBold size={16}>{label}</TextSemiBold>) : null}
             <Input
                 placeholder={hint}
                 placeholderTextColor={isEditable ? textColor : AppColors.grayV2}

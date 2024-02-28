@@ -5,7 +5,7 @@ import { AppointmentLevelsButtons, Flex} from '../../../../settings/AppEnums'
 import AppButton, { LinkButton } from '../../../../components/AppButton'
 import { Spacing } from '../../../../components/Container'
 import AppInput from '../../../../components/AppInput'
-import translate from '../../../../locale'
+import t from '../../../../locale'
 import AppLocalizations from '../../../../settings/AppLocalizations'
 import AppDropdown from '../../../../components/AppDropdown'
 import { AppColors } from '../../../../settings/AppColors'
@@ -43,13 +43,12 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
       onClose={onClose}
 
     >
-      <TitleSemiBold alignSelf={Flex.center}>{translate(AppLocalizations.scheduleAppointment)}</TitleSemiBold>
+      <TitleSemiBold alignSelf={Flex.center}>{t(AppLocalizations.scheduleAppointment)}</TitleSemiBold>
       <Spacing height={30} />
       <AppDropdown
         data={datas}
-        label={translate(AppLocalizations.typeofAppointmentLabel)}
-        placeholder={translate(AppLocalizations.typeofAppointmentHint)}
-        hasLabel={true}
+        label={t(AppLocalizations.typeofAppointmentLabel)}
+        placeholder={t(AppLocalizations.typeofAppointmentHint)}
         handleValueSelected={handleTabSelected}
       />
       <Spacing height={20} />
@@ -58,22 +57,20 @@ export default function ScheduleAppointmentDialog({ visible, onClose, navigation
         handleTabSelected={handleTabSelected}
         mainColor={AppColors.primary}
         mainTextColor={AppColors.primaryV1}
-        haslabel={true}
-        label={translate(AppLocalizations.appointmenteLevelLabel)}
+        label={t(AppLocalizations.appointmenteLevelLabel)}
         buttonList={AppointmentLevelsButtons}
         spacing={21}
       />
       <Spacing height={20} />
 
       <AppInput 
-      hasLabel={true} 
-      lable={translate(AppLocalizations.desiredLocationLabel)} 
-      hint={translate(AppLocalizations.desiredLocationHint)} 
+      label={t(AppLocalizations.desiredLocationLabel)} 
+      hint={t(AppLocalizations.desiredLocationHint)} 
       onEdit={() => { }} />
       <Spacing height={30} />
-      <AppButton textButton={translate(AppLocalizations.continueButton).toUpperCase()} onTap={handleInsertMedicalRecord} />
+      <AppButton textButton={t(AppLocalizations.continueButton).toUpperCase()} onTap={handleInsertMedicalRecord} />
       <Spacing height={30} />
-      <LinkButton text={translate(AppLocalizations.cancel)} onTap={onClose} />
+      <LinkButton text={t(AppLocalizations.cancel)} onTap={onClose} />
     </AppDialog>
   )
 }

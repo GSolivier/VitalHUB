@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Container, Spacing } from '../../components/Container'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { TitleSemiBold } from '../../settings/AppFonts'
-import translate from '../../locale'
+import t from '../../locale'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import { pop } from '../../settings/routes/RouteActions'
 import AppDropdown from '../../components/AppDropdown'
@@ -27,23 +27,22 @@ export default function SelectDate({ navigation }) {
 
   return (
     <Container>
-      <TitleSemiBold>{translate(AppLocalizations.selectDate)}</TitleSemiBold>
+      <TitleSemiBold>{t(AppLocalizations.selectDate)}</TitleSemiBold>
       <Spacing height={35} />
       <SelectDateCalendar />
       <Spacing height={30} />
 
       <AppDropdown
-        hasLabel={true}
         handleValueSelected={setTime}
-        label={translate(AppLocalizations.selectAvailableTimeLabel)}
-        placeholder={translate(AppLocalizations.selectAvailableTimeHint)}
+        label={t(AppLocalizations.selectAvailableTimeLabel)}
+        placeholder={t(AppLocalizations.selectAvailableTimeHint)}
         data={datas}
       />
 
       <Spacing height={42} />
-      <AppButton textButton={translate(AppLocalizations.confirm).toUpperCase()} onTap={() => setConfirmDialog(true)} />
+      <AppButton textButton={t(AppLocalizations.confirm).toUpperCase()} onTap={() => setConfirmDialog(true)} />
       <Spacing height={30} />
-      <LinkButton text={translate(AppLocalizations.cancel)} onTap={() => pop(navigation)} />
+      <LinkButton text={t(AppLocalizations.cancel)} onTap={() => pop(navigation)} />
       <ConfirmAppointmentDialog visible={confirmDialog}   onClose={() => setConfirmDialog(false)} navigation={navigation}/>
     </Container>
   )

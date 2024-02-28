@@ -4,7 +4,7 @@ import AuthContainer from './widgets/AuthContainer'
 import { AppAssets } from '../../assets/AppAssets'
 import { Spacing } from '../../components/Container'
 import { TextMedium, TitleSemiBold } from '../../settings/AppFonts'
-import translate from '../../locale'
+import t from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import AppInput from '../../components/AppInput'
 import AppButton, { LinkButton } from '../../components/AppButton'
@@ -16,19 +16,19 @@ export default function CreateAccount({ navigation }) {
     <AuthContainer>
       <Image source={AppAssets.appLogoDark} />
       <Spacing height={25} />
-      <TitleSemiBold size={20}>{translate(AppLocalizations.createAccountTitle)}</TitleSemiBold>
+      <TitleSemiBold size={20}>{t(AppLocalizations.createAccountTitle)}</TitleSemiBold>
       <Spacing height={15} />
-      <TextMedium textAlign={TextAlign.center}>{translate(AppLocalizations.createAccountHint)}</TextMedium>
+      <TextMedium textAlign={TextAlign.center}>{t(AppLocalizations.createAccountHint)}</TextMedium>
       <Spacing height={20} />
-      <AppInput hint={translate(AppLocalizations.emailPlacehoder)} />
+      <AppInput hint={t(AppLocalizations.emailPlacehoder)} />
       <Spacing height={15} />
-      <AppInput hint={translate(AppLocalizations.passwordPlaceholder)} />
+      <AppInput hint={t(AppLocalizations.passwordPlaceholder)} />
       <Spacing height={15} />
-      <AppInput hint={translate(AppLocalizations.confirmPassword)} />
+      <AppInput hint={t(AppLocalizations.confirmPassword)} />
       <Spacing height={30} />
-      <AppButton textButton={translate(AppLocalizations.signUp).toUpperCase()} />
+      <AppButton textButton={t(AppLocalizations.signUp).toUpperCase()} />
       <Spacing height={30} />
-      <LinkButton text={translate(AppLocalizations.cancel)} onTap={() => pop(navigation)}/>
+      <LinkButton text={t(AppLocalizations.cancel)} onTap={() => pop(navigation)}/>
     </AuthContainer>
   )
 }

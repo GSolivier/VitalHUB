@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Container, Spacing } from '../../components/Container'
 import { TitleSemiBold } from '../../settings/AppFonts'
 import AppButton, { LinkButton } from '../../components/AppButton'
-import translate from '../../locale'
+import t from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
 import { ClinicListData } from '../../settings/AppUtils'
 import ClinicList from './widgets/ClinicList'
@@ -16,7 +16,7 @@ export default function SelectClinic({navigation}) {
     }
   return (
     <Container paddingTop={30}>
-      <TitleSemiBold>{translate(AppLocalizations.selectClinic)}</TitleSemiBold>
+      <TitleSemiBold>{t(AppLocalizations.selectClinic)}</TitleSemiBold>
       <Spacing height={35}/>
       <ClinicList
         DATA={ClinicListData}
@@ -24,9 +24,9 @@ export default function SelectClinic({navigation}) {
         selected={selected}
       />
       <Spacing height={30}/>
-      <AppButton textButton={translate(AppLocalizations.continueButton).toUpperCase()} onTap={() => push(navigation, RouteKeys.selectDoctorScreen)}/>
+      <AppButton textButton={t(AppLocalizations.continueButton).toUpperCase()} onTap={() => push(navigation, RouteKeys.selectDoctorScreen)}/>
       <Spacing height={30}/>
-      <LinkButton text={translate(AppLocalizations.cancel)} onTap={() => pop(navigation)}/>
+      <LinkButton text={t(AppLocalizations.cancel)} onTap={() => pop(navigation)}/>
     </Container>
   )
 }

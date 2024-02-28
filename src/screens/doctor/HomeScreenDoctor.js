@@ -49,7 +49,10 @@ export default function HomeScreenDoctor({ navigation }) {
 
       <Spacing height={20} />
 
-      <ButtonSelecter selected={selectedTab} handleTabSelected={handleTabSelected} buttonList={AppointmentFilterList} />
+      <ButtonSelecter 
+      selected={selectedTab} 
+      handleTabSelected={handleTabSelected} 
+      buttonList={AppointmentFilterList} />
       
       <Spacing height={20} />
 
