@@ -22,7 +22,8 @@ export const RouteKeys = {
   selectDoctorScreen: "SelectDoctorScreen",
   selectDateScreen: 'SelectDateScreen',
   seeAppointmentLocalScreen: 'seeAppointmentLocalScreen',
-  medicalRecordScreen: 'medicalRecordScreen'
+  medicalRecordScreen: 'medicalRecordScreen',
+  scanExamsScreen: 'ScanExamsScreen'
 };
 
 export async function push<RouteName extends keyof ParamListBase>(

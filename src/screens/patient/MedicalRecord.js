@@ -1,4 +1,4 @@
-import { ScrollView } from 'react-native'
+import { ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Container, Row, Spacing } from '../../components/Container'
 import styled from 'styled-components/native'
@@ -11,7 +11,7 @@ import AppLocalizations from '../../settings/AppLocalizations'
 import AppButton, { LinkButton } from '../../components/AppButton'
 import { AppColors } from '../../settings/AppColors'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
-import { pop } from '../../settings/routes/RouteActions'
+import { RouteKeys, pop, push } from '../../settings/routes/RouteActions'
 
 const HeaderImage = styled.Image`
     width: 100%;
@@ -61,11 +61,13 @@ export default function MedicalRecord({ navigation }) {
                         isTextArea={true}
                         textValue={'O paciente possuí uma infecção noouvido. Necessário repouse de 2 diase acompanhamento médico constante'} />
                     <Spacing height={20} />
-                    <AppInput
-                        isEditable={false}
-                        label={t(AppLocalizations.appointDescriptionLabel)}
-                        isTextArea={true}
-                        textValue={'Nenhuma foto informada'} />
+                    <TouchableOpacity onPress={() => push(navigation, RouteKeys.scanExamsScreen)}>
+                        <AppInput
+                            isEditable={false}
+                            label={t(AppLocalizations.appointDescriptionLabel)}
+                            isTextArea={true}
+                            textValue={'Nenhuma foto informada'} />
+                    </TouchableOpacity>
                     <Spacing height={10} />
                     <Row>
                         <ButtonContainer>
@@ -92,7 +94,7 @@ export default function MedicalRecord({ navigation }) {
                         isTextArea={true}
                         textValue={'Resultado do exame de sangue: tudo normal'} />
                     <Spacing height={30} />
-                    <LinkButton text={t(AppLocalizations.back)} onTap={() => pop(navigation)}/>
+                    <LinkButton text={t(AppLocalizations.back)} onTap={() => pop(navigation)} />
                 </Container>
             </ScrollView>
         </>

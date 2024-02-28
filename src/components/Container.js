@@ -12,6 +12,7 @@ export const Container = styled.SafeAreaView`
     justify-content: ${({ justifyContent = Flex.center }) => justifyContent};
     background-color: ${AppColors.white};
     flex: ${({flex = 1}) => flex};
+    width: 100%;
 `
 
 export const Spacing = styled.View`
