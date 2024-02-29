@@ -1,6 +1,48 @@
 import { Camera, CameraType } from 'expo-camera'
 import React, { useState } from 'react'
 import { Button, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Container } from '../../components/Container';
+import styled from 'styled-components/native';
+import { AppColors } from '../../settings/AppColors';
+import SvgIcon, { Icon } from '../../assets/icons/Icons';
+import { Flex } from '../../settings/AppEnums';
+
+const AppCamera = styled(Camera)`
+    flex: 1;
+    width: 100%;
+
+`
+
+const CameraBox = styled.View`
+flex: 1;
+width: 100%;
+justify-content: flex-end;
+`
+
+const ButtonBox = styled.View`
+    flex: 0.15;
+    width: 100%;
+    background-color: rgba(255,255,255,0.85);
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+`
+
+const ImageBox = styled.View`
+    flex: 1;
+    position: relative;
+`
+
+const RenderedImage = styled.Image`
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+`
 
 
 export default function ScanExamsScreen() {
@@ -21,58 +63,46 @@ export default function ScanExamsScreen() {
             </View>
         );
     }
-    function toggleCameraType() {
-        setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
-    }
 
     const takePicture = async () => {
-        if(camera){
+        if (camera) {
             const data = await camera.takePictureAsync(null)
-            console.log('====================================');
-            console.log(data);
-            console.log('====================================');
             setImage(data.uri);
         }
-      }
-    
+    }
+
 
     return (
-        <SafeAreaView style={styles.container}  >
-            <Camera ref={ref => setCamera(ref)} style={styles.camera} type={CameraType.front}>
-                <View style={styles.buttonContainer}>
-                    <Button title="Take Picture" onPress={() => takePicture()} />
-                    {image && <Image source={{ uri: image }} style={{ flex: 1 }} />}
-                </View>
-            </Camera>
-        </SafeAreaView>
+        <Container paddingTop={0} paddingRight={0} paddingLeft={0} paddingBottom={0} alignItems={Flex.flexStart}>
+
+            {image == null ? (
+                <AppCamera
+                    ref={ref => setCamera(ref)}
+                    type={CameraType.back}>
+                    <CameraBox>
+
+                        <ButtonBox>
+                            <TouchableOpacity activeOpacity={0.5} onPress={() => takePicture()}>
+                                <SvgIcon name={Icon.dotCircle} color={AppColors.primary} size={80} />
+                            </TouchableOpacity>
+                        </ButtonBox>
+
+                    </CameraBox>
+
+                </AppCamera>
+            ) :
+                (
+                    <>
+                        <ImageBox>
+                            <ButtonBox>
+                                
+                            </ButtonBox>
+                            <RenderedImage source={{ uri: image }} />
+                        </ImageBox>
+                    </>
+
+                )}
+
+        </Container>
     );
 }
-
-/* @hide const styles = StyleSheet.create({ ... }); */
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-    },
-    camera: {
-        flex: 1,
-        width: '100%'
-    },
-    buttonContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        backgroundColor: 'transparent',
-        margin: 64,
-        width: '100%'
-    },
-    button: {
-        flex: 1,
-        alignSelf: 'flex-end',
-        alignItems: 'center',
-    },
-    text: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: 'white',
-    },
-});

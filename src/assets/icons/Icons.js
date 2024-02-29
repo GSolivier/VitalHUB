@@ -93,6 +93,10 @@ export const Icon = {
         name: 'file-alert-outline',
         family: IconFamily.materialCommunityIcons
     },
+    dotCircle: {
+        name: 'dot-circle',
+        family: IconFamily.fontAwesome5
+    },
 };
 
 

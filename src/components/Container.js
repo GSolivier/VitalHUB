@@ -3,11 +3,11 @@ import { AppColors } from '../settings/AppColors'
 import { Flex } from '../settings/AppEnums'
 
 export const Container = styled.SafeAreaView`
-    padding: ${({padding = 20}) => `${padding}px`};
-    padding-top: ${({paddingTop = 20}) => `${paddingTop}px`};
-    padding-right: ${({paddingRight = 20}) => `${paddingRight}px`};
-    padding-bottom: ${({paddingBottom = 20}) => `${paddingBottom}px`};
-    padding-left: ${({paddingLeft = 20}) => `${paddingLeft}px`};
+    padding: ${({
+        paddingTop = 20, 
+        paddingRight = 20, 
+        paddingBottom = 20, 
+        paddingLeft = 20}) => `${paddingTop}px ${paddingRight}px ${paddingBottom}px ${paddingLeft}px `};
     align-items: ${({ alignItems = Flex.center }) => alignItems};
     justify-content: ${({ justifyContent = Flex.center }) => justifyContent};
     background-color: ${AppColors.white};
