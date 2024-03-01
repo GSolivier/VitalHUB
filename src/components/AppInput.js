@@ -13,7 +13,7 @@ export const Input = styled.TextInput`
     padding: 16px;
     font-family: ${FontFamily.montSerratSemiBold};
     color: ${({ color = AppColors.primaryV1, isValid = true, isEditable = true }) => !isEditable ? AppColors.grayV2 : isValid ? color : AppColors.red};
-    background-color: ${({isEditable = true}) => isEditable ? AppColors.transparent : AppColors.whiteDarker };
+    background-color: ${({ isEditable = true }) => isEditable ? AppColors.transparent : AppColors.whiteDarker};
     `
 
 export const InputBox = styled.View`
@@ -107,13 +107,14 @@ export function AppCodeInput({ onValueChange }) {
             keyboardType="number-pad"
             textContentType="oneTimeCode"
             renderCell={({ index, symbol, isFocused }) => {
-                return (<Cell
-                    key={index}
-                    isFocused={isFocused}
-                    onLayout={getCellOnLayoutHandler(index)}
-                >
-                    {symbol || (isFocused ? <Cursor /> : null)}
-                </Cell>);
+                return (
+                    <Cell
+                        key={index}
+                        isFocused={isFocused}
+                        onLayout={getCellOnLayoutHandler(index)}
+                    >
+                        {symbol || (isFocused ? <Cursor /> : null)}
+                    </Cell>);
             }}
         />
 

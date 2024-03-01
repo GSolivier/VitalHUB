@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import { AppColors } from '../../../settings/AppColors'
 import { Column, Row, Spacing } from '../../../components/Container'
 import { TextSemiBold, TextRegular, TitleSemiBold } from '../../../settings/AppFonts'
-import { Flex, HomeCardActionType, JustifyContent, TextDecoration } from '../../../settings/AppEnums'
+import { Flex, HomeCardActionType, TextDecoration } from '../../../settings/AppEnums'
 import { LinkButton } from '../../../components/AppButton'
 import t from '../../../locale'
 import AppLocalizations from '../../../settings/AppLocalizations'
@@ -57,7 +57,7 @@ export default function HomeCard({ imagePath, name, age, examType, schedule, act
                             <SchedulesBox actionCard={actionType}>
                                 <SvgIcon name={Icon.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.primary : AppColors.grayV1} />
                                 <Spacing width={6} />
-                                <TextSemiBold alignSelf={Flex.alignSelf.center} color={actionType == HomeCardActionType.scheduled ? AppColors.primary : AppColors.grayV1} size={14}>{schedule}</TextSemiBold>
+                                <TextSemiBold alignSelf={Flex.center} color={actionType == HomeCardActionType.scheduled ? AppColors.primary : AppColors.grayV1} size={14}>{schedule}</TextSemiBold>
                             </SchedulesBox>
                             {
                                 actionType == HomeCardActionType.scheduled ?

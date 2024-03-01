@@ -13,7 +13,8 @@ import ButtonSelecter from '../../../widgets/ButtonSelecter'
 import { RouteKeys, push } from '../../../../settings/routes/RouteActions'
 
 export default function ScheduleAppointmentDialog({ visible, onClose, navigation }) {
-  const [selectedAppointmentType, setSelectedAppointmentType] = useState('');
+  const [selectedAppointmentType, setSelectedAppointmentType] = useState('');`
+  `
   const datas = [
     { key: '1', value: 'Check-up' },
     { key: '2', value: 'Retorno' },

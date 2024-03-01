@@ -97,6 +97,14 @@ export const Icon = {
         name: 'dot-circle',
         family: IconFamily.fontAwesome5
     },
+    check: {
+        name: 'check',
+        family: IconFamily.feather
+    },
+    wrong: {
+        name: 'x',
+        family: IconFamily.feather
+    },
 };
 
 
@@ -104,9 +112,7 @@ export const Icon = {
 export default function SvgIcon({ name, size = 24, color = "black" }) {
 
     const iconName = name.name;
-    const iconFamily = name.family;
-
-    const IconComponent = iconFamily;
+    const IconComponent = name.family;
 
     return <IconComponent name={iconName} size={size} color={color} />;
 

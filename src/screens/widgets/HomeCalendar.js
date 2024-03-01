@@ -6,6 +6,7 @@ import styled from "styled-components/native";
 import t from "../../locale";
 import AppLocalizations from "../../settings/AppLocalizations";
 
+
 export const StyledCalendarStrip = styled(CalendarStrip)`
   flex: 0.20;
   width: 100%;

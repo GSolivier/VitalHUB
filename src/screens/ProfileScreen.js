@@ -76,8 +76,6 @@ export default function ProfileScreen({ user, navigation }) {
                     <AppButton textButton={t(AppLocalizations.editButton).toUpperCase()}/>
                     <Spacing height={30} />
                     <AppButton textButton={t(AppLocalizations.logOut).toUpperCase()} mainColor={AppColors.red}/>
-                    <Spacing height={30} />
-                    <AppButton textButton={'pt'} mainColor={AppColors.green}/>
                 </Container>
             </ScrollView>
         </>
