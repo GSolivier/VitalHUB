@@ -22,8 +22,10 @@
         "foregroundImage": "./src/assets/images/app_logoDark.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.waternoose.VitalHUB"
+      "package": "com.waternoose.VitalHUB",
+      "permissions": []
     },
+    
     "web": {
       "favicon": "./src/assets/images/app_logoDark.png"
     },

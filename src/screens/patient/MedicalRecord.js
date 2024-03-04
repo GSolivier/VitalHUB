@@ -1,5 +1,5 @@
 import { ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Spacing } from '../../components/Container'
 import styled from 'styled-components/native'
 import { useRoute } from '@react-navigation/native'
@@ -12,6 +12,7 @@ import AppButton, { LinkButton } from '../../components/AppButton'
 import { AppColors } from '../../settings/AppColors'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
 import { RouteKeys, pop, push } from '../../settings/routes/RouteActions'
+import PhotoSelector from './widgets/PhotoSelector'
 
 const HeaderImage = styled.Image`
     width: 100%;
@@ -31,6 +32,7 @@ const Line = styled.View`
 
 export default function MedicalRecord({ navigation }) {
     const { params } = useRoute();
+    const [photoList, setPhotoList] = useState([])
     return (
         <>
             <HeaderImage source={{ uri: params.appointment.imagePath }} />
@@ -61,13 +63,12 @@ export default function MedicalRecord({ navigation }) {
                         isTextArea={true}
                         textValue={'O paciente possuí uma infecção noouvido. Necessário repouse de 2 diase acompanhamento médico constante'} />
                     <Spacing height={20} />
-                    <TouchableOpacity onPress={() => push(navigation, RouteKeys.scanExamsScreen)}>
-                        <AppInput
-                            isEditable={false}
-                            label={t(AppLocalizations.appointDescriptionLabel)}
-                            isTextArea={true}
-                            textValue={'Nenhuma foto informada'} />
-                    </TouchableOpacity>
+                    <PhotoSelector 
+                    label={t(AppLocalizations.medicalExams)} 
+                    onTap={() => push(navigation, RouteKeys.scanExamsScreen)}
+                    photoList={photoList}
+
+                    />
                     <Spacing height={10} />
                     <Row>
                         <ButtonContainer>

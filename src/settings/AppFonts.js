@@ -25,6 +25,12 @@ font-size: ${({ size = 20 }) => `${size}px`};
 color: ${({ color = AppColors.grayV1 }) => color};
 text-align: ${({ textAlign = 'auto' }) => textAlign};
 `
+export const TitleMedium = styled.Text`
+font-family: ${FontFamily.montSerratMedium};
+font-size: ${({ size = 20 }) => `${size}px`};
+color: ${({ color = AppColors.grayV1 }) => color};
+text-align: ${({ textAlign = 'auto' }) => textAlign};
+`
 
 export const TextMedium = styled.Text`
     font-family: ${FontFamily.quicSandMedium};

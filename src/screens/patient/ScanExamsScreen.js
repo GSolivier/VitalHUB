@@ -1,12 +1,12 @@
 import { Camera, CameraType } from 'expo-camera'
-import React, { useState } from 'react'
-import { Button, Text, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useState } from 'react'
+import { ToastAndroid, TouchableOpacity } from 'react-native';
 import { Container } from '../../components/Container';
 import styled from 'styled-components/native';
 import { AppColors } from '../../settings/AppColors';
 import SvgIcon, { Icon } from '../../assets/icons/Icons';
 import { Flex } from '../../settings/AppEnums';
-import { useWindowDimensions } from "react-native";
+import { pop } from '../../settings/routes/RouteActions';
 
 const AppCamera = styled(Camera)`
     flex: 1;
@@ -48,26 +48,17 @@ const RenderedImage = styled.ImageBackground`
 `
 
 
-export default function ScanExamsScreen() {
+export default function ScanExamsScreen({ navigation }) {
     const [type, setType] = useState(CameraType.back);
     const [image, setImage] = useState(null);
     const [camera, setCamera] = useState(null);
-    const [permission, requestPermission] = Camera.useCameraPermissions();
-
-
-
-    if (!permission) {
-        return <View />;
-    }
-
-    if (!permission.granted) {
-        return (
-            <View>
-                <Text style={{ textAlign: 'center' }}>We need your permission to show the camera</Text>
-                <Button onPress={requestPermission} title="grant permission" />
-            </View>
-        );
-    }
+    const [hasCameraPermission, setHasCameraPermission] = useState(null);
+    useEffect(() => {
+        (async () => {
+            const cameraStatus = await Camera.requestCameraPermissionsAsync();
+            setHasCameraPermission(cameraStatus.status === 'granted');
+        })();
+    }, []);
 
     const takePicture = async () => {
         if (camera) {
@@ -76,7 +67,14 @@ export default function ScanExamsScreen() {
         }
     }
 
-
+    if (hasCameraPermission === false) {
+        ToastAndroid.showWithGravity(
+            'Acesso a camera nao permitido',
+            ToastAndroid.SHORT,
+            ToastAndroid.CENTER,
+          );
+        pop(navigation)
+    }
     return (
         <Container paddingTop={0} paddingRight={0} paddingLeft={0} paddingBottom={0} alignItems={Flex.flexStart}>
 
