@@ -6,7 +6,8 @@ import styled from 'styled-components/native';
 import { AppColors } from '../../settings/AppColors';
 import SvgIcon, { Icon } from '../../assets/icons/Icons';
 import { Flex } from '../../settings/AppEnums';
-import { pop } from '../../settings/routes/RouteActions';
+import { RouteKeys, pop, popWithData, popWithReturn, push } from '../../settings/routes/RouteActions';
+import { useRoute } from '@react-navigation/native';
 
 const AppCamera = styled(Camera)`
     flex: 1;
@@ -49,10 +50,12 @@ const RenderedImage = styled.ImageBackground`
 
 
 export default function ScanExamsScreen({ navigation }) {
+    const {params} = useRoute()
     const [type, setType] = useState(CameraType.back);
     const [image, setImage] = useState(null);
     const [camera, setCamera] = useState(null);
     const [hasCameraPermission, setHasCameraPermission] = useState(null);
+
     useEffect(() => {
         (async () => {
             const cameraStatus = await Camera.requestCameraPermissionsAsync();
@@ -71,8 +74,8 @@ export default function ScanExamsScreen({ navigation }) {
         ToastAndroid.showWithGravity(
             'Acesso a camera nao permitido',
             ToastAndroid.SHORT,
-            ToastAndroid.CENTER,
-          );
+            ToastAndroid.BOTTOM,
+        );
         pop(navigation)
     }
     return (
@@ -83,6 +86,7 @@ export default function ScanExamsScreen({ navigation }) {
                     ratio='16:9'
                     ref={ref => setCamera(ref)}
                     type={CameraType.back}
+
                 >
                     <CameraBox>
 
@@ -106,7 +110,11 @@ export default function ScanExamsScreen({ navigation }) {
                                         <SvgIcon name={Icon.wrong} color={AppColors.primary} size={80} />
                                     </TouchableOpacity>
 
-                                    <TouchableOpacity activeOpacity={0.5}>
+                                    <TouchableOpacity
+                                    onPress={() => {
+                                        popWithData(navigation, RouteKeys.medicalRecordScreen, {image: image})
+                                    }}
+                                    activeOpacity={0.5}>
                                         <SvgIcon name={Icon.check} color={AppColors.primary} size={80} />
                                     </TouchableOpacity>
                                 </ButtonBox>

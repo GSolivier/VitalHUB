@@ -1,6 +1,7 @@
 import {
   NavigationProp,
   ParamListBase,
+  Route,
   StackActions,
 } from "@react-navigation/native";
 
@@ -20,10 +21,10 @@ export const RouteKeys = {
   insertMedicalRecordScreen: "InsertMedicalRecordScreen",
   selectClinicScreen: "SelectClinicScreen",
   selectDoctorScreen: "SelectDoctorScreen",
-  selectDateScreen: 'SelectDateScreen',
-  seeAppointmentLocalScreen: 'seeAppointmentLocalScreen',
-  medicalRecordScreen: 'medicalRecordScreen',
-  scanExamsScreen: 'ScanExamsScreen'
+  selectDateScreen: "SelectDateScreen",
+  seeAppointmentLocalScreen: "seeAppointmentLocalScreen",
+  medicalRecordScreen: "medicalRecordScreen",
+  scanExamsScreen: "ScanExamsScreen",
 };
 
 export async function push<RouteName extends keyof ParamListBase>(
@@ -56,6 +57,22 @@ export async function pop(
   try {
     const popAction = StackActions.pop(screensToPop);
     navigation.dispatch(popAction);
+  } catch (error) {
+    console.error("Erro ao fazer pop na rota:", error);
+  }
+}
+
+export async function popWithData<RouteName extends keyof ParamListBase>(
+  navigation: NavigationProp<ParamListBase>,
+  routeKey: any,
+  params?: ParamListBase[RouteName]
+): Promise<void> {
+  try {
+    navigation.navigate({
+      name: routeKey,
+      params: params,
+      merge: true,
+    });
   } catch (error) {
     console.error("Erro ao fazer pop na rota:", error);
   }
