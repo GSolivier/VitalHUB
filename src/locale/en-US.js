@@ -126,7 +126,11 @@ const en = {
     medicalExams: 'Medical exams',
     noPhotoReported: 'No photo reported',
     send: 'Send',
-    
+    confirmPhoto: 'Confirm image',
+    deleteImage: 'Delete image',
+    photoReported: 'photo reported',
+    photosReported: 'photos reporteds',
+
     dateOfBirth: 'Date of birth',
     cpf: 'CPF',
     cep: 'Postal code',

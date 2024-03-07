@@ -73,11 +73,11 @@ export default function HomeBottomNavigation() {
 
             />
 
-            <Tab.Screen
+            {/* <Tab.Screen
                 name={RouteKeys.clinicScreenDoctor}
                 component={ClinicScreenDoctor}
 
-            />
+            /> */}
 
             <Tab.Screen
                 name={RouteKeys.profileScreen}

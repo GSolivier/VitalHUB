@@ -13,6 +13,7 @@ import { AppColors } from '../../settings/AppColors'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
 import { RouteKeys, pop, push } from '../../settings/routes/RouteActions'
 import PhotoSelector from './widgets/PhotoSelector'
+import SeeImageModal from './widgets/dialogs/SeeImageModal'
 
 const HeaderImage = styled.Image`
     width: 100%;
@@ -33,6 +34,8 @@ const Line = styled.View`
 export default function MedicalRecord({ navigation }) {
     const { params } = useRoute();
     const [photoList, setPhotoList] = useState([])
+    const [selectedImage, setSelectedImage] = useState()
+    const [imageModalIsVisible, setImageModalIsVisible] = useState(false)
 
     useEffect(() => {
         if (params.image) {
@@ -40,6 +43,19 @@ export default function MedicalRecord({ navigation }) {
             setPhotoList([...photoList, params.image])
         }
     }, [params])
+
+    const handleOpenImage = (photo) => {
+        setSelectedImage(photo)
+        setImageModalIsVisible(true)
+    }
+
+    const handleDeleteImage = () => {
+        const index = photoList.indexOf(selectedImage)
+        if (index != -1) {
+            photoList.splice(index, 1)
+        }
+        setImageModalIsVisible(false)
+    }
 
     return (
         <>
@@ -73,8 +89,8 @@ export default function MedicalRecord({ navigation }) {
                     <Spacing height={20} />
                     <PhotoSelector
                         label={t(AppLocalizations.medicalExams)}
-
                         photoList={photoList}
+                        openImage={handleOpenImage}
                     />
                     <Spacing height={10} />
                     <Row>
@@ -108,6 +124,12 @@ export default function MedicalRecord({ navigation }) {
                         textValue={'Resultado do exame de sangue: tudo normal'} />
                     <Spacing height={30} />
                     <LinkButton text={t(AppLocalizations.back)} onTap={() => pop(navigation)} />
+                    <SeeImageModal 
+                    visible={imageModalIsVisible} 
+                    image={selectedImage} 
+                    onClose={() => setImageModalIsVisible(false)}
+                    deleteImage={handleDeleteImage}
+                    />
                 </Container>
             </ScrollView>
         </>

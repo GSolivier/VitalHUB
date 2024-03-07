@@ -19,9 +19,9 @@ export default function RedefinePassword({ navigation }) {
             <Spacing height={15} />
             <TextMedium>{t(AppLocalizations.redefinePasswordHint)}</TextMedium>
             <Spacing height={20} />
-            <AppInput hint={t(AppLocalizations.newPasswordPlaceHolder)}/>
+            <AppInput isObscure hint={t(AppLocalizations.newPasswordPlaceHolder)}/>
             <Spacing height={15} />
-            <AppInput hint={t(AppLocalizations.confirmNewPasswordPlaceHolder)}/>
+            <AppInput isObscure hint={t(AppLocalizations.confirmNewPasswordPlaceHolder)}/>
             <Spacing height={30} />
             <AppButton textButton={t(AppLocalizations.confirmNewPasswordPlaceHolder).toUpperCase()}/>
         </AuthContainer>

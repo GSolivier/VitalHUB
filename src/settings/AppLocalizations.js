@@ -126,6 +126,10 @@ export default AppLocalizations = {
     medicalExams: 'medicalExams',
     noPhotoReported: 'noPhotoReported',
     send: 'send',
+    confirmPhoto: 'confirmPhoto',
+    deleteImage: 'deleteImage',
+    photoReported: 'photoReported',
+    photosReported: 'photosReported',
     
     dateOfBirth: 'dateOfBirth',
     cpf: 'cpf',

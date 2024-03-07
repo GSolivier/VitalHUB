@@ -22,9 +22,9 @@ export default function CreateAccount({ navigation }) {
       <Spacing height={20} />
       <AppInput hint={t(AppLocalizations.emailPlacehoder)} />
       <Spacing height={15} />
-      <AppInput hint={t(AppLocalizations.passwordPlaceholder)} />
+      <AppInput isObscure hint={t(AppLocalizations.passwordPlaceholder)} />
       <Spacing height={15} />
-      <AppInput hint={t(AppLocalizations.confirmPassword)} />
+      <AppInput isObscure hint={t(AppLocalizations.confirmPassword)} />
       <Spacing height={30} />
       <AppButton textButton={t(AppLocalizations.signUp).toUpperCase()} />
       <Spacing height={30} />

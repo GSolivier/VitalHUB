@@ -8,9 +8,6 @@ import { Link, TitleBold } from '../settings/AppFonts'
 export const LinkTouchableOpacity = styled.TouchableOpacity`
         align-self: ${({ alignSelf = 'auto' }) => alignSelf};
         justify-self: ${({ justifySelf = 'auto' }) => justifySelf};;
-        padding-top: 3px ;
-        align-items: center;
-        justify-content: center;
 `
 
 export function LinkButton({ text, color, size, alignSelf, onTap, textDecoration, justifySelf }) {

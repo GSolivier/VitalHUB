@@ -24,41 +24,63 @@ export default function AppRoutes() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name={RouteKeys.tabNavigationPatient} component={TabNavigationPatient} />
-                <Stack.Screen name={RouteKeys.medicalRecordScreen} component={MedicalRecord} />
+
                 <Stack.Screen
                     name={RouteKeys.loginScreen}
-                    component={Login}
-                />
-                <Stack.Screen name={RouteKeys.tabNavigationDoctor} component={TabNavigationDoctor} />
-                <Stack.Screen name={RouteKeys.scanExamsScreen} component={ScanExamsScreen} />
-                <Stack.Screen name={RouteKeys.seeAppointmentLocalScreen} component={SeeAppointmentLocalScreen} />
-                <Stack.Screen name={RouteKeys.selectDateScreen} component={SelectDate} />
-                <Stack.Screen name={RouteKeys.selectDoctorScreen} component={SelectDoctor} />
+                    component={Login} />
+
+                <Stack.Screen
+                    name={RouteKeys.tabNavigationPatient}
+                    component={TabNavigationPatient} />
+
+                <Stack.Screen
+                    name={RouteKeys.medicalRecordScreen}
+                    component={MedicalRecord} />
+
+                <Stack.Screen
+                    name={RouteKeys.tabNavigationDoctor}
+                    component={TabNavigationDoctor} />
+
+                <Stack.Screen
+                    name={RouteKeys.scanExamsScreen}
+                    component={ScanExamsScreen} />
+
+                <Stack.Screen
+                    name={RouteKeys.seeAppointmentLocalScreen}
+                    component={SeeAppointmentLocalScreen} />
+
+                <Stack.Screen
+                    name={RouteKeys.selectDateScreen}
+                    component={SelectDate} />
+
+                <Stack.Screen
+                    name={RouteKeys.selectDoctorScreen}
+                    component={SelectDoctor} />
+
                 <Stack.Screen
                     name={RouteKeys.selectClinicScreen}
-                    component={SelectClinic}
-                />
+                    component={SelectClinic} />
+
                 <Stack.Screen
                     name={RouteKeys.forgotPassword}
-                    component={ForgotPassword}
-                />
+                    component={ForgotPassword} />
+
                 <Stack.Screen
                     name={RouteKeys.emailVerify}
-                    component={EmailVerify}
-                />
+                    component={EmailVerify} />
+
                 <Stack.Screen
                     name={RouteKeys.redefinePassword}
-                    component={RedefinePassword}
-                />
+                    component={RedefinePassword} />
+
                 <Stack.Screen
                     name={RouteKeys.createAccount}
-                    component={CreateAccount}
-                />
+                    component={CreateAccount} />
+
                 <Stack.Screen
                     name={RouteKeys.insertMedicalRecordScreen}
-                    component={InsertMedicalRecord}
-                />
+                    component={InsertMedicalRecord} />
+
             </Stack.Navigator>
         </NavigationContainer>
     )

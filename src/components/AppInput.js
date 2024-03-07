@@ -3,6 +3,7 @@ import styled from 'styled-components/native'
 import { AppColors } from '../settings/AppColors'
 import { FontFamily, TextSemiBold } from '../settings/AppFonts'
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field'
+import { Spacing } from './Container'
 
 export const Input = styled.TextInput`
     width: 100%;
@@ -24,21 +25,25 @@ export const InputBox = styled.View`
 export default function AppInput({
     label,
     hint,
+    Icon,
     textColor = AppColors.primaryV1,
     borderColor,
     isObscure = false,
     isTextArea = false,
     isEditable = true,
     textValue,
-    onEdit,
+    onEdit = null,
     focus = null,
     focusOut = null,
     isValid = true,
     onChange = null,
+    ...rest
 }) {
     const handleInputChange = (value) => {
         onEdit === null ? null : onEdit(value);
     };
+
+
 
     return (
         <InputBox>
@@ -61,7 +66,9 @@ export default function AppInput({
                 isValid={isValid}
                 editable={isEditable}
                 isEditable={isEditable}
+                {...rest}
             />
+            {Icon ? Icon : <Spacing/>}
         </InputBox>
     )
 }

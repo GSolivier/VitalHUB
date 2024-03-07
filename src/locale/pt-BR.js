@@ -127,6 +127,10 @@ const pt = {
     medicalExams: 'Exames médicos',
     noPhotoReported: 'Nenhuma foto informada',
     send: 'Enviar',
+    confirmPhoto: 'Confirmar imagem',
+    deleteImage: 'Excluir imagem',
+    photoReported: 'foto reportada',
+    photosReported: 'fotos reportadas',
 
     dateOfBirth: 'Data de nascimento',
     cpf: 'CPF',

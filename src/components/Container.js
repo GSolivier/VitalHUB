@@ -32,6 +32,7 @@ export const Row = styled.View`
     width: ${({ width }) => width};
     height: ${({ height }) => height};
     flex-direction: row;
+    flex-wrap: ${({isWrap = false})=> isWrap ? 'wrap' : 'nowrap'};
     align-items: ${({ alignItems }) => alignItems};
     justify-content: ${({ justifyContent }) => justifyContent};
     align-self: ${({ alignSelf }) => alignSelf};

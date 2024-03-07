@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Container, Row, Spacing } from '../components/Container'
 import styled from 'styled-components/native'
 import { USER_LOGGED } from '../settings/AppUtils'
@@ -8,8 +8,10 @@ import AppInput from '../components/AppInput'
 import { Flex, JustifyContent } from '../settings/AppEnums'
 import t, { changeLanguage } from '../locale'
 import AppLocalizations from '../settings/AppLocalizations'
-import { ScrollView } from 'react-native'
+import { Platform, ScrollView } from 'react-native'
 import AppButton from '../components/AppButton'
+import DateTimePicker from '@react-native-community/datetimepicker';
+import SvgIcon, { Icon } from '../assets/icons/Icons'
 
 const HeaderImage = styled.Image`
     width: 100%;
@@ -25,7 +27,7 @@ const InfoBox = styled.View`
     border-radius: 5px;
     position: absolute;
     z-index: 9999;
-    top: 270px;
+    top: 35%;
     align-self: center;
 `
 
@@ -35,9 +37,47 @@ const InputContainer = styled.View`
 
 export default function ProfileScreen({ user, navigation }) {
 
+    const [date, setDate] = useState(new Date())
+    const [open, setOpen] = useState(false)
+
+    const formatDate = (rawDate) => {
+        let date = new Date(rawDate)
+
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let day = date.getDate()
+
+        day = day < 10 ? `0${day}` : day
+        month = month < 10 ? `0${month}` : month
+
+        return `${day}/${month}/${year}`
+    }
+
+    const toggleDatePicker = () => {
+        setOpen(!open);
+    }
+
+    const onChange = ({ type }, selectedDate) => {
+        if (type == "set") {
+            const currentDate = selectedDate;
+            setDate(currentDate)
+
+            if (Platform.OS === "android") {
+                toggleDatePicker()
+
+                setDateOfBirth(formatDate(currentDate));
+            }
+        } else {
+            toggleDatePicker()
+        }
+        aceEditorRef.current.blur()
+    }
+
+    const aceEditorRef = useRef();
+
     return (
         <>
-            <HeaderImage source={{ uri: USER_LOGGED.imagePath }}/>            
+            <HeaderImage source={{ uri: USER_LOGGED.imagePath }} />
             <InfoBox>
                 <TitleSemiBold size={16}>{USER_LOGGED.name}</TitleSemiBold>
                 <Spacing height={10} />
@@ -47,12 +87,16 @@ export default function ProfileScreen({ user, navigation }) {
                 <Container justifyContent={Flex.flexStart}>
                     <Spacing height={80} />
                     <AppInput
-                        isEditable={false}
+                        isEditable={true}
                         label={t(AppLocalizations.dateOfBirth)}
-                        textValue={USER_LOGGED.date} />
+                        textValue={formatDate(date)}
+                        onPress={toggleDatePicker}
+                        showSoftInputOnFocus={false}
+                        Icon={<SvgIcon name={Icon.calendar}/>}
+                    />
                     <Spacing height={24} />
                     <AppInput
-                        isEditable={false}
+                        isEditable={true}
                         label={t(AppLocalizations.cpf)}
                         textValue={'426********'} />
                     <Spacing height={20} />
@@ -71,13 +115,21 @@ export default function ProfileScreen({ user, navigation }) {
                         </InputContainer>
                     </Row>
                     <Spacing height={32} />
-                    <AppButton textButton={t(AppLocalizations.saveButton).toUpperCase()}/>
+                    <AppButton textButton={t(AppLocalizations.saveButton).toUpperCase()} />
                     <Spacing height={30} />
-                    <AppButton textButton={t(AppLocalizations.editButton).toUpperCase()}/>
+                    <AppButton textButton={t(AppLocalizations.editButton).toUpperCase()} />
                     <Spacing height={30} />
-                    <AppButton textButton={t(AppLocalizations.logOut).toUpperCase()} mainColor={AppColors.red}/>
+                    <AppButton textButton={t(AppLocalizations.logOut).toUpperCase()} mainColor={AppColors.red} />
                 </Container>
             </ScrollView>
+
+            {open ? <DateTimePicker
+                display='calendar'
+                onChange={onChange}
+                value={date}
+                
+            /> : <Spacing />}
+
         </>
     )
 }

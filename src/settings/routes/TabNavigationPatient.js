@@ -74,10 +74,10 @@ export default function TabNavigationPatient() {
 
                 />
 
-                <Tab.Screen 
+                {/* <Tab.Screen 
                 name={RouteKeys.clinicScreenPatient} 
                 component={ClinicScreenPatient}
-                />
+                /> */}
 
                 <Tab.Screen 
                 name={RouteKeys.profileScreen} 

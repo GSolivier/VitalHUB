@@ -14,7 +14,7 @@ export const DialogContainer = styled.View`
 `
 
 export const DialogBox = styled.View`
-    padding: 27px;
+    padding: ${({ paddingInside = 27 }) => `${paddingInside}px`};
     background-color: ${AppColors.white};
     border-radius: 10px;
     flex: ${({ flex = '0 1 auto' }) => flex};
@@ -23,7 +23,7 @@ export const DialogBox = styled.View`
 `
 
 export default function AppDialog({
-    visible, onClose, children, animationType = "fade", justifyContentContainer, justifyContentBox, flex, padding, isFaded
+    visible, onClose, children, animationType = "fade", justifyContentContainer, justifyContentBox, flex, padding, isFaded, paddingInside
 }) {
     return (
         <Dialog
@@ -38,7 +38,7 @@ export default function AppDialog({
                 justifyContent={justifyContentContainer}
                 isFaded={isFaded}
             >
-                <DialogBox justifyContentBox={justifyContentBox} flex={flex}>
+                <DialogBox justifyContentBox={justifyContentBox} flex={flex} paddingInside={paddingInside}>
                     {children}
                 </DialogBox>
             </DialogContainer>
