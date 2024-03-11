@@ -5,7 +5,7 @@ import { FontFamily, TextSemiBold } from '../settings/AppFonts'
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field'
 import { Spacing } from './Container'
 
-export const Input = styled.TextInput`
+const Input = styled.TextInput`
     width: 100%;
     height: ${({ isTextArea = false }) => isTextArea ? '120px' : '60px'};
     border-radius: 5px;
@@ -17,9 +17,15 @@ export const Input = styled.TextInput`
     background-color: ${({ isEditable = true }) => isEditable ? AppColors.transparent : AppColors.whiteDarker};
     `
 
-export const InputBox = styled.View`
+const InputBox = styled.View`
         width: 100%;
         gap: 10px;
+`
+
+const IconBox = styled.View`
+    position: absolute;
+    right: 5%;
+    top: 55%;
 `
 
 export default function AppInput({
@@ -68,7 +74,9 @@ export default function AppInput({
                 isEditable={isEditable}
                 {...rest}
             />
-            {Icon ? Icon : <Spacing/>}
+            <IconBox>
+                {Icon ? Icon : <Spacing />}
+            </IconBox>
         </InputBox>
     )
 }

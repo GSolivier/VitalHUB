@@ -24,6 +24,9 @@ export default function AppRoutes() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
+                <Stack.Screen
+                    name={RouteKeys.seeAppointmentLocalScreen}
+                    component={SeeAppointmentLocalScreen} />
 
                 <Stack.Screen
                     name={RouteKeys.loginScreen}
@@ -45,9 +48,6 @@ export default function AppRoutes() {
                     name={RouteKeys.scanExamsScreen}
                     component={ScanExamsScreen} />
 
-                <Stack.Screen
-                    name={RouteKeys.seeAppointmentLocalScreen}
-                    component={SeeAppointmentLocalScreen} />
 
                 <Stack.Screen
                     name={RouteKeys.selectDateScreen}

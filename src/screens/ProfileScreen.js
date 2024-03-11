@@ -8,7 +8,7 @@ import AppInput from '../components/AppInput'
 import { Flex, JustifyContent } from '../settings/AppEnums'
 import t, { changeLanguage } from '../locale'
 import AppLocalizations from '../settings/AppLocalizations'
-import { Platform, ScrollView } from 'react-native'
+import { Platform, Pressable, ScrollView, View } from 'react-native'
 import AppButton from '../components/AppButton'
 import DateTimePicker from '@react-native-community/datetimepicker';
 import SvgIcon, { Icon } from '../assets/icons/Icons'
@@ -39,6 +39,7 @@ export default function ProfileScreen({ user, navigation }) {
 
     const [date, setDate] = useState(new Date())
     const [open, setOpen] = useState(false)
+    const [isEditable, setIsEditable] = useState(false)
 
     const formatDate = (rawDate) => {
         let date = new Date(rawDate)
@@ -86,38 +87,42 @@ export default function ProfileScreen({ user, navigation }) {
             <ScrollView>
                 <Container justifyContent={Flex.flexStart}>
                     <Spacing height={80} />
-                    <AppInput
-                        isEditable={true}
-                        label={t(AppLocalizations.dateOfBirth)}
-                        textValue={formatDate(date)}
-                        onPress={toggleDatePicker}
-                        showSoftInputOnFocus={false}
-                        Icon={<SvgIcon name={Icon.calendar}/>}
-                    />
+
+                    <Pressable style={{width: '100%'}} onPress={isEditable ? toggleDatePicker : null}>
+                        <View style={{width: '100%'}} pointerEvents='none'>
+                            <AppInput
+                                isEditable={isEditable}
+                                label={t(AppLocalizations.dateOfBirth)}
+                                textValue={formatDate(date)}
+                                showSoftInputOnFocus={false}
+                                Icon={<SvgIcon name={Icon.calendar} color={isEditable ? AppColors.primary : AppColors.gray} />}
+                            />
+                        </View>
+                    </Pressable>
                     <Spacing height={24} />
                     <AppInput
-                        isEditable={true}
+                        isEditable={isEditable}
                         label={t(AppLocalizations.cpf)}
                         textValue={'426********'} />
                     <Spacing height={20} />
                     <AppInput
-                        isEditable={false}
+                        isEditable={isEditable}
                         label={t(AppLocalizations.adress)}
                         textValue={'Rua Vicenzo da Silva, 181'} />
                     <Spacing height={24} />
                     <Row justifyContent={Flex.spaceBetween} width={'100%'}>
                         <InputContainer>
-                            <AppInput isEditable={false} label={t(AppLocalizations.cep)} hint={'09586-754'} />
+                            <AppInput isEditable={isEditable} label={t(AppLocalizations.cep)} hint={'09586-754'} />
                         </InputContainer>
                         <Spacing width={32} />
                         <InputContainer>
-                            <AppInput isEditable={false} label={t(AppLocalizations.city)} hint={'Moema-SP'} />
+                            <AppInput isEditable={isEditable} label={t(AppLocalizations.city)} hint={'Moema-SP'} />
                         </InputContainer>
                     </Row>
                     <Spacing height={32} />
-                    <AppButton textButton={t(AppLocalizations.saveButton).toUpperCase()} />
+                    <AppButton textButton={t(AppLocalizations.saveButton).toUpperCase()} onTap={() => setIsEditable(false)}  />
                     <Spacing height={30} />
-                    <AppButton textButton={t(AppLocalizations.editButton).toUpperCase()} />
+                    <AppButton textButton={t(AppLocalizations.editButton).toUpperCase()} onTap={() => setIsEditable(true)} />
                     <Spacing height={30} />
                     <AppButton textButton={t(AppLocalizations.logOut).toUpperCase()} mainColor={AppColors.red} />
                 </Container>
@@ -127,7 +132,7 @@ export default function ProfileScreen({ user, navigation }) {
                 display='calendar'
                 onChange={onChange}
                 value={date}
-                
+
             /> : <Spacing />}
 
         </>

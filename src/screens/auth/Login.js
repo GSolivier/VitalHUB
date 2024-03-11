@@ -17,7 +17,7 @@ import { RouteKeys, push } from '../../settings/routes/RouteActions'
 export default function Login({ navigation }) {
   const [email, setEmail] = useState('')
   const [isValidated, setIsValidated] = useState(true)
-  const [userType, setUserType] = useState('doctor')
+  const [userType, setUserType] = useState('patient')
 
   const handleEmailChange = (value) => {
     setEmail(value);
