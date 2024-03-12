@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Container, Row, Spacing } from '../../components/Container'
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps'
 import styled from 'styled-components'
@@ -10,10 +10,11 @@ import AppLocalizations from '../../settings/AppLocalizations'
 import AppButton from '../../components/AppButton'
 import { pop } from '../../settings/routes/RouteActions'
 import * as Location from 'expo-location';
-import { Appearance, Text } from 'react-native'
+import { Appearance, Text, TouchableOpacity } from 'react-native'
 import { AppColors } from '../../settings/AppColors'
 import MapViewDirections from 'react-native-maps-directions'
 import { mapskey } from '../../settings/AppUtils'
+import SvgIcon, { Icon } from '../../assets/icons/Icons'
 
 const Map = styled(MapView)`
   width: 100%;
@@ -24,9 +25,24 @@ const InputContainer = styled.View`
     flex: 0.5;
 `
 
+const ZoomOut = styled.TouchableOpacity`
+  position: absolute;
+  top: -30%;
+  right: 5%;
+  z-index: 9999;
+  background-color: ${AppColors.white};
+  padding: 10px 15px 10px 15px;
+  border-radius: 10px;
+`
+
 export default function SeeAppointmentLocalScreen({ navigation }) {
 
+  const mapRef = useRef(null)
   const [initialPosition, setInitialPosition] = useState(null)
+  const [finalPosition, setFinalPosition] = useState({
+    latitude: -23.698023,
+    longitude: -46.598395
+  })
   const [theme, setTheme] = useState(null)
 
 
@@ -45,7 +61,38 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
 
   useEffect(() => {
     getCurrentLocalization()
+
+    Location.watchPositionAsync({
+      accuracy: Location.LocationAccuracy.Highest,
+      timeInterval: 1000,
+      distanceInterval: 1,
+
+    }, async (response) => {
+      await setInitialPosition(response)
+      console.log('====================================');
+      console.log(response);
+      console.log('====================================');
+    })
   }, [1000])
+
+  useEffect(() => {
+    reloadView();
+  }, [initialPosition])
+
+  async function reloadView() {
+    if (mapRef.current && initialPosition) {
+      await mapRef.current.fitToCoordinates(
+        [
+          { latitude: initialPosition.coords.latitude, longitude: initialPosition.coords.longitude },
+          { latitude: finalPosition.latitude, longitude: finalPosition.longitude }
+        ],
+        {
+          edgePadding: { top: 60, right: 60, bottom: 60, left: 60 },
+          animated: true
+        }
+      )
+    }
+  }
 
   if (initialPosition == null) {
     return <Text>Não foi possivel pegar a localização</Text>
@@ -62,6 +109,7 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
         }}
         provider={PROVIDER_GOOGLE}
         customMapStyle={theme === 'dark' ? darkMap : lightMap}
+        ref={mapRef}
       >
         <Marker
           coordinate={{
@@ -75,7 +123,7 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
         <MapViewDirections
           origin={initialPosition.coords}
           destination={{
-            latitude: -23.698023, 
+            latitude: -23.698023,
             longitude: -46.598395,
             latitudeDelta: 0.005,
             longitudeDelta: 0.005
@@ -86,14 +134,21 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
         />
         <Marker
           coordinate={{
-            latitude: -23.698023, 
-            longitude: -46.598395,
+            latitude: finalPosition.latitude,
+            longitude: finalPosition.longitude,
           }}
           title='Seu destino'
           pinColor={AppColors.primary}
         />
+
+
+
       </Map>
       <Container justifyContent={Flex.flexStart}>
+        <ZoomOut onPress={ () => reloadView()} activeOpacity={.8}>
+
+          <SvgIcon name={Icon.zoomOut} size={30} color={AppColors.primary} />
+        </ZoomOut>
         <Spacing height={10} />
         <TitleSemiBold size={20}>Clinica Natureh</TitleSemiBold>
         <Spacing height={8} />

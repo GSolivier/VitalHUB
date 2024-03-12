@@ -105,6 +105,10 @@ export const Icon = {
         name: 'x',
         family: IconFamily.feather
     },
+    zoomOut: {
+        name: 'zoom-out',
+        family: IconFamily.foundation
+    }
 };
 
 
