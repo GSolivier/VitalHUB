@@ -10,7 +10,7 @@ import AppLocalizations from '../../settings/AppLocalizations'
 import AppButton from '../../components/AppButton'
 import { pop } from '../../settings/routes/RouteActions'
 import * as Location from 'expo-location';
-import { Appearance, Text, TouchableOpacity } from 'react-native'
+import { ActivityIndicator, Appearance, Text, TouchableOpacity, useColorScheme } from 'react-native'
 import { AppColors } from '../../settings/AppColors'
 import MapViewDirections from 'react-native-maps-directions'
 import { mapskey } from '../../settings/AppUtils'
@@ -44,13 +44,11 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
     longitude: -46.598395
   })
   const [theme, setTheme] = useState(null)
+  let colorScheme = useColorScheme()
 
 
   async function getCurrentLocalization() {
     const { granted } = await Location.requestForegroundPermissionsAsync()
-    const theme = Appearance.getColorScheme()
-
-    setTheme(theme)
 
     if (granted) {
       const captureLocation = await Location.getCurrentPositionAsync()
@@ -61,6 +59,7 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
 
   useEffect(() => {
     getCurrentLocalization()
+    setTheme(colorScheme)
 
     Location.watchPositionAsync({
       accuracy: Location.LocationAccuracy.Highest,
@@ -69,9 +68,6 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
 
     }, async (response) => {
       await setInitialPosition(response)
-      console.log('====================================');
-      console.log(response);
-      console.log('====================================');
     })
   }, [1000])
 
@@ -95,7 +91,11 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
   }
 
   if (initialPosition == null) {
-    return <Text>Não foi possivel pegar a localização</Text>
+    return <Container>
+      <TitleSemiBold>Carregando</TitleSemiBold>
+      <Spacing height={10}/>
+      <ActivityIndicator/>
+    </Container>
   }
 
   return (
@@ -108,7 +108,7 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
           longitudeDelta: 0.005
         }}
         provider={PROVIDER_GOOGLE}
-        customMapStyle={theme === 'dark' ? darkMap : lightMap}
+        customMapStyle={theme === "light" ? lightMap : darkMap}
         ref={mapRef}
       >
         <Marker
@@ -390,223 +390,162 @@ const lightMap = [
 
 const darkMap = [
   {
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#E1E0E7",
-      },
-    ],
+      "elementType": "geometry",
+      "stylers": [
+          {
+              "color": "#242f3e"
+          }
+      ]
   },
   {
-    elementType: "geometry.fill",
-    stylers: [
-      {
-        saturation: -5,
-      },
-      {
-        lightness: -5,
-      },
-    ],
+      "elementType": "labels.text.fill",
+      "stylers": [
+          {
+              "color": "#746855"
+          }
+      ]
   },
   {
-    elementType: "labels.icon",
-    stylers: [
-      {
-        visibility: "on",
-      },
-    ],
+      "elementType": "labels.text.stroke",
+      "stylers": [
+          {
+              "color": "#242f3e"
+          }
+      ]
   },
   {
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#FBFBFB",
-      },
-    ],
+      "featureType": "administrative.locality",
+      "elementType": "labels.text.fill",
+      "stylers": [
+          {
+              "color": "#d59563"
+          }
+      ]
   },
   {
-    elementType: "labels.text.stroke",
-    stylers: [
-      {
-        color: "#33303E",
-      },
-    ],
+      "featureType": "poi",
+      "elementType": "labels.text.fill",
+      "stylers": [
+          {
+              "color": "#d59563"
+          }
+      ]
   },
   {
-    featureType: "administrative",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#fbfbfb",
-      },
-    ],
+      "featureType": "poi.park",
+      "elementType": "geometry",
+      "stylers": [
+          {
+              "color": "#263c3f"
+          }
+      ]
   },
   {
-    featureType: "administrative.country",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#fbfbfb",
-      },
-    ],
+      "featureType": "poi.park",
+      "elementType": "labels.text.fill",
+      "stylers": [
+          {
+              "color": "#6b9a76"
+          }
+      ]
   },
   {
-    featureType: "administrative.land_parcel",
-    stylers: [
-      {
-        visibility: "on",
-      },
-    ],
+      "featureType": "road",
+      "elementType": "geometry",
+      "stylers": [
+          {
+              "color": "#38414e"
+          }
+      ]
   },
   {
-    featureType: "administrative.locality",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#fbfbfb",
-      },
-    ],
+      "featureType": "road",
+      "elementType": "geometry.stroke",
+      "stylers": [
+          {
+              "color": "#212a37"
+          }
+      ]
   },
   {
-    featureType: "poi",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#fbfbfb",
-      },
-    ],
+      "featureType": "road",
+      "elementType": "labels.text.fill",
+      "stylers": [
+          {
+              "color": "#9ca5b3"
+          }
+      ]
   },
   {
-    featureType: "poi.business",
-    stylers: [
-      {
-        visibility: "on",
-      },
-    ],
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [
+          {
+              "color": "#746855"
+          }
+      ]
   },
   {
-    featureType: "poi.park",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#66DA9F",
-      },
-    ],
+      "featureType": "road.highway",
+      "elementType": "geometry.stroke",
+      "stylers": [
+          {
+              "color": "#1f2835"
+          }
+      ]
   },
   {
-    featureType: "poi.park",
-    elementType: "labels.text",
-    stylers: [
-      {
-        visibility: "on",
-      },
-    ],
+      "featureType": "road.highway",
+      "elementType": "labels.text.fill",
+      "stylers": [
+          {
+              "color": "#f3d19c"
+          }
+      ]
   },
   {
-    featureType: "poi.park",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#fbfbfb",
-      },
-    ],
+      "featureType": "transit",
+      "elementType": "geometry",
+      "stylers": [
+          {
+              "color": "#2f3948"
+          }
+      ]
   },
   {
-    featureType: "poi.park",
-    elementType: "labels.text.stroke",
-    stylers: [
-      {
-        color: "#1B1B1B",
-      },
-    ],
+      "featureType": "transit.station",
+      "elementType": "labels.text.fill",
+      "stylers": [
+          {
+              "color": "#d59563"
+          }
+      ]
   },
   {
-    featureType: "road",
-    stylers: [
-      {
-        visibility: "on",
-      },
-    ],
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
+          {
+              "color": "#17263c"
+          }
+      ]
   },
   {
-    featureType: "road",
-    elementType: "geometry.fill",
-    stylers: [
-      {
-        color: "#C6C5CE",
-      },
-    ],
+      "featureType": "water",
+      "elementType": "labels.text.fill",
+      "stylers": [
+          {
+              "color": "#515c6d"
+          }
+      ]
   },
   {
-    featureType: "road",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#FBFBFB",
-      },
-    ],
-  },
-  {
-    featureType: "road.arterial",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#ACABB7",
-      },
-    ],
-  },
-  {
-    featureType: "road.highway",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#8C8A97",
-      },
-    ],
-  },
-  {
-    featureType: "road.highway.controlled_access",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#8C8A97",
-      },
-    ],
-  },
-  {
-    featureType: "road.local",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#fbfbfb",
-      },
-    ],
-  },
-  {
-    featureType: "transit",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#fbfbfb",
-      },
-    ],
-  },
-  {
-    featureType: "water",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#8EA5D9",
-      },
-    ],
-  },
-  {
-    featureType: "water",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#fbfbfb",
-      },
-    ],
-  },
-];
+      "featureType": "water",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+          {
+              "color": "#17263c"
+          }
+      ]
+  }
+]

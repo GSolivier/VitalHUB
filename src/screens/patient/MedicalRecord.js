@@ -23,6 +23,7 @@ const HeaderImage = styled.Image`
 const ButtonContainer = styled.View`
     flex: 0.5;
     justify-content: center;
+    align-items: center;
 `
 
 const Line = styled.View`
@@ -31,16 +32,19 @@ const Line = styled.View`
     background-color: ${AppColors.grayV4};
 `
 
-export default function MedicalRecord({ navigation }) {
+export default function MedicalRecord({ navigation, navigation: { setParams } }) {
     const { params } = useRoute();
     const [photoList, setPhotoList] = useState([])
     const [selectedImage, setSelectedImage] = useState()
     const [imageModalIsVisible, setImageModalIsVisible] = useState(false)
 
     useEffect(() => {
+        console.log('====================================');
+        console.log(params);
+        console.log('====================================');
         if (params.image) {
-
             setPhotoList([...photoList, params.image])
+            setParams({ image: undefined })
         }
     }, [params])
 
@@ -124,11 +128,11 @@ export default function MedicalRecord({ navigation }) {
                         textValue={'Resultado do exame de sangue: tudo normal'} />
                     <Spacing height={30} />
                     <LinkButton text={t(AppLocalizations.back)} onTap={() => pop(navigation)} />
-                    <SeeImageModal 
-                    visible={imageModalIsVisible} 
-                    image={selectedImage} 
-                    onClose={() => setImageModalIsVisible(false)}
-                    deleteImage={handleDeleteImage}
+                    <SeeImageModal
+                        visible={imageModalIsVisible}
+                        image={selectedImage}
+                        onClose={() => setImageModalIsVisible(false)}
+                        deleteImage={handleDeleteImage}
                     />
                 </Container>
             </ScrollView>

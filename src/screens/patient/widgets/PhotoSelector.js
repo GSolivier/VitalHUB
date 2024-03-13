@@ -31,7 +31,6 @@ const ImgBox = styled.TouchableOpacity`
     background-color: ${AppColors.whiteDarker};
     justify-content: space-around;
     border-radius: 5px;
-    margin-bottom: 10px;
 `
 
 export default function PhotoSelector({ label, photoList = [], openImage }) {
@@ -52,10 +51,10 @@ export default function PhotoSelector({ label, photoList = [], openImage }) {
 
             </PhotoSelectorContent>
 
-            <Row isWrap={true} justifyContent={Flex.spaceBetween}>
+            <Row isWrap={true} gap={15}>
                 {photoList.map((photo, index) => {
                     return <>
-                        <ImgBox activeOpacity={0.5} onPress={() => openImage(photo)}>
+                        <ImgBox key={photo} activeOpacity={0.5} onPress={() => openImage(photo)}>
                             <TextSemiBold color={AppColors.primary}>{`IMG_${index + 1}`}</TextSemiBold>
                             <SvgIcon color={AppColors.primary} name={Icon.close} size={20} />
                         </ImgBox>

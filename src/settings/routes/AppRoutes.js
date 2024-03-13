@@ -25,6 +25,9 @@ export default function AppRoutes() {
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen
+                    name={RouteKeys.tabNavigationPatient}
+                    component={TabNavigationPatient} />
+                <Stack.Screen
                     name={RouteKeys.seeAppointmentLocalScreen}
                     component={SeeAppointmentLocalScreen} />
 
@@ -32,9 +35,6 @@ export default function AppRoutes() {
                     name={RouteKeys.loginScreen}
                     component={Login} />
 
-                <Stack.Screen
-                    name={RouteKeys.tabNavigationPatient}
-                    component={TabNavigationPatient} />
 
                 <Stack.Screen
                     name={RouteKeys.medicalRecordScreen}

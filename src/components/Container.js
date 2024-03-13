@@ -36,4 +36,5 @@ export const Row = styled.View`
     align-items: ${({ alignItems }) => alignItems};
     justify-content: ${({ justifyContent }) => justifyContent};
     align-self: ${({ alignSelf }) => alignSelf};
+    gap: ${({gap = 0}) => `${gap}px`}
 `
