@@ -108,6 +108,14 @@ export const Icon = {
     zoomOut: {
         name: 'zoom-out',
         family: IconFamily.foundation
+    },
+    camera: {
+        name: 'camera',
+        family: IconFamily.fontAwesome
+    },
+    addPhoto: {
+        name: 'add-photo-alternate',
+        family: IconFamily.materialIcons
     }
 };
 

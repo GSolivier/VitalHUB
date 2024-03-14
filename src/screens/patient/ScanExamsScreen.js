@@ -1,13 +1,12 @@
 import { Camera, CameraType } from 'expo-camera'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ToastAndroid, TouchableOpacity } from 'react-native';
-import { Container } from '../../components/Container';
+import { Container, Spacing } from '../../components/Container';
 import styled from 'styled-components/native';
 import { AppColors } from '../../settings/AppColors';
 import SvgIcon, { Icon } from '../../assets/icons/Icons';
 import { Flex } from '../../settings/AppEnums';
 import { RouteKeys, pop, popWithData, popWithReturn, push } from '../../settings/routes/RouteActions';
-import { useRoute } from '@react-navigation/native';
 
 const AppCamera = styled(Camera)`
     flex: 1;
@@ -24,11 +23,18 @@ justify-content: flex-end;
 const ButtonBox = styled.View`
     flex: 0.15;
     width: 100%;
-    background-color: rgba(255,255,255,0.85);
+    background-color: ${({isWhite = false}) => !isWhite ? AppColors.transparent : AppColors.white};
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
+    padding: 20px;
     z-index: 2;
+`
+
+const ButtonCamera = styled.TouchableOpacity`
+    padding: 15px;
+    background-color: ${AppColors.white};
+    border-radius: 10px;
 `
 
 const ImageBox = styled.View`
@@ -50,10 +56,8 @@ const RenderedImage = styled.ImageBackground`
 
 
 export default function ScanExamsScreen({ navigation }) {
-    const {params} = useRoute()
-    const [type, setType] = useState(CameraType.back);
+    const cameraRef = useRef(null)
     const [image, setImage] = useState(null);
-    const [camera, setCamera] = useState(null);
     const [hasCameraPermission, setHasCameraPermission] = useState(null);
 
     useEffect(() => {
@@ -64,8 +68,8 @@ export default function ScanExamsScreen({ navigation }) {
     }, []);
 
     const takePicture = async () => {
-        if (camera) {
-            const data = await camera.takePictureAsync(null)
+        if (cameraRef) {
+            const data = await cameraRef.current.takePictureAsync(null)
             setImage(data.uri);
         }
     }
@@ -84,16 +88,18 @@ export default function ScanExamsScreen({ navigation }) {
             {image == null ? (
                 <AppCamera
                     ratio='16:9'
-                    ref={ref => setCamera(ref)}
+                    ref={cameraRef}
                     type={CameraType.back}
-
+                    
                 >
                     <CameraBox>
 
                         <ButtonBox>
-                            <TouchableOpacity activeOpacity={0.5} onPress={() => takePicture()}>
-                                <SvgIcon name={Icon.dotCircle} color={AppColors.primary} size={80} />
-                            </TouchableOpacity>
+                            <Spacing/>
+                            <ButtonCamera activeOpacity={0.5} onPress={() => takePicture()}>
+                                <SvgIcon name={Icon.camera} color={AppColors.primary} size={30} />
+                            </ButtonCamera>
+                            <Spacing/>
                         </ButtonBox>
 
                     </CameraBox>
@@ -105,7 +111,7 @@ export default function ScanExamsScreen({ navigation }) {
                         <ImageBox>
                             <RenderedImage source={{ uri: image }} resizeMode="cover" >
 
-                                <ButtonBox>
+                                <ButtonBox isWhite={true}>
                                     <TouchableOpacity activeOpacity={0.5} onPress={() => setImage(null)}>
                                         <SvgIcon name={Icon.wrong} color={AppColors.primary} size={80} />
                                     </TouchableOpacity>

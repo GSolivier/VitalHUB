@@ -95,19 +95,16 @@ export default function MedicalRecord({ navigation, navigation: { setParams } })
                         label={t(AppLocalizations.medicalExams)}
                         photoList={photoList}
                         openImage={handleOpenImage}
-                    />
+                        onTap={() => push(navigation, RouteKeys.scanExamsScreen)}/>
                     <Spacing height={10} />
                     <Row>
                         <ButtonContainer>
                             <AppButton
                                 textButton={t(AppLocalizations.send)}
+                                isDisabled={photoList.length == 0}
                                 mainColor={AppColors.primary}
-                                SvgIcon={<SvgIcon name={Icon.cameraPlus} color={AppColors.white} />}
-                                onTap={() => {
-                                    push(
-                                        navigation, RouteKeys.scanExamsScreen
-                                    )
-                                }}
+                                // SvgIcon={<SvgIcon name={Icon.cameraPlus} color={AppColors.white} />}
+
                             />
                         </ButtonContainer>
                         <ButtonContainer>

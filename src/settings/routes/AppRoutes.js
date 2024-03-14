@@ -16,6 +16,9 @@ import SelectDate from '../../screens/patient/SelectDate';
 import SeeAppointmentLocalScreen from '../../screens/patient/SeeAppointmentLocalScreen';
 import MedicalRecord from '../../screens/patient/MedicalRecord';
 import ScanExamsScreen from '../../screens/patient/ScanExamsScreen';
+import { AppColors } from '../AppColors';
+import { Flex } from '../AppEnums';
+import { FontFamily } from '../AppFonts';
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +48,17 @@ export default function AppRoutes() {
                     component={TabNavigationDoctor} />
 
                 <Stack.Screen
+                    options={{
+                        headerShown: true,
+                        title: 'Escanear Exame',
+                        headerTitleAlign: Flex.center,
+                        headerTintColor: AppColors.primary,
+                        headerTitleStyle: {
+                            fontFamily: FontFamily.montSerratBold
+                            
+                        },
+                        animation: "fade"
+                    }}
                     name={RouteKeys.scanExamsScreen}
                     component={ScanExamsScreen} />
 
