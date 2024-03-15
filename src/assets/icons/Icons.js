@@ -106,8 +106,8 @@ export const Icon = {
         family: IconFamily.feather
     },
     zoomOut: {
-        name: 'zoom-out',
-        family: IconFamily.foundation
+        name: 'image-filter-center-focus-weak',
+        family: IconFamily.materialCommunityIcons
     },
     camera: {
         name: 'camera',

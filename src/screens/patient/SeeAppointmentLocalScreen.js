@@ -27,11 +27,11 @@ const InputContainer = styled.View`
 
 const ZoomOut = styled.TouchableOpacity`
   position: absolute;
-  top: -30%;
+  top: -20%;
   right: 5%;
   z-index: 9999;
   background-color: ${AppColors.white};
-  padding: 10px 15px 10px 15px;
+  padding: 10px 10px 10px 10px;
   border-radius: 10px;
 `
 
@@ -147,7 +147,7 @@ export default function SeeAppointmentLocalScreen({ navigation }) {
       <Container justifyContent={Flex.flexStart}>
         <ZoomOut onPress={ () => reloadView()} activeOpacity={.8}>
 
-          <SvgIcon name={Icon.zoomOut} size={30} color={AppColors.primary} />
+          <SvgIcon name={Icon.zoomOut} size={30} color={AppColors.secondary} />
         </ZoomOut>
         <Spacing height={10} />
         <TitleSemiBold size={20}>Clinica Natureh</TitleSemiBold>

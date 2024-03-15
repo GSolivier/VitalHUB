@@ -39,9 +39,6 @@ export default function MedicalRecord({ navigation, navigation: { setParams } })
     const [imageModalIsVisible, setImageModalIsVisible] = useState(false)
 
     useEffect(() => {
-        console.log('====================================');
-        console.log(params);
-        console.log('====================================');
         if (params.image) {
             setPhotoList([...photoList, params.image])
             setParams({ image: undefined })

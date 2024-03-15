@@ -6,7 +6,7 @@ import { Flex } from '../settings/AppEnums'
 export const Dialog = styled.Modal`
 `
 
-export const DialogContainer = styled.View`
+export const DialogContainer = styled.SafeAreaView`
     justify-content: ${({ justifyContentContainer = Flex.center, isFaded = false }) => isFaded ? Flex.flexEnd : justifyContentContainer};
     flex: 1;
     background-color: rgba(0,0,0,0.5);
@@ -31,7 +31,7 @@ export default function AppDialog({
             animationType={animationType}
             transparent={true}
             onRequestClose={() => onClose}
-
+            statusBarTranslucent
         >
             <DialogContainer
                 padding={padding}

@@ -49,7 +49,6 @@ export default function AppointmentPatientCard({
         <CardContainer activeOpacity={0.8} onPress={isTappable ? cardTap : null}>
             <CardBox>
                 <Row justifyContent={Flex.spaceBetween}>
-                    <Row>
                         <CardImage source={{ uri: imagePath }} />
                         <Spacing width={10} />
                         <Column justifyContent={Flex.spaceBetween}>
@@ -65,7 +64,7 @@ export default function AppointmentPatientCard({
                                 </Row>
                             </Column>
 
-                            <Row width={'81%'} justifyContent={Flex.spaceBetween} alignItems={Flex.center}>
+                            <Row width={'85%'} justifyContent={Flex.spaceBetween} alignItems={Flex.center}>
                                 <SchedulesBox actionCard={actionType}>
                                     <SvgIcon name={Icon.clock} size={15} color={actionType == HomeCardActionType.scheduled ? AppColors.primary : AppColors.grayV1} />
                                     <Spacing width={6} />
@@ -101,7 +100,6 @@ export default function AppointmentPatientCard({
                             </Row>
                         </Column>
                     </Row>
-                </Row>
             </CardBox>
         </CardContainer>
     )
