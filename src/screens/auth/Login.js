@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Spacing } from '../../components/Container'
 import AppInput from '../../components/AppInput'
-import { Image } from 'react-native'
+import { Image, Text} from 'react-native'
 import { AppAssets } from '../../assets/AppAssets'
 import { TitleSemiBold } from '../../settings/AppFonts'
 import AppButton, { LinkButton } from '../../components/AppButton'
@@ -9,19 +9,52 @@ import { AppColors } from '../../settings/AppColors'
 import AuthContainer from './widgets/AuthContainer'
 import t from '../../locale'
 import AppLocalizations from '../../settings/AppLocalizations'
-import { Flex, TextDecoration } from '../../settings/AppEnums'
+import { Flex } from '../../settings/AppEnums'
 import SvgIcon, { Icon } from '../../assets/icons/Icons'
 import { RouteKeys, push } from '../../settings/routes/RouteActions'
+import * as Auth from 'expo-local-authentication'
 
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState('')
   const [isValidated, setIsValidated] = useState(true)
   const [userType, setUserType] = useState('patient')
+  const [hasBio, setHasBio] = useState(false)
+  const [isAuth, setIsAuth] = useState(false)
+
+  async function CheckAuth() {
+
+    const compatible = await Auth.hasHardwareAsync()
+
+    setHasBio(compatible)
+  }
+
+  async function handleAuth() {
+    const biometric = await Auth.isEnrolledAsync()
+
+    if (!biometric) {
+      return
+    }
+
+    const auth = await Auth.authenticateAsync({
+      promptMessage: 'VitalHub'
+    })
+
+    setIsAuth( auth.success)
+
+    push(navigation, userType === 'patient' ? RouteKeys.tabNavigationPatient : RouteKeys.tabNavigationDoctor, true)
+  }
 
   const handleEmailChange = (value) => {
     setEmail(value);
   }
+
+  useEffect(() => {
+    CheckAuth()
+    handleAuth()
+  } , [])
+
+
   return (
     <AuthContainer>
 
@@ -95,7 +128,6 @@ export default function Login({ navigation }) {
            />
 
       </Row>
-
 
     </AuthContainer>
   )
